@@ -1,0 +1,33 @@
+23:29:04 **** Incremental Build of configuration Debug for project Second_AVR ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 Second_AVR.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    2538 bytes (7.7% Full)
+(.text + .data + .bootloader)
+
+Data:        120 bytes (5.9% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+Invoking: AVRDude
+C:\WinAVR-20100110\bin\avrdude -pm32 -cusbasp -u -Uflash:w:Second_AVR.hex:a -Ulfuse:w:0xff:m -Uhfuse:w:0xd9:m
+
+avrdude: warning: cannot set sck period. please check for usbasp firmware update.
+avrdude: error: programm enable: target doesn't answer. 1 
+avrdude: initialization failed, rc=-1
+         Double check connections and try again, or use -F to override
+         this check.
+
+
+avrdude done.  Thank you.
+
+make: *** [avrdudedummy] Error 1
+
+23:29:04 Build Finished (took 643ms)
+

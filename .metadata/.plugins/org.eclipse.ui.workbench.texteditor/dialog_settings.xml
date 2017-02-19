@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="org.eclipse.cdt.internal.ui.preferences.CTemplatePreferencePage$CEditTemplateDialog_dialogBounds">
+		<item value="615" key="DIALOG_WIDTH"/>
+		<item value="1|Segoe UI|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI" key="DIALOG_FONT_NAME"/>
+		<item value="331" key="DIALOG_HEIGHT"/>
+		<item value="384" key="DIALOG_X_ORIGIN"/>
+		<item value="152" key="DIALOG_Y_ORIGIN"/>
+	</section>
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
+		<item value="false" key="isRegEx"/>
+		<item value="LCD_LINE_END" key="selection"/>
+		<item value="true" key="casesensitive"/>
+		<item value="false" key="incremental"/>
+		<item value="true" key="wrap"/>
+		<item value="true" key="wholeword"/>
+		<list key="findhistory">
+			<item value="LINE_END"/>
+			<item value="LINE_BASE"/>
+			<item value="SECOND_LINE"/>
+			<item value="FIRST_LINE"/>
+			<item value="SECONDLINE_DDRAM"/>
+			<item value="BASE_DDRAM"/>
+			<item value="BASE_CGR"/>
+			<item value="SCHEDULAR_Periodicity"/>
+		</list>
+		<list key="replacehistory">
+			<item value="LCD_LINE_END"/>
+			<item value="LCD_LINE_BASE"/>
+			<item value="LCD_SECOND_LINE"/>
+			<item value="LCD_FIRST_LINE"/>
+			<item value="LCD_SECONDLINE_DDRAM"/>
+			<item value="LCD_BASE_DDRAM"/>
+			<item value="LCD_BASE_CGR"/>
+			<item value="SCHEDULAR_u8Periodicity"/>
+		</list>
+	</section>
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
+		<item value="342" key="DIALOG_WIDTH"/>
+		<item value="1|Ubuntu|11.0|0|GTK|1|" key="DIALOG_FONT_NAME"/>
+		<item value="444" key="DIALOG_HEIGHT"/>
+		<item value="548" key="DIALOG_X_ORIGIN"/>
+		<item value="200" key="DIALOG_Y_ORIGIN"/>
+	</section>
+</section>

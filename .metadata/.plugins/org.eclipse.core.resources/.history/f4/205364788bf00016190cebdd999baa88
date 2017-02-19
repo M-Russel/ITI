@@ -1,0 +1,35 @@
+/*
+ * main.c
+ *
+ *  Created on: Feb 6, 2017
+ *      Author: root
+ */
+
+#include "std_types.h"
+#include "utils.h"
+#include "DIO_Interface.h"
+#include "delay_ms.h"
+#include "avr/pgmspace.h"
+
+const u8 var[2] PROGMEM = { 1, 2 };
+
+u8 read_var (u8 i);
+
+int main(void)
+{
+	/* Locate var in flash memory */
+
+
+
+	while(1)
+	{
+
+	}
+	return 0;
+}
+
+u8 read_var (u8 i)
+{
+	/* Access var[] by accessor macro from avr/pgmspace.h */
+	return (u8) pgm_read_word(&var[i]);
+}

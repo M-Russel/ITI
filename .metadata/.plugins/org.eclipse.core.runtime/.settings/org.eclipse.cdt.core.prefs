@@ -1,0 +1,15 @@
+build.all.configs.enabled=false
+build.proj.ref.configs.enabled=false
+eclipse.preferences.version=1
+environment/workspace/JDK/delimiter=;
+environment/workspace/JDK/operation=append
+environment/workspace/JDK/value=C\:\\Program Files\\Java\\jdk1.8.0_92\\bin
+environment/workspace/JRE/delimiter=;
+environment/workspace/JRE/operation=append
+environment/workspace/JRE/value=C\:\\Program Files\\Java\\jre1.8.0_92\\bin
+environment/workspace/MINGW/delimiter=;
+environment/workspace/MINGW/operation=append
+environment/workspace/MINGW/value=C\:\\MinGW\\gcc\\bin
+environment/workspace/append=true
+environment/workspace/appendContributed=true
+macros/workspace=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?>\n<macros/>\n

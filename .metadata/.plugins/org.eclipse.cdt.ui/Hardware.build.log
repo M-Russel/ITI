@@ -1,0 +1,36 @@
+19:57:21 **** Incremental Build of configuration Debug for project Hardware ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=4000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+In file included from ../main.c:15:0:
+/usr/lib/avr/include/util/delay.h:95:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed" [-Wcpp]
+ # warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+   ^
+../main.c:21:6: warning: return type of ‘main’ is not ‘int’ [-Wmain]
+ void main(void)
+      ^
+../main.c: In function ‘main’:
+../main.c:28:49: error: ‘DIO_OUTPUT’ undeclared (first use in this function)
+ DIO_u8SetPinDirection(MOTOR_DIRECTION_ONE_UPPER,DIO_OUTPUT);
+                                                 ^
+../main.c:28:49: note: each undeclared identifier is reported only once for each function it appears in
+../main.c:29:49: error: ‘DIO_INPUT’ undeclared (first use in this function)
+ DIO_u8SetPinDirection(MOTOR_DIRECTION_ONE_LOWER,DIO_INPUT);
+                                                 ^
+../main.c:90:20: error: ‘PIN_17’ undeclared (first use in this function)
+ SWITCH_u8GetStatus(PIN_17,&Status);
+                    ^
+../main.c:109:19: error: ‘PIN_16’ undeclared (first use in this function)
+ DIO_u8SetPinValue(PIN_16,DIO_HIGH);
+                   ^
+../main.c:109:26: error: ‘DIO_HIGH’ undeclared (first use in this function)
+ DIO_u8SetPinValue(PIN_16,DIO_HIGH);
+                          ^
+../main.c:113:27: error: ‘DIO_LOW’ undeclared (first use in this function)
+  DIO_u8SetPinValue(PIN_16,DIO_LOW);
+                           ^
+make: *** [main.o] Error 1
+
+19:57:21 Build Finished (took 65ms)
+

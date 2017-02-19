@@ -1,0 +1,187 @@
+/*
+ * main.c
+ *
+ *  Created on: Feb 8, 2017
+ *      Author: root
+ */
+
+
+//BLINKING WITH TIMER
+
+
+#include "std_types.h"
+#include "utils.h"
+#include "DIO_Interface.h"
+#include "DIO_Config.h"
+#include "DIO_Private.h"
+#include "TIMER0_private.h"
+#include "TIMER0_interface.h"
+#include "TIMER0_config.h"
+#include "LCD_Interface.h"
+#include "delay_ms.h"
+#include "SCHEDULAR_u8interface.h"
+
+
+
+
+
+typedef struct {
+
+	u32 SCHEDULAR_u32Periodicity;
+	u32 SCHEDULAR_u32FirstDelay;
+	void (*ptr)(void);
+
+
+
+
+}Task;
+
+void SCHEDULAR_voidStart(void);
+void Seconds (void);
+void Minutes (void);
+void Hours (void);
+void Days (void);
+void Months(void);
+
+
+
+Task swTask[SCHEDULAR_MAXIMUM_TASK]={
+		{SCHEDULAR_TASKONE_PERIODICITY,SCHEDULAR_TASKONE_FIRST_DELAY,Seconds},
+		{SCHEDULAR_TASKTWO_PERIODICITY,SCHEDULAR_TASKTWO_FIRST_DELAY,Minutes},
+		{SCHEDULAR_TASKTHREE_PERIODICITY,SCHEDULAR_TASKTHREE_FIRST_DELAY,Hours},
+		{SCHEDULAR_TASKFOUR_PERIODICITY,SCHEDULAR_TASKFOUR_FIRST_DELAY,Days}
+
+};
+
+u8 Seconds_u8Counter=0;
+u16 Minutes_u16Counter=0;
+u32 Hours_u32Counter=0;
+u32 Days_u32Days=0;
+
+void Seconds (void)
+{
+
+	LCD_u8CursorPosition(LCD_FIRST_LINE,8);
+	u8 First_Digit,Second_Digit;
+	Seconds_u8Counter++;
+	Seconds_u8Counter=Seconds_u8Counter%60;
+	First_Digit=Seconds_u8Counter/10;
+	Second_Digit=Seconds_u8Counter%10;
+	LCD_u8WriteData(':');
+    LCD_u8WriteData(First_Digit+'0');
+    LCD_u8WriteData(Second_Digit+'0');
+
+}
+
+
+void Minutes (void)
+{
+	LCD_u8CursorPosition(LCD_FIRST_LINE,5);
+	u8 First_Digit,Second_Digit;
+	Minutes_u16Counter++;
+	Minutes_u16Counter=Minutes_u16Counter%60;
+	First_Digit=Minutes_u16Counter/10;
+	Second_Digit=Minutes_u16Counter%10;
+	LCD_u8WriteData(':');
+    LCD_u8WriteData(First_Digit+'0');
+    LCD_u8WriteData(Minutes_u16Counter+'0');
+
+}
+
+
+void Hours (void)
+{
+	LCD_u8CursorPosition(LCD_FIRST_LINE,3);
+		u8 First_Digit,Second_Digit;
+		Hours_u32Counter++;
+		Hours_u32Counter=Hours_u32Counter%60;
+		First_Digit=Hours_u32Counter/10;
+		Second_Digit=Hours_u32Counter%10;
+		LCD_u8WriteData(':');
+	    LCD_u8WriteData(First_Digit+'0');
+	    LCD_u8WriteData(Hours_u32Counter+'0');
+
+}
+
+void Days(void)
+{
+
+}
+
+void Months(void)
+{
+	}
+
+u16 OVNB=OVERFLOW_COUNTER_INITIAL;
+ void __vector_11(void)
+{
+
+	 OVNB++;
+
+	 if(OVERFLOW_COUNTER_MAX==OVNB)
+	 {
+		 SCHEDULAR_voidStart();
+		 TCNT0=TCNT0_INITIAL_VALUE;
+		 OVNB=OVERFLOW_COUNTER_INITIAL;
+	 }
+
+	 else
+	 {
+
+
+	 }
+}
+
+void main(void)
+{
+	TIMER0_init();
+	DIO_voidInitialize();
+	LCD_u8Init();
+	LCD_u8ClearScreen();
+
+	LCD_u8CursorPosition(LCD_FIRST_LINE,3);
+	    LCD_u8WriteData('0');
+	    LCD_u8WriteData('0');
+	    LCD_u8WriteData(':');
+	    LCD_u8WriteData('0');
+	    LCD_u8WriteData('0');
+	    LCD_u8WriteData(':');
+	    LCD_u8WriteData('0');
+	    LCD_u8WriteData('0');
+
+
+while (1)
+{
+
+
+
+}
+
+return ;
+}
+
+
+void SCHEDULAR_voidStart(void)
+{
+	u8 SCHEDULAR_u8Counter;
+	for (SCHEDULAR_u8Counter=SCHEDULAR_INITIAL_TASK;SCHEDULAR_u8Counter<SCHEDULAR_MAXIMUM_TASK;SCHEDULAR_u8Counter++)
+	{
+		if (swTask[SCHEDULAR_u8Counter].SCHEDULAR_u32FirstDelay== SCHEDULAR_INITIAL_DELAY)
+		{
+			(swTask[SCHEDULAR_u8Counter].ptr)();
+			swTask[SCHEDULAR_u8Counter].SCHEDULAR_u32FirstDelay=swTask[SCHEDULAR_u8Counter].SCHEDULAR_u32Periodicity-SCHEDULAR_PERIODICITY_OFFSET;
+		}
+		else
+		{
+			swTask[SCHEDULAR_u8Counter].SCHEDULAR_u32FirstDelay--;
+
+
+		}
+
+	}
+
+
+
+
+
+}

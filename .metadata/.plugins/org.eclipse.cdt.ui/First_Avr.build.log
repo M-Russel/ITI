@@ -1,0 +1,55 @@
+16:36:15 **** Incremental Build of configuration Debug for project First_Avr ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=4000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+In file included from ../main.c:11:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+../main.c:20:1: warning: "F_CPU" redefined
+<command-line>: warning: this is the location of the previous definition
+../main.c:21: warning: return type of 'main' is not 'int'
+../main.c: In function 'main':
+../main.c:54: warning: implicit declaration of function 'Initializing'
+../main.c:31: warning: unused variable 'w'
+../main.c:31: warning: unused variable 'z'
+../main.c:31: warning: unused variable 'k'
+../main.c:31: warning: unused variable 'j'
+../main.c:31: warning: unused variable 'i'
+../main.c:31: warning: unused variable 'q'
+Finished building: ../main.c
+ 
+Building target: First_Avr.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,First_Avr.map -mmcu=atmega32 -o "First_Avr.elf"  ./Green.o ./Initializing.o ./Orange.o ./Red.o ./delay_ms.o ./main.o   
+Finished building target: First_Avr.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S First_Avr.elf  >"First_Avr.lss"
+Finished building: First_Avr.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex First_Avr.elf  "First_Avr.hex"
+Finished building: First_Avr.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 First_Avr.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    9844 bytes (30.0% Full)
+(.text + .data + .bootloader)
+
+Data:         68 bytes (3.3% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+Invoking: AVRDude
+C:\WinAVR-20100110\bin\avrdude -pm32 -cusbasp -u -Uflash:w:First_Avr.hex:a -Ulfuse:w:0xff:m -Uhfuse:w:0xd9:m
+avrdude: error: could not find USB device "USBasp" with vid=0x16c0 pid=0x5dc
+make: *** [avrdudedummy] Error 1
+
+16:36:17 Build Finished (took 2s.52ms)
+

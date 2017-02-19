@@ -1,0 +1,55 @@
+
+#include "std_types.h"
+#include "utils.h"
+#include "io_ports_atmega32.h"
+#include "DIO_Interface.h"
+#include "DIO_Config.h"
+#include "DIO_Private.h"
+#include "switch.h"
+
+static u8 SWITCH_u8PushedCounter=0,SWITCH_u8ReleasedCounter=0;
+
+u8 SWITCH_u8GetStatus(u8 Copy_u8PinNumber,pu8 Copy_pu8PinStatus)
+{
+
+u8 Local_u8Status;
+DIO_u8GetPinValue(Copy_u8PinNumber,&Local_u8Status);
+
+if (DIO_HIGH==Local_u8Status)
+	{
+		SWITCH_u8PushedCounter++;
+		SWITCH_u8ReleasedCounter=THREESHOLD_MINIMUM;
+
+		if (THREESHOLD_MAXIMUM<=SWITCH_u8PushedCounter)
+		{
+			*Copy_pu8PinStatus=PUSHED;
+			SWITCH_u8PushedCounter=THREESHOLD_MINIMUM;
+		}
+		else
+		{
+				*Copy_pu8PinStatus=PRE_PUSHED;
+
+		}
+}
+
+
+else if (DIO_LOW==Local_u8Status)
+{
+	SWITCH_u8ReleasedCounter++;
+	SWITCH_u8PushedCounter=THREESHOLD_MINIMUM;
+
+	if (THREESHOLD_MAXIMUM>=SWITCH_u8ReleasedCounter)
+	{
+		*Copy_pu8PinStatus=RELEASED;
+		SWITCH_u8ReleasedCounter=THREESHOLD_MINIMUM;
+	}
+	else
+	{
+		*Copy_pu8PinStatus=PRE_RELEASED;
+	}
+
+
+}
+
+return OK;
+}

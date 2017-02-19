@@ -1,0 +1,20 @@
+22:37:58 **** Incremental Build of configuration Debug for project LCD_Tasks ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 LCD_Tasks.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    3654 bytes (11.2% Full)
+(.text + .data + .bootloader)
+
+Data:        233 bytes (11.4% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+
+22:37:58 Build Finished (took 66ms)
+

@@ -1,0 +1,56 @@
+19:57:21 **** Incremental Build of configuration Debug for project TIMER8BIT ****
+make all 
+Building file: ../TIMER0.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=4000000UL -MMD -MP -MF"TIMER0.d" -MT"TIMER0.o" -c -o "TIMER0.o" "../TIMER0.c"
+In file included from ../TIMER0.c:18:0:
+../TIMER0_interface.h:13:1: warning: ‘__INTR_ATTRS’ attribute directive ignored [-Wattributes]
+ void __vector_11(void) __attribute__((signal,__INTR_ATTRS));
+ ^
+../TIMER0.c: In function ‘__vector_11’:
+../TIMER0.c:157:4: warning: implicit declaration of function ‘schedular’ [-Wimplicit-function-declaration]
+    schedular();
+    ^
+../TIMER0.c: At top level:
+../TIMER0.c:169:6: warning: return type of ‘main’ is not ‘int’ [-Wmain]
+ void main(void)
+      ^
+../TIMER0.c:187:6: warning: conflicting types for ‘schedular’ [enabled by default]
+ void schedular (void)
+      ^
+../TIMER0.c:157:4: note: previous implicit declaration of ‘schedular’ was here
+    schedular();
+    ^
+Finished building: ../TIMER0.c
+ 
+Building target: TIMER8BIT.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,TIMER8BIT.map -mmcu=atmega32 -o "TIMER8BIT.elf"  ./DIO_Prog.o ./TIMER0.o ./TIMER0_prog.o ./TIMER1.o ./TIMER2.o ./delay_ms.o   
+Finished building target: TIMER8BIT.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S TIMER8BIT.elf  >"TIMER8BIT.lss"
+Finished building: TIMER8BIT.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex TIMER8BIT.elf  "TIMER8BIT.hex"
+Finished building: TIMER8BIT.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 TIMER8BIT.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   13566 bytes (41.4% Full)
+(.text + .data + .bootloader)
+
+Data:         23 bytes (1.1% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+
+19:57:21 Build Finished (took 113ms)
+

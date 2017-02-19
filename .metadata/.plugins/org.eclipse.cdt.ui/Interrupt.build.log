@@ -1,0 +1,59 @@
+22:05:59 **** Incremental Build of configuration Debug for project Interrupt ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -I/usr/lib/avr/include -I/usr/lib/gcc/avr/4.8.2/include -I/usr/lib/gcc/avr/4.8.2/include-fixed -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=4000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+In file included from ../main.c:13:0:
+../DIO_Private.h:298:0: warning: "DIO_u8PIN_31_INITIAL" redefined [enabled by default]
+  #define DIO_u8PIN_31_INITIAL DIO_HIGH
+ ^
+In file included from ../main.c:12:0:
+../DIO_Config.h:108:0: note: this is the location of the previous definition
+ #define DIO_u8PIN_31_INITIAL DIO_LOW
+ ^
+In file included from ../main.c:17:0:
+../Mc_Registers.h:11:0: warning: "INT0" redefined [enabled by default]
+ #define INT0 26
+ ^
+In file included from /usr/lib/avr/include/avr/io.h:206:0,
+                 from /usr/lib/avr/include/avr/interrupt.h:38,
+                 from ../main.c:16:
+/usr/lib/avr/include/avr/iom32.h:282:0: note: this is the location of the previous definition
+ #define INT0    6
+ ^
+../main.c:30:6: warning: return type of ‘main’ is not ‘int’ [-Wmain]
+ void main (void)
+      ^
+Finished building: ../main.c
+ 
+Building target: Interrupt.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,Interrupt.map -mmcu=atmega32 -o "Interrupt.elf"  ./DIO_Prog.o ./DIO_voidInitialize.o ./Mc_Registers.o ./delay_ms.o ./main.o   
+Finished building target: Interrupt.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S Interrupt.elf  >"Interrupt.lss"
+Finished building: Interrupt.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex Interrupt.elf  "Interrupt.hex"
+Finished building: Interrupt.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 Interrupt.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    2414 bytes (7.4% Full)
+(.text + .data + .bootloader)
+
+Data:          2 bytes (0.1% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+
+22:05:59 Build Finished (took 186ms)
+

@@ -1,0 +1,10 @@
+19:27:34 **** Incremental Build of configuration Debug for project magic ****
+make all 
+'Building target: magic'
+'Invoking: Cross GCC Linker'
+gcc  -o "magic"  ./src/magic.o   
+'Finished building target: magic'
+' '
+
+19:27:35 Build Finished (took 586ms)
+

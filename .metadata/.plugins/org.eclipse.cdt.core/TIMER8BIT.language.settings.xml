@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project>
+	<configuration id="de.innot.avreclipse.configuration.app.debug.461436958" name="Debug">
+		<extension point="org.eclipse.cdt.core.LanguageSettingsProvider">
+			<provider id="org.eclipse.cdt.ui.UserLanguageSettingsProvider">
+				<language id="org.eclipse.cdt.core.gcc">
+					<resource project-relative-path="">
+						<entry kind="includePath" name="/usr/lib/gcc/avr/4.8.2/include-fixed">
+							<flag value="LOCAL"/>
+						</entry>
+						<entry kind="includePath" name="/usr/lib/gcc/avr/4.8.2/include">
+							<flag value="LOCAL"/>
+						</entry>
+						<entry kind="includePath" name="/usr/lib/avr/include">
+							<flag value="LOCAL"/>
+						</entry>
+					</resource>
+				</language>
+			</provider>
+		</extension>
+	</configuration>
+</project>

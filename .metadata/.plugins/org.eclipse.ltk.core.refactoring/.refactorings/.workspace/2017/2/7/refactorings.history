@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">&#x0A;<refactoring comment="Delete resource &apos;TIMER8BIT/io_ports_atmega32.h&apos;" deleteContents="false" description="Delete resource &apos;TIMER8BIT/io_ports_atmega32.h&apos;" element1="/TIMER8BIT/io_ports_atmega32.h" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1487090787972"/>&#x0A;<refactoring comment="Rename resource &apos;Schedular&apos; to &apos;Schedular_LCD_LED&apos;" description="Rename resource &apos;Schedular&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="/Schedular" name="Schedular_LCD_LED" stamp="1487190907237" updateReferences="true"/>
+</session>

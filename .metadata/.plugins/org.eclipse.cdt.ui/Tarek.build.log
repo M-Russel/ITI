@@ -1,0 +1,27 @@
+18:14:16 **** Build of configuration Debug for project Tarek ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 Tarek.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    2096 bytes (6.4% Full)
+(.text + .data + .bootloader)
+
+Data:          0 bytes (0.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+Invoking: AVRDude
+/usr/bin/avrdude -pm32 -cusbasp -u -Uflash:w:Tarek.hex:a -Ulfuse:w:0xff:m -Uhfuse:w:0xd9:m
+avrdude: error: could not find USB device with vid=0x16c0 pid=0x5dc vendor='www.fischl.de' product='USBasp'
+
+avrdude done.  Thank you.
+
+make: *** [avrdudedummy] Error 1
+
+18:14:16 Build Finished (took 254ms)
+

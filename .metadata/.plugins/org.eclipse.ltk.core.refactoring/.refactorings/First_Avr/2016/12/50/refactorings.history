@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;First_Avr/io_ports.h&apos; to &apos;io_ports_atmega32.h&apos;" description="Rename resource &apos;io_ports.h&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="io_ports.h" name="io_ports_atmega32.h" stamp="1481101967250" updateReferences="true"/>
+</session>

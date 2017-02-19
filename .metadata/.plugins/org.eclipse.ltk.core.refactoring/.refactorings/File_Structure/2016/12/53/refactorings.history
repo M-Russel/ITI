@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">&#x0A;<refactoring comment="Rename resource &apos;File_Structure/types.h&apos; to &apos;std_types.h&apos;" description="Rename resource &apos;types.h&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="types.h" name="std_types.h" stamp="1482945443505" updateReferences="true"/>&#x0A;<refactoring comment="Rename resource &apos;File_Structure/bitCalc.h&apos; to &apos;utils.h&apos;" description="Rename resource &apos;bitCalc.h&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="bitCalc.h" name="utils.h" stamp="1482945483237" updateReferences="true"/>
+</session>

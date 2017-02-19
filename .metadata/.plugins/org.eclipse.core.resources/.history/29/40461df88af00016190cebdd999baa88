@@ -1,0 +1,32 @@
+/*
+ * main.c
+ *
+ *  Created on: Feb 6, 2017
+ *      Author: root
+ */
+
+#include "std_types.h"
+#include "utils.h"
+#include "DIO_Interface.h"
+#include "delay_ms.h"
+
+
+void main (void)
+{
+DIO_u8Initialize();
+
+
+while (1)
+{
+
+
+
+}
+
+
+
+
+return;
+}
+
+

@@ -1,0 +1,16 @@
+14:48:56 **** Incremental Build of configuration Debug for project LED_Matrix ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=4000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+In file included from ../main.c:11:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+In file included from ../main.c:20:
+../led_matrix_names.h:90: error: expected '=', ',', ';', 'asm' or '__attribute__' before 'E'
+../main.c:21:1: warning: "F_CPU" redefined
+<command-line>: warning: this is the location of the previous definition
+../main.c:22: warning: return type of 'main' is not 'int'
+make: *** [main.o] Error 1
+
+14:49:02 Build Finished (took 5s.711ms)
+
