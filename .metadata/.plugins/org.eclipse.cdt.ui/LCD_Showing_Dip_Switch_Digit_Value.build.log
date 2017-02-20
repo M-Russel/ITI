@@ -1,0 +1,20 @@
+12:52:24 **** Incremental Build of configuration Debug for project LCD_Showing_Dip_Switch_Digit_Value ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 LCD_Showing_Dip_Switch_Digit_Value.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    2156 bytes (6.6% Full)
+(.text + .data + .bootloader)
+
+Data:         89 bytes (4.3% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+
+12:52:24 Build Finished (took 77ms)
+

@@ -1,12 +1,46 @@
-23:26:44 **** Incremental Build of configuration Debug for project Stepper ****
+13:32:29 **** Incremental Build of configuration Debug for project Stepper ****
 make all 
+Building file: ../STEPPER_prog.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=4000000UL -MMD -MP -MF"STEPPER_prog.d" -MT"STEPPER_prog.o" -c -o "STEPPER_prog.o" "../STEPPER_prog.c"
+../STEPPER_prog.c: In function ‘STEPPER_u8Init’:
+../STEPPER_prog.c:24:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+../STEPPER_prog.c: In function ‘STEPPER_u8SetRotateDirectionCounterClockWise’:
+../STEPPER_prog.c:61:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+Finished building: ../STEPPER_prog.c
+ 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=4000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+../main.c:24:6: warning: return type of ‘main’ is not ‘int’ [-Wmain]
+ void main (void)
+      ^
+Finished building: ../main.c
+ 
+Building target: Stepper.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,Stepper.map -mmcu=atmega32 -o "Stepper.elf"  ./DIO_Prog.o ./STEPPER_prog.o ./delay_ms.o ./main.o   
+Finished building target: Stepper.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S Stepper.elf  >"Stepper.lss"
+Finished building: Stepper.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex Stepper.elf  "Stepper.hex"
+Finished building: Stepper.hex
+ 
 Invoking: Print Size
 avr-size --format=avr --mcu=atmega32 Stepper.elf
 AVR Memory Usage
 ----------------
 Device: atmega32
 
-Program:    2584 bytes (7.9% Full)
+Program:    2620 bytes (8.0% Full)
 (.text + .data + .bootloader)
 
 Data:          0 bytes (0.0% Full)
@@ -16,5 +50,5 @@ Data:          0 bytes (0.0% Full)
 Finished building: sizedummy
  
 
-23:26:44 Build Finished (took 132ms)
+13:32:29 Build Finished (took 123ms)
 

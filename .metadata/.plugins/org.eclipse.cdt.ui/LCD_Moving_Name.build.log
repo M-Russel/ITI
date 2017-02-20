@@ -1,0 +1,55 @@
+12:29:37 **** Build of configuration Debug for project LCD_Moving_Name ****
+make all 
+Building file: ../My_Name_Moving_Arabic_English.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=4000000UL -MMD -MP -MF"My_Name_Moving_Arabic_English.d" -MT"My_Name_Moving_Arabic_English.o" -c -o "My_Name_Moving_Arabic_English.o" "../My_Name_Moving_Arabic_English.c"
+In file included from ../My_Name_Moving_Arabic_English.c:16:0:
+/usr/lib/avr/include/util/delay.h:95:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed" [-Wcpp]
+ # warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+   ^
+../My_Name_Moving_Arabic_English.c:20:6: warning: return type of ‘main’ is not ‘int’ [-Wmain]
+ void main(void)
+      ^
+../My_Name_Moving_Arabic_English.c: In function ‘main’:
+../My_Name_Moving_Arabic_English.c:26:87: warning: unused variable ‘LCD_SecondLineEndOffset’ [-Wunused-variable]
+     u8 LCD_FirstLineOffset=0x80,LCD_SecondLineOffset=0xc0,LCD_FirstLineEndOffset=0x8f,LCD_SecondLineEndOffset=0x79;
+                                                                                       ^
+../My_Name_Moving_Arabic_English.c:26:8: warning: unused variable ‘LCD_FirstLineOffset’ [-Wunused-variable]
+     u8 LCD_FirstLineOffset=0x80,LCD_SecondLineOffset=0xc0,LCD_FirstLineEndOffset=0x8f,LCD_SecondLineEndOffset=0x79;
+        ^
+../My_Name_Moving_Arabic_English.c:25:49: warning: variable ‘lcd_counter’ set but not used [-Wunused-but-set-variable]
+  u8 w=0,i=0,j=0,k=9,base_cgr=0x40,base_ddr=0x80,lcd_counter=0;
+                                                 ^
+Finished building: ../My_Name_Moving_Arabic_English.c
+ 
+Building target: LCD_Moving_Name.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,LCD_Moving_Name.map -mmcu=atmega32 -o "LCD_Moving_Name.elf"  ./DIO_Prog.o ./DIO_voidInitialize.o ./LCD_Prog.o ./My_Name_Moving_Arabic_English.o ./delay_ms.o   
+Finished building target: LCD_Moving_Name.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S LCD_Moving_Name.elf  >"LCD_Moving_Name.lss"
+Finished building: LCD_Moving_Name.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex LCD_Moving_Name.elf  "LCD_Moving_Name.hex"
+Finished building: LCD_Moving_Name.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 LCD_Moving_Name.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    2202 bytes (6.7% Full)
+(.text + .data + .bootloader)
+
+Data:         73 bytes (3.6% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+
+12:29:38 Build Finished (took 684ms)
+

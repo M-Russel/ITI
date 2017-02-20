@@ -23746,3 +23746,1616 @@ Data:          0 bytes (0.0% Full)
 
 Finished building: sizedummy
  
+12:21:21 **** Build of configuration Debug for project LCD_Tasks6 ****
+make all 
+Building file: ../main2.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=4000000UL -MMD -MP -MF"main2.d" -MT"main2.o" -c -o "main2.o" "../main2.c"
+In file included from ../main2.c:16:0:
+/usr/lib/avr/include/util/delay.h:95:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed" [-Wcpp]
+ # warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+   ^
+../main2.c:20:6: warning: return type of ‘main’ is not ‘int’ [-Wmain]
+ void main(void)
+      ^
+../main2.c: In function ‘main’:
+../main2.c:26:33: warning: unused variable ‘LCD_SecondLineOffset’ [-Wunused-variable]
+     u8 LCD_FirstLineOffset=0x80,LCD_SecondLineOffset=0xc0;
+                                 ^
+../main2.c:26:8: warning: unused variable ‘LCD_FirstLineOffset’ [-Wunused-variable]
+     u8 LCD_FirstLineOffset=0x80,LCD_SecondLineOffset=0xc0;
+        ^
+../main2.c:25:25: warning: unused variable ‘base_ddr’ [-Wunused-variable]
+  u8 i,j,k,base_cgr=0x40,base_ddr=0x80,lcd_counter=0;
+                         ^
+../main2.c:25:9: warning: unused variable ‘k’ [-Wunused-variable]
+  u8 i,j,k,base_cgr=0x40,base_ddr=0x80,lcd_counter=0;
+         ^
+Finished building: ../main2.c
+ 
+Building target: LCD_Tasks6.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,LCD_Tasks6.map -mmcu=atmega32 -o "LCD_Tasks6.elf"  ./DIO_Prog.o ./DIO_voidInitialize.o ./LCD_Prog.o ./delay_ms.o ./main2.o   
+Finished building target: LCD_Tasks6.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S LCD_Tasks6.elf  >"LCD_Tasks6.lss"
+Finished building: LCD_Tasks6.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex LCD_Tasks6.elf  "LCD_Tasks6.hex"
+Finished building: LCD_Tasks6.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 LCD_Tasks6.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    2388 bytes (7.3% Full)
+(.text + .data + .bootloader)
+
+Data:         65 bytes (3.2% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+12:23:48 **** Incremental Build of configuration Debug for project LCD_Tasks6 ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 LCD_Tasks6.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    2388 bytes (7.3% Full)
+(.text + .data + .bootloader)
+
+Data:         65 bytes (3.2% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+12:29:37 **** Build of configuration Debug for project LCD_Moving_Name ****
+make all 
+Building file: ../My_Name_Moving_Arabic_English.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=4000000UL -MMD -MP -MF"My_Name_Moving_Arabic_English.d" -MT"My_Name_Moving_Arabic_English.o" -c -o "My_Name_Moving_Arabic_English.o" "../My_Name_Moving_Arabic_English.c"
+In file included from ../My_Name_Moving_Arabic_English.c:16:0:
+/usr/lib/avr/include/util/delay.h:95:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed" [-Wcpp]
+ # warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+   ^
+../My_Name_Moving_Arabic_English.c:20:6: warning: return type of ‘main’ is not ‘int’ [-Wmain]
+ void main(void)
+      ^
+../My_Name_Moving_Arabic_English.c: In function ‘main’:
+../My_Name_Moving_Arabic_English.c:26:87: warning: unused variable ‘LCD_SecondLineEndOffset’ [-Wunused-variable]
+     u8 LCD_FirstLineOffset=0x80,LCD_SecondLineOffset=0xc0,LCD_FirstLineEndOffset=0x8f,LCD_SecondLineEndOffset=0x79;
+                                                                                       ^
+../My_Name_Moving_Arabic_English.c:26:8: warning: unused variable ‘LCD_FirstLineOffset’ [-Wunused-variable]
+     u8 LCD_FirstLineOffset=0x80,LCD_SecondLineOffset=0xc0,LCD_FirstLineEndOffset=0x8f,LCD_SecondLineEndOffset=0x79;
+        ^
+../My_Name_Moving_Arabic_English.c:25:49: warning: variable ‘lcd_counter’ set but not used [-Wunused-but-set-variable]
+  u8 w=0,i=0,j=0,k=9,base_cgr=0x40,base_ddr=0x80,lcd_counter=0;
+                                                 ^
+Finished building: ../My_Name_Moving_Arabic_English.c
+ 
+Building target: LCD_Moving_Name.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,LCD_Moving_Name.map -mmcu=atmega32 -o "LCD_Moving_Name.elf"  ./DIO_Prog.o ./DIO_voidInitialize.o ./LCD_Prog.o ./My_Name_Moving_Arabic_English.o ./delay_ms.o   
+Finished building target: LCD_Moving_Name.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S LCD_Moving_Name.elf  >"LCD_Moving_Name.lss"
+Finished building: LCD_Moving_Name.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex LCD_Moving_Name.elf  "LCD_Moving_Name.hex"
+Finished building: LCD_Moving_Name.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 LCD_Moving_Name.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    2202 bytes (6.7% Full)
+(.text + .data + .bootloader)
+
+Data:         73 bytes (3.6% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+12:38:05 **** Build of configuration Debug for project LCD_Calculator_With_Switchs ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=4000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+In file included from ../main.c:16:0:
+/usr/lib/avr/include/util/delay.h:95:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed" [-Wcpp]
+ # warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+   ^
+../main.c:20:6: warning: return type of ‘main’ is not ‘int’ [-Wmain]
+ void main(void)
+      ^
+../main.c: In function ‘main’:
+../main.c:424:3: error: expected declaration or statement at end of input
+   }
+   ^
+../main.c:424:3: error: expected declaration or statement at end of input
+../main.c:152:4: warning: unused variable ‘name’ [-Wunused-variable]
+ u8 name[][8]={
+    ^
+../main.c:45:4: warning: unused variable ‘x’ [-Wunused-variable]
+ u8 x[3][8]= { {
+    ^
+../main.c:28:61: warning: variable ‘Local_MultiplyFlag’ set but not used [-Wunused-but-set-variable]
+  u8 Local_PlusFlag=0,Local_MinusFlag=0,Local_DivisionFlag=0,Local_MultiplyFlag=0;
+                                                             ^
+../main.c:28:40: warning: variable ‘Local_DivisionFlag’ set but not used [-Wunused-but-set-variable]
+  u8 Local_PlusFlag=0,Local_MinusFlag=0,Local_DivisionFlag=0,Local_MultiplyFlag=0;
+                                        ^
+../main.c:28:22: warning: variable ‘Local_MinusFlag’ set but not used [-Wunused-but-set-variable]
+  u8 Local_PlusFlag=0,Local_MinusFlag=0,Local_DivisionFlag=0,Local_MultiplyFlag=0;
+                      ^
+../main.c:28:5: warning: variable ‘Local_PlusFlag’ set but not used [-Wunused-but-set-variable]
+  u8 Local_PlusFlag=0,Local_MinusFlag=0,Local_DivisionFlag=0,Local_MultiplyFlag=0;
+     ^
+../main.c:26:29: warning: unused variable ‘Local_DigitHolder’ [-Wunused-variable]
+  u8 Local_TemporaryHolder=0,Local_DigitHolder;
+                             ^
+../main.c:26:5: warning: unused variable ‘Local_TemporaryHolder’ [-Wunused-variable]
+  u8 Local_TemporaryHolder=0,Local_DigitHolder;
+     ^
+../main.c:25:37: warning: unused variable ‘lcd_counter’ [-Wunused-variable]
+  u8 i,j,base_cgr=0x40,base_ddr=0x80,lcd_counter=0;
+                                     ^
+../main.c:25:23: warning: unused variable ‘base_ddr’ [-Wunused-variable]
+  u8 i,j,base_cgr=0x40,base_ddr=0x80,lcd_counter=0;
+                       ^
+../main.c:25:9: warning: unused variable ‘base_cgr’ [-Wunused-variable]
+  u8 i,j,base_cgr=0x40,base_ddr=0x80,lcd_counter=0;
+         ^
+../main.c:25:7: warning: unused variable ‘j’ [-Wunused-variable]
+  u8 i,j,base_cgr=0x40,base_ddr=0x80,lcd_counter=0;
+       ^
+../main.c:25:5: warning: unused variable ‘i’ [-Wunused-variable]
+  u8 i,j,base_cgr=0x40,base_ddr=0x80,lcd_counter=0;
+     ^
+make: *** [main.o] Error 1
+12:38:56 **** Incremental Build of configuration Debug for project LCD_Calculator_With_Switchs ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=4000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+In file included from ../main.c:16:0:
+/usr/lib/avr/include/util/delay.h:95:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed" [-Wcpp]
+ # warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+   ^
+../main.c:20:6: warning: return type of ‘main’ is not ‘int’ [-Wmain]
+ void main(void)
+      ^
+../main.c: In function ‘main’:
+../main.c:419:2: error: expected declaration or statement at end of input
+  }
+  ^
+../main.c:152:4: warning: unused variable ‘name’ [-Wunused-variable]
+ u8 name[][8]={
+    ^
+../main.c:45:4: warning: unused variable ‘x’ [-Wunused-variable]
+ u8 x[3][8]= { {
+    ^
+../main.c:28:61: warning: variable ‘Local_MultiplyFlag’ set but not used [-Wunused-but-set-variable]
+  u8 Local_PlusFlag=0,Local_MinusFlag=0,Local_DivisionFlag=0,Local_MultiplyFlag=0;
+                                                             ^
+../main.c:28:40: warning: variable ‘Local_DivisionFlag’ set but not used [-Wunused-but-set-variable]
+  u8 Local_PlusFlag=0,Local_MinusFlag=0,Local_DivisionFlag=0,Local_MultiplyFlag=0;
+                                        ^
+../main.c:28:22: warning: variable ‘Local_MinusFlag’ set but not used [-Wunused-but-set-variable]
+  u8 Local_PlusFlag=0,Local_MinusFlag=0,Local_DivisionFlag=0,Local_MultiplyFlag=0;
+                      ^
+../main.c:28:5: warning: variable ‘Local_PlusFlag’ set but not used [-Wunused-but-set-variable]
+  u8 Local_PlusFlag=0,Local_MinusFlag=0,Local_DivisionFlag=0,Local_MultiplyFlag=0;
+     ^
+../main.c:26:29: warning: unused variable ‘Local_DigitHolder’ [-Wunused-variable]
+  u8 Local_TemporaryHolder=0,Local_DigitHolder;
+                             ^
+../main.c:26:5: warning: unused variable ‘Local_TemporaryHolder’ [-Wunused-variable]
+  u8 Local_TemporaryHolder=0,Local_DigitHolder;
+     ^
+../main.c:25:37: warning: unused variable ‘lcd_counter’ [-Wunused-variable]
+  u8 i,j,base_cgr=0x40,base_ddr=0x80,lcd_counter=0;
+                                     ^
+../main.c:25:23: warning: unused variable ‘base_ddr’ [-Wunused-variable]
+  u8 i,j,base_cgr=0x40,base_ddr=0x80,lcd_counter=0;
+                       ^
+../main.c:25:9: warning: unused variable ‘base_cgr’ [-Wunused-variable]
+  u8 i,j,base_cgr=0x40,base_ddr=0x80,lcd_counter=0;
+         ^
+../main.c:25:7: warning: unused variable ‘j’ [-Wunused-variable]
+  u8 i,j,base_cgr=0x40,base_ddr=0x80,lcd_counter=0;
+       ^
+../main.c:25:5: warning: unused variable ‘i’ [-Wunused-variable]
+  u8 i,j,base_cgr=0x40,base_ddr=0x80,lcd_counter=0;
+     ^
+make: *** [main.o] Error 1
+12:39:25 **** Incremental Build of configuration Debug for project LCD_Calculator_With_Switchs ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=4000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+In file included from ../main.c:16:0:
+/usr/lib/avr/include/util/delay.h:95:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed" [-Wcpp]
+ # warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+   ^
+../main.c:20:6: warning: return type of ‘main’ is not ‘int’ [-Wmain]
+ void main(void)
+      ^
+../main.c: In function ‘main’:
+../main.c:152:4: warning: unused variable ‘name’ [-Wunused-variable]
+ u8 name[][8]={
+    ^
+../main.c:45:4: warning: unused variable ‘x’ [-Wunused-variable]
+ u8 x[3][8]= { {
+    ^
+../main.c:28:61: warning: variable ‘Local_MultiplyFlag’ set but not used [-Wunused-but-set-variable]
+  u8 Local_PlusFlag=0,Local_MinusFlag=0,Local_DivisionFlag=0,Local_MultiplyFlag=0;
+                                                             ^
+../main.c:28:40: warning: variable ‘Local_DivisionFlag’ set but not used [-Wunused-but-set-variable]
+  u8 Local_PlusFlag=0,Local_MinusFlag=0,Local_DivisionFlag=0,Local_MultiplyFlag=0;
+                                        ^
+../main.c:28:22: warning: variable ‘Local_MinusFlag’ set but not used [-Wunused-but-set-variable]
+  u8 Local_PlusFlag=0,Local_MinusFlag=0,Local_DivisionFlag=0,Local_MultiplyFlag=0;
+                      ^
+../main.c:28:5: warning: variable ‘Local_PlusFlag’ set but not used [-Wunused-but-set-variable]
+  u8 Local_PlusFlag=0,Local_MinusFlag=0,Local_DivisionFlag=0,Local_MultiplyFlag=0;
+     ^
+../main.c:26:29: warning: unused variable ‘Local_DigitHolder’ [-Wunused-variable]
+  u8 Local_TemporaryHolder=0,Local_DigitHolder;
+                             ^
+../main.c:26:5: warning: unused variable ‘Local_TemporaryHolder’ [-Wunused-variable]
+  u8 Local_TemporaryHolder=0,Local_DigitHolder;
+     ^
+../main.c:25:37: warning: unused variable ‘lcd_counter’ [-Wunused-variable]
+  u8 i,j,base_cgr=0x40,base_ddr=0x80,lcd_counter=0;
+                                     ^
+../main.c:25:23: warning: unused variable ‘base_ddr’ [-Wunused-variable]
+  u8 i,j,base_cgr=0x40,base_ddr=0x80,lcd_counter=0;
+                       ^
+../main.c:25:9: warning: unused variable ‘base_cgr’ [-Wunused-variable]
+  u8 i,j,base_cgr=0x40,base_ddr=0x80,lcd_counter=0;
+         ^
+../main.c:25:7: warning: unused variable ‘j’ [-Wunused-variable]
+  u8 i,j,base_cgr=0x40,base_ddr=0x80,lcd_counter=0;
+       ^
+../main.c:25:5: warning: unused variable ‘i’ [-Wunused-variable]
+  u8 i,j,base_cgr=0x40,base_ddr=0x80,lcd_counter=0;
+     ^
+Finished building: ../main.c
+ 
+Building target: LCD_Calculator_With_Switchs.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,LCD_Calculator_With_Switchs.map -mmcu=atmega32 -o "LCD_Calculator_With_Switchs.elf"  ./DIO_Prog.o ./DIO_voidInitialize.o ./LCD_Prog.o ./delay_ms.o ./main.o   
+Finished building target: LCD_Calculator_With_Switchs.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S LCD_Calculator_With_Switchs.elf  >"LCD_Calculator_With_Switchs.lss"
+Finished building: LCD_Calculator_With_Switchs.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex LCD_Calculator_With_Switchs.elf  "LCD_Calculator_With_Switchs.hex"
+Finished building: LCD_Calculator_With_Switchs.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 LCD_Calculator_With_Switchs.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    2904 bytes (8.9% Full)
+(.text + .data + .bootloader)
+
+Data:         89 bytes (4.3% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+12:46:53 **** Build of configuration Debug for project LCD_Arabic_Name_Sinsuidal_move ****
+make all 
+Building target: LCD_Arabic_Name_Sinsuidal_move.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,LCD_Arabic_Name_Sinsuidal_move.map -mmcu=atmega32 -o "LCD_Arabic_Name_Sinsuidal_move.elf"  ./DIO_Prog.o ./DIO_voidInitialize.o ./LCD_Prog.o ./delay_ms.o ./main2.o   
+Finished building target: LCD_Arabic_Name_Sinsuidal_move.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S LCD_Arabic_Name_Sinsuidal_move.elf  >"LCD_Arabic_Name_Sinsuidal_move.lss"
+Finished building: LCD_Arabic_Name_Sinsuidal_move.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex LCD_Arabic_Name_Sinsuidal_move.elf  "LCD_Arabic_Name_Sinsuidal_move.hex"
+Finished building: LCD_Arabic_Name_Sinsuidal_move.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 LCD_Arabic_Name_Sinsuidal_move.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    2388 bytes (7.3% Full)
+(.text + .data + .bootloader)
+
+Data:         65 bytes (3.2% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+12:46:56 **** Incremental Build of configuration Debug for project LCD_Arabic_Name_Sinsuidal_move ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 LCD_Arabic_Name_Sinsuidal_move.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    2388 bytes (7.3% Full)
+(.text + .data + .bootloader)
+
+Data:         65 bytes (3.2% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+12:51:21 **** Build of configuration Debug for project LCD_Showing_Numbers_With_Switch ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=4000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+In file included from ../main.c:16:0:
+/usr/lib/avr/include/util/delay.h:95:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed" [-Wcpp]
+ # warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+   ^
+../main.c:20:6: warning: return type of ‘main’ is not ‘int’ [-Wmain]
+ void main(void)
+      ^
+../main.c: In function ‘main’:
+../main.c:271:1: error: expected declaration or statement at end of input
+ }
+ ^
+../main.c:152:4: warning: unused variable ‘name’ [-Wunused-variable]
+ u8 name[][8]={
+    ^
+../main.c:45:4: warning: unused variable ‘x’ [-Wunused-variable]
+ u8 x[3][8]= { {
+    ^
+../main.c:31:5: warning: unused variable ‘Local_Result’ [-Wunused-variable]
+  u8 Local_Result=0;
+     ^
+../main.c:30:30: warning: unused variable ‘Local_TemporaryCounter2’ [-Wunused-variable]
+  u8 Local_TemporaryCounter=0,Local_TemporaryCounter2=0;
+                              ^
+../main.c:30:5: warning: unused variable ‘Local_TemporaryCounter’ [-Wunused-variable]
+  u8 Local_TemporaryCounter=0,Local_TemporaryCounter2=0;
+     ^
+../main.c:29:5: warning: unused variable ‘Local_SignHolder’ [-Wunused-variable]
+  u8 Local_SignHolder =0;
+     ^
+../main.c:28:61: warning: unused variable ‘Local_MultiplyFlag’ [-Wunused-variable]
+  u8 Local_PlusFlag=0,Local_MinusFlag=0,Local_DivisionFlag=0,Local_MultiplyFlag=0;
+                                                             ^
+../main.c:28:40: warning: unused variable ‘Local_DivisionFlag’ [-Wunused-variable]
+  u8 Local_PlusFlag=0,Local_MinusFlag=0,Local_DivisionFlag=0,Local_MultiplyFlag=0;
+                                        ^
+../main.c:28:22: warning: unused variable ‘Local_MinusFlag’ [-Wunused-variable]
+  u8 Local_PlusFlag=0,Local_MinusFlag=0,Local_DivisionFlag=0,Local_MultiplyFlag=0;
+                      ^
+../main.c:28:5: warning: unused variable ‘Local_PlusFlag’ [-Wunused-variable]
+  u8 Local_PlusFlag=0,Local_MinusFlag=0,Local_DivisionFlag=0,Local_MultiplyFlag=0;
+     ^
+../main.c:27:108: warning: unused variable ‘Local_FourthDigitFlag’ [-Wunused-variable]
+  u8 Local_Counter=0,Local_Counter2=0,Local_FirstDigitFlag=0,Local_SecondDigitFlag=0,Local_ThirdDigitFlag=0,Local_FourthDigitFlag=1;
+                                                                                                            ^
+../main.c:27:85: warning: unused variable ‘Local_ThirdDigitFlag’ [-Wunused-variable]
+  u8 Local_Counter=0,Local_Counter2=0,Local_FirstDigitFlag=0,Local_SecondDigitFlag=0,Local_ThirdDigitFlag=0,Local_FourthDigitFlag=1;
+                                                                                     ^
+../main.c:27:61: warning: unused variable ‘Local_SecondDigitFlag’ [-Wunused-variable]
+  u8 Local_Counter=0,Local_Counter2=0,Local_FirstDigitFlag=0,Local_SecondDigitFlag=0,Local_ThirdDigitFlag=0,Local_FourthDigitFlag=1;
+                                                             ^
+../main.c:27:38: warning: unused variable ‘Local_FirstDigitFlag’ [-Wunused-variable]
+  u8 Local_Counter=0,Local_Counter2=0,Local_FirstDigitFlag=0,Local_SecondDigitFlag=0,Local_ThirdDigitFlag=0,Local_FourthDigitFlag=1;
+                                      ^
+../main.c:27:21: warning: unused variable ‘Local_Counter2’ [-Wunused-variable]
+  u8 Local_Counter=0,Local_Counter2=0,Local_FirstDigitFlag=0,Local_SecondDigitFlag=0,Local_ThirdDigitFlag=0,Local_FourthDigitFlag=1;
+                     ^
+../main.c:27:5: warning: unused variable ‘Local_Counter’ [-Wunused-variable]
+  u8 Local_Counter=0,Local_Counter2=0,Local_FirstDigitFlag=0,Local_SecondDigitFlag=0,Local_ThirdDigitFlag=0,Local_FourthDigitFlag=1;
+     ^
+../main.c:25:37: warning: unused variable ‘lcd_counter’ [-Wunused-variable]
+  u8 i,j,base_cgr=0x40,base_ddr=0x80,lcd_counter=0;
+                                     ^
+../main.c:25:23: warning: unused variable ‘base_ddr’ [-Wunused-variable]
+  u8 i,j,base_cgr=0x40,base_ddr=0x80,lcd_counter=0;
+                       ^
+../main.c:25:9: warning: unused variable ‘base_cgr’ [-Wunused-variable]
+  u8 i,j,base_cgr=0x40,base_ddr=0x80,lcd_counter=0;
+         ^
+../main.c:25:7: warning: unused variable ‘j’ [-Wunused-variable]
+  u8 i,j,base_cgr=0x40,base_ddr=0x80,lcd_counter=0;
+       ^
+../main.c:25:5: warning: unused variable ‘i’ [-Wunused-variable]
+  u8 i,j,base_cgr=0x40,base_ddr=0x80,lcd_counter=0;
+     ^
+make: *** [main.o] Error 1
+12:51:39 **** Incremental Build of configuration Debug for project LCD_Showing_Numbers_With_Switch ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=4000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+In file included from ../main.c:16:0:
+/usr/lib/avr/include/util/delay.h:95:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed" [-Wcpp]
+ # warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+   ^
+../main.c:20:6: warning: return type of ‘main’ is not ‘int’ [-Wmain]
+ void main(void)
+      ^
+../main.c: In function ‘main’:
+../main.c:152:4: warning: unused variable ‘name’ [-Wunused-variable]
+ u8 name[][8]={
+    ^
+../main.c:45:4: warning: unused variable ‘x’ [-Wunused-variable]
+ u8 x[3][8]= { {
+    ^
+../main.c:31:5: warning: unused variable ‘Local_Result’ [-Wunused-variable]
+  u8 Local_Result=0;
+     ^
+../main.c:30:30: warning: unused variable ‘Local_TemporaryCounter2’ [-Wunused-variable]
+  u8 Local_TemporaryCounter=0,Local_TemporaryCounter2=0;
+                              ^
+../main.c:30:5: warning: unused variable ‘Local_TemporaryCounter’ [-Wunused-variable]
+  u8 Local_TemporaryCounter=0,Local_TemporaryCounter2=0;
+     ^
+../main.c:29:5: warning: unused variable ‘Local_SignHolder’ [-Wunused-variable]
+  u8 Local_SignHolder =0;
+     ^
+../main.c:28:61: warning: unused variable ‘Local_MultiplyFlag’ [-Wunused-variable]
+  u8 Local_PlusFlag=0,Local_MinusFlag=0,Local_DivisionFlag=0,Local_MultiplyFlag=0;
+                                                             ^
+../main.c:28:40: warning: unused variable ‘Local_DivisionFlag’ [-Wunused-variable]
+  u8 Local_PlusFlag=0,Local_MinusFlag=0,Local_DivisionFlag=0,Local_MultiplyFlag=0;
+                                        ^
+../main.c:28:22: warning: unused variable ‘Local_MinusFlag’ [-Wunused-variable]
+  u8 Local_PlusFlag=0,Local_MinusFlag=0,Local_DivisionFlag=0,Local_MultiplyFlag=0;
+                      ^
+../main.c:28:5: warning: unused variable ‘Local_PlusFlag’ [-Wunused-variable]
+  u8 Local_PlusFlag=0,Local_MinusFlag=0,Local_DivisionFlag=0,Local_MultiplyFlag=0;
+     ^
+../main.c:27:108: warning: unused variable ‘Local_FourthDigitFlag’ [-Wunused-variable]
+  u8 Local_Counter=0,Local_Counter2=0,Local_FirstDigitFlag=0,Local_SecondDigitFlag=0,Local_ThirdDigitFlag=0,Local_FourthDigitFlag=1;
+                                                                                                            ^
+../main.c:27:85: warning: unused variable ‘Local_ThirdDigitFlag’ [-Wunused-variable]
+  u8 Local_Counter=0,Local_Counter2=0,Local_FirstDigitFlag=0,Local_SecondDigitFlag=0,Local_ThirdDigitFlag=0,Local_FourthDigitFlag=1;
+                                                                                     ^
+../main.c:27:61: warning: unused variable ‘Local_SecondDigitFlag’ [-Wunused-variable]
+  u8 Local_Counter=0,Local_Counter2=0,Local_FirstDigitFlag=0,Local_SecondDigitFlag=0,Local_ThirdDigitFlag=0,Local_FourthDigitFlag=1;
+                                                             ^
+../main.c:27:38: warning: unused variable ‘Local_FirstDigitFlag’ [-Wunused-variable]
+  u8 Local_Counter=0,Local_Counter2=0,Local_FirstDigitFlag=0,Local_SecondDigitFlag=0,Local_ThirdDigitFlag=0,Local_FourthDigitFlag=1;
+                                      ^
+../main.c:27:21: warning: unused variable ‘Local_Counter2’ [-Wunused-variable]
+  u8 Local_Counter=0,Local_Counter2=0,Local_FirstDigitFlag=0,Local_SecondDigitFlag=0,Local_ThirdDigitFlag=0,Local_FourthDigitFlag=1;
+                     ^
+../main.c:27:5: warning: unused variable ‘Local_Counter’ [-Wunused-variable]
+  u8 Local_Counter=0,Local_Counter2=0,Local_FirstDigitFlag=0,Local_SecondDigitFlag=0,Local_ThirdDigitFlag=0,Local_FourthDigitFlag=1;
+     ^
+../main.c:25:37: warning: unused variable ‘lcd_counter’ [-Wunused-variable]
+  u8 i,j,base_cgr=0x40,base_ddr=0x80,lcd_counter=0;
+                                     ^
+../main.c:25:23: warning: unused variable ‘base_ddr’ [-Wunused-variable]
+  u8 i,j,base_cgr=0x40,base_ddr=0x80,lcd_counter=0;
+                       ^
+../main.c:25:9: warning: unused variable ‘base_cgr’ [-Wunused-variable]
+  u8 i,j,base_cgr=0x40,base_ddr=0x80,lcd_counter=0;
+         ^
+../main.c:25:7: warning: unused variable ‘j’ [-Wunused-variable]
+  u8 i,j,base_cgr=0x40,base_ddr=0x80,lcd_counter=0;
+       ^
+../main.c:25:5: warning: unused variable ‘i’ [-Wunused-variable]
+  u8 i,j,base_cgr=0x40,base_ddr=0x80,lcd_counter=0;
+     ^
+../main.c: At top level:
+../main.c:276:1: error: expected identifier or ‘(’ before ‘}’ token
+ }
+ ^
+make: *** [main.o] Error 1
+12:51:43 **** Incremental Build of configuration Debug for project LCD_Showing_Numbers_With_Switch ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=4000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+In file included from ../main.c:16:0:
+/usr/lib/avr/include/util/delay.h:95:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed" [-Wcpp]
+ # warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+   ^
+../main.c:20:6: warning: return type of ‘main’ is not ‘int’ [-Wmain]
+ void main(void)
+      ^
+../main.c: In function ‘main’:
+../main.c:152:4: warning: unused variable ‘name’ [-Wunused-variable]
+ u8 name[][8]={
+    ^
+../main.c:45:4: warning: unused variable ‘x’ [-Wunused-variable]
+ u8 x[3][8]= { {
+    ^
+../main.c:31:5: warning: unused variable ‘Local_Result’ [-Wunused-variable]
+  u8 Local_Result=0;
+     ^
+../main.c:30:30: warning: unused variable ‘Local_TemporaryCounter2’ [-Wunused-variable]
+  u8 Local_TemporaryCounter=0,Local_TemporaryCounter2=0;
+                              ^
+../main.c:30:5: warning: unused variable ‘Local_TemporaryCounter’ [-Wunused-variable]
+  u8 Local_TemporaryCounter=0,Local_TemporaryCounter2=0;
+     ^
+../main.c:29:5: warning: unused variable ‘Local_SignHolder’ [-Wunused-variable]
+  u8 Local_SignHolder =0;
+     ^
+../main.c:28:61: warning: unused variable ‘Local_MultiplyFlag’ [-Wunused-variable]
+  u8 Local_PlusFlag=0,Local_MinusFlag=0,Local_DivisionFlag=0,Local_MultiplyFlag=0;
+                                                             ^
+../main.c:28:40: warning: unused variable ‘Local_DivisionFlag’ [-Wunused-variable]
+  u8 Local_PlusFlag=0,Local_MinusFlag=0,Local_DivisionFlag=0,Local_MultiplyFlag=0;
+                                        ^
+../main.c:28:22: warning: unused variable ‘Local_MinusFlag’ [-Wunused-variable]
+  u8 Local_PlusFlag=0,Local_MinusFlag=0,Local_DivisionFlag=0,Local_MultiplyFlag=0;
+                      ^
+../main.c:28:5: warning: unused variable ‘Local_PlusFlag’ [-Wunused-variable]
+  u8 Local_PlusFlag=0,Local_MinusFlag=0,Local_DivisionFlag=0,Local_MultiplyFlag=0;
+     ^
+../main.c:27:108: warning: unused variable ‘Local_FourthDigitFlag’ [-Wunused-variable]
+  u8 Local_Counter=0,Local_Counter2=0,Local_FirstDigitFlag=0,Local_SecondDigitFlag=0,Local_ThirdDigitFlag=0,Local_FourthDigitFlag=1;
+                                                                                                            ^
+../main.c:27:85: warning: unused variable ‘Local_ThirdDigitFlag’ [-Wunused-variable]
+  u8 Local_Counter=0,Local_Counter2=0,Local_FirstDigitFlag=0,Local_SecondDigitFlag=0,Local_ThirdDigitFlag=0,Local_FourthDigitFlag=1;
+                                                                                     ^
+../main.c:27:61: warning: unused variable ‘Local_SecondDigitFlag’ [-Wunused-variable]
+  u8 Local_Counter=0,Local_Counter2=0,Local_FirstDigitFlag=0,Local_SecondDigitFlag=0,Local_ThirdDigitFlag=0,Local_FourthDigitFlag=1;
+                                                             ^
+../main.c:27:38: warning: unused variable ‘Local_FirstDigitFlag’ [-Wunused-variable]
+  u8 Local_Counter=0,Local_Counter2=0,Local_FirstDigitFlag=0,Local_SecondDigitFlag=0,Local_ThirdDigitFlag=0,Local_FourthDigitFlag=1;
+                                      ^
+../main.c:27:21: warning: unused variable ‘Local_Counter2’ [-Wunused-variable]
+  u8 Local_Counter=0,Local_Counter2=0,Local_FirstDigitFlag=0,Local_SecondDigitFlag=0,Local_ThirdDigitFlag=0,Local_FourthDigitFlag=1;
+                     ^
+../main.c:27:5: warning: unused variable ‘Local_Counter’ [-Wunused-variable]
+  u8 Local_Counter=0,Local_Counter2=0,Local_FirstDigitFlag=0,Local_SecondDigitFlag=0,Local_ThirdDigitFlag=0,Local_FourthDigitFlag=1;
+     ^
+../main.c:25:37: warning: unused variable ‘lcd_counter’ [-Wunused-variable]
+  u8 i,j,base_cgr=0x40,base_ddr=0x80,lcd_counter=0;
+                                     ^
+../main.c:25:23: warning: unused variable ‘base_ddr’ [-Wunused-variable]
+  u8 i,j,base_cgr=0x40,base_ddr=0x80,lcd_counter=0;
+                       ^
+../main.c:25:9: warning: unused variable ‘base_cgr’ [-Wunused-variable]
+  u8 i,j,base_cgr=0x40,base_ddr=0x80,lcd_counter=0;
+         ^
+../main.c:25:7: warning: unused variable ‘j’ [-Wunused-variable]
+  u8 i,j,base_cgr=0x40,base_ddr=0x80,lcd_counter=0;
+       ^
+../main.c:25:5: warning: unused variable ‘i’ [-Wunused-variable]
+  u8 i,j,base_cgr=0x40,base_ddr=0x80,lcd_counter=0;
+     ^
+Finished building: ../main.c
+ 
+Building target: LCD_Showing_Numbers_With_Switch.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,LCD_Showing_Numbers_With_Switch.map -mmcu=atmega32 -o "LCD_Showing_Numbers_With_Switch.elf"  ./DIO_Prog.o ./DIO_voidInitialize.o ./LCD_Prog.o ./delay_ms.o ./main.o   
+Finished building target: LCD_Showing_Numbers_With_Switch.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S LCD_Showing_Numbers_With_Switch.elf  >"LCD_Showing_Numbers_With_Switch.lss"
+Finished building: LCD_Showing_Numbers_With_Switch.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex LCD_Showing_Numbers_With_Switch.elf  "LCD_Showing_Numbers_With_Switch.hex"
+Finished building: LCD_Showing_Numbers_With_Switch.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 LCD_Showing_Numbers_With_Switch.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    2156 bytes (6.6% Full)
+(.text + .data + .bootloader)
+
+Data:         89 bytes (4.3% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+12:52:21 **** Build of configuration Debug for project LCD_Showing_Dip_Switch_Digit_Value ****
+make all 
+Building target: LCD_Showing_Dip_Switch_Digit_Value.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,LCD_Showing_Dip_Switch_Digit_Value.map -mmcu=atmega32 -o "LCD_Showing_Dip_Switch_Digit_Value.elf"  ./DIO_Prog.o ./DIO_voidInitialize.o ./LCD_Prog.o ./delay_ms.o ./main.o   
+Finished building target: LCD_Showing_Dip_Switch_Digit_Value.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S LCD_Showing_Dip_Switch_Digit_Value.elf  >"LCD_Showing_Dip_Switch_Digit_Value.lss"
+Finished building: LCD_Showing_Dip_Switch_Digit_Value.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex LCD_Showing_Dip_Switch_Digit_Value.elf  "LCD_Showing_Dip_Switch_Digit_Value.hex"
+Finished building: LCD_Showing_Dip_Switch_Digit_Value.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 LCD_Showing_Dip_Switch_Digit_Value.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    2156 bytes (6.6% Full)
+(.text + .data + .bootloader)
+
+Data:         89 bytes (4.3% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+12:52:24 **** Incremental Build of configuration Debug for project LCD_Showing_Dip_Switch_Digit_Value ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 LCD_Showing_Dip_Switch_Digit_Value.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    2156 bytes (6.6% Full)
+(.text + .data + .bootloader)
+
+Data:         89 bytes (4.3% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+12:57:12 **** Incremental Build of configuration Debug for project LCD_Tasks ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=4000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+In file included from ../main.c:16:0:
+/usr/lib/avr/include/util/delay.h:95:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed" [-Wcpp]
+ # warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+   ^
+../main.c:20:6: warning: return type of ‘main’ is not ‘int’ [-Wmain]
+ void main(void)
+      ^
+../main.c: In function ‘main’:
+../main.c:45:4: warning: unused variable ‘x’ [-Wunused-variable]
+ u8 x[3][8]= { {
+    ^
+../main.c:31:5: warning: unused variable ‘Local_Result’ [-Wunused-variable]
+  u8 Local_Result=0;
+     ^
+../main.c:30:30: warning: unused variable ‘Local_TemporaryCounter2’ [-Wunused-variable]
+  u8 Local_TemporaryCounter=0,Local_TemporaryCounter2=0;
+                              ^
+../main.c:30:5: warning: unused variable ‘Local_TemporaryCounter’ [-Wunused-variable]
+  u8 Local_TemporaryCounter=0,Local_TemporaryCounter2=0;
+     ^
+../main.c:29:5: warning: unused variable ‘Local_SignHolder’ [-Wunused-variable]
+  u8 Local_SignHolder =0;
+     ^
+../main.c:28:61: warning: unused variable ‘Local_MultiplyFlag’ [-Wunused-variable]
+  u8 Local_PlusFlag=0,Local_MinusFlag=0,Local_DivisionFlag=0,Local_MultiplyFlag=0;
+                                                             ^
+../main.c:28:40: warning: unused variable ‘Local_DivisionFlag’ [-Wunused-variable]
+  u8 Local_PlusFlag=0,Local_MinusFlag=0,Local_DivisionFlag=0,Local_MultiplyFlag=0;
+                                        ^
+../main.c:28:22: warning: unused variable ‘Local_MinusFlag’ [-Wunused-variable]
+  u8 Local_PlusFlag=0,Local_MinusFlag=0,Local_DivisionFlag=0,Local_MultiplyFlag=0;
+                      ^
+../main.c:28:5: warning: unused variable ‘Local_PlusFlag’ [-Wunused-variable]
+  u8 Local_PlusFlag=0,Local_MinusFlag=0,Local_DivisionFlag=0,Local_MultiplyFlag=0;
+     ^
+../main.c:27:108: warning: unused variable ‘Local_FourthDigitFlag’ [-Wunused-variable]
+  u8 Local_Counter=0,Local_Counter2=0,Local_FirstDigitFlag=0,Local_SecondDigitFlag=0,Local_ThirdDigitFlag=0,Local_FourthDigitFlag=1;
+                                                                                                            ^
+../main.c:27:85: warning: unused variable ‘Local_ThirdDigitFlag’ [-Wunused-variable]
+  u8 Local_Counter=0,Local_Counter2=0,Local_FirstDigitFlag=0,Local_SecondDigitFlag=0,Local_ThirdDigitFlag=0,Local_FourthDigitFlag=1;
+                                                                                     ^
+../main.c:27:61: warning: unused variable ‘Local_SecondDigitFlag’ [-Wunused-variable]
+  u8 Local_Counter=0,Local_Counter2=0,Local_FirstDigitFlag=0,Local_SecondDigitFlag=0,Local_ThirdDigitFlag=0,Local_FourthDigitFlag=1;
+                                                             ^
+../main.c:27:38: warning: unused variable ‘Local_FirstDigitFlag’ [-Wunused-variable]
+  u8 Local_Counter=0,Local_Counter2=0,Local_FirstDigitFlag=0,Local_SecondDigitFlag=0,Local_ThirdDigitFlag=0,Local_FourthDigitFlag=1;
+                                      ^
+../main.c:27:21: warning: unused variable ‘Local_Counter2’ [-Wunused-variable]
+  u8 Local_Counter=0,Local_Counter2=0,Local_FirstDigitFlag=0,Local_SecondDigitFlag=0,Local_ThirdDigitFlag=0,Local_FourthDigitFlag=1;
+                     ^
+../main.c:27:5: warning: unused variable ‘Local_Counter’ [-Wunused-variable]
+  u8 Local_Counter=0,Local_Counter2=0,Local_FirstDigitFlag=0,Local_SecondDigitFlag=0,Local_ThirdDigitFlag=0,Local_FourthDigitFlag=1;
+     ^
+../main.c:26:29: warning: unused variable ‘Local_DigitHolder’ [-Wunused-variable]
+  u8 Local_TemporaryHolder=0,Local_DigitHolder;
+                             ^
+../main.c:26:5: warning: unused variable ‘Local_TemporaryHolder’ [-Wunused-variable]
+  u8 Local_TemporaryHolder=0,Local_DigitHolder;
+     ^
+../main.c:25:23: warning: unused variable ‘base_ddr’ [-Wunused-variable]
+  u8 i,j,base_cgr=0x40,base_ddr=0x80,lcd_counter=0;
+                       ^
+Finished building: ../main.c
+ 
+Building target: LCD_Tasks.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,LCD_Tasks.map -mmcu=atmega32 -o "LCD_Tasks.elf"  ./DIO_Prog.o ./DIO_voidInitialize.o ./LCD_Prog.o ./delay_ms.o ./main.o   
+Finished building target: LCD_Tasks.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S LCD_Tasks.elf  >"LCD_Tasks.lss"
+Finished building: LCD_Tasks.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex LCD_Tasks.elf  "LCD_Tasks.hex"
+Finished building: LCD_Tasks.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 LCD_Tasks.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    2224 bytes (6.8% Full)
+(.text + .data + .bootloader)
+
+Data:         89 bytes (4.3% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+13:04:39 **** Incremental Build of configuration Debug for project Interrupt ****
+make all 
+Building file: ../DIO_Prog.c
+Invoking: AVR Compiler
+avr-gcc -I/usr/lib/avr/include -I/usr/lib/gcc/avr/4.8.2/include -I/usr/lib/gcc/avr/4.8.2/include-fixed -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=4000000UL -MMD -MP -MF"DIO_Prog.d" -MT"DIO_Prog.o" -c -o "DIO_Prog.o" "../DIO_Prog.c"
+Finished building: ../DIO_Prog.c
+ 
+Building file: ../DIO_voidInitialize.c
+Invoking: AVR Compiler
+avr-gcc -I/usr/lib/avr/include -I/usr/lib/gcc/avr/4.8.2/include -I/usr/lib/gcc/avr/4.8.2/include-fixed -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=4000000UL -MMD -MP -MF"DIO_voidInitialize.d" -MT"DIO_voidInitialize.o" -c -o "DIO_voidInitialize.o" "../DIO_voidInitialize.c"
+../DIO_voidInitialize.c: In function ‘DIO_voidInitialize’:
+../DIO_voidInitialize.c:23:1: warning: implicit declaration of function ‘DDRA_VALUE’ [-Wimplicit-function-declaration]
+ DDRA = DDRA_VALUE( DIO_u8PIN_0_DIRECTION , DIO_u8PIN_1_DIRECTION , DIO_u8PIN_2_DIRECTION,
+ ^
+../DIO_voidInitialize.c:26:1: warning: implicit declaration of function ‘DDRB_VALUE’ [-Wimplicit-function-declaration]
+ DDRB = DDRB_VALUE(DIO_u8PIN_8_DIRECTION,DIO_u8PIN_9_DIRECTION, DIO_u8PIN_10_DIRECTION,
+ ^
+../DIO_voidInitialize.c:30:1: warning: implicit declaration of function ‘DDRC_VALUE’ [-Wimplicit-function-declaration]
+ DDRC=DDRC_VALUE(DIO_u8PIN_16_DIRECTION,DIO_u8PIN_17_DIRECTION,DIO_u8PIN_18_DIRECTION,
+ ^
+../DIO_voidInitialize.c:33:1: warning: implicit declaration of function ‘DDRD_VALUE’ [-Wimplicit-function-declaration]
+ DDRD=DDRD_VALUE(DIO_u8PIN_24_DIRECTION,DIO_u8PIN_25_DIRECTION,DIO_u8PIN_26_DIRECTION,
+ ^
+../DIO_voidInitialize.c:38:1: warning: implicit declaration of function ‘PORTA_VALUE’ [-Wimplicit-function-declaration]
+ PORTA=PORTA_VALUE(DIO_u8PIN_7_INITIAL,DIO_u8PIN_6_INITIAL,DIO_u8PIN_5_INITIAL,DIO_u8PIN_4_INITIAL,DIO_u8PIN_3_INITIAL,
+ ^
+../DIO_voidInitialize.c:41:1: warning: implicit declaration of function ‘PORTB_VALUE’ [-Wimplicit-function-declaration]
+ PORTB=PORTB_VALUE(DIO_u8PIN_15_INITIAL,DIO_u8PIN_14_INITIAL,DIO_u8PIN_13_INITIAL,DIO_u8PIN_12_INITIAL,DIO_u8PIN_11_INITIAL,
+ ^
+../DIO_voidInitialize.c:44:1: warning: implicit declaration of function ‘PORTC_VALUE’ [-Wimplicit-function-declaration]
+ PORTC=PORTC_VALUE(DIO_u8PIN_23_INITIAL,DIO_u8PIN_22_INITIAL,DIO_u8PIN_21_INITIAL,DIO_u8PIN_20_INITIAL,DIO_u8PIN_19_INITIAL,
+ ^
+../DIO_voidInitialize.c:47:1: warning: implicit declaration of function ‘PORTD_VALUE’ [-Wimplicit-function-declaration]
+ PORTD=PORTD_VALUE(DIO_u8PIN_31_INITIAL,DIO_u8PIN_30_INITIAL,DIO_u8PIN_29_INITIAL,DIO_u8PIN_28_INITIAL,DIO_u8PIN_27_INITIAL,
+ ^
+Finished building: ../DIO_voidInitialize.c
+ 
+Building file: ../Mc_Registers.c
+Invoking: AVR Compiler
+avr-gcc -I/usr/lib/avr/include -I/usr/lib/gcc/avr/4.8.2/include -I/usr/lib/gcc/avr/4.8.2/include-fixed -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=4000000UL -MMD -MP -MF"Mc_Registers.d" -MT"Mc_Registers.o" -c -o "Mc_Registers.o" "../Mc_Registers.c"
+In file included from ../Mc_Registers.c:12:0:
+../DIO_Private.h:298:0: warning: "DIO_u8PIN_31_INITIAL" redefined [enabled by default]
+  #define DIO_u8PIN_31_INITIAL DIO_HIGH
+ ^
+In file included from ../Mc_Registers.c:11:0:
+../DIO_Config.h:108:0: note: this is the location of the previous definition
+ #define DIO_u8PIN_31_INITIAL DIO_LOW
+ ^
+In file included from ../Mc_Registers.c:16:0:
+../Mc_Registers.h:11:0: warning: "INT0" redefined [enabled by default]
+ #define INT0 26
+ ^
+In file included from /usr/lib/avr/include/avr/io.h:206:0,
+                 from /usr/lib/avr/include/avr/interrupt.h:38,
+                 from ../Mc_Registers.c:15:
+/usr/lib/avr/include/avr/iom32.h:282:0: note: this is the location of the previous definition
+ #define INT0    6
+ ^
+Finished building: ../Mc_Registers.c
+ 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -I/usr/lib/avr/include -I/usr/lib/gcc/avr/4.8.2/include -I/usr/lib/gcc/avr/4.8.2/include-fixed -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=4000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+In file included from ../main.c:13:0:
+../DIO_Private.h:298:0: warning: "DIO_u8PIN_31_INITIAL" redefined [enabled by default]
+  #define DIO_u8PIN_31_INITIAL DIO_HIGH
+ ^
+In file included from ../main.c:12:0:
+../DIO_Config.h:108:0: note: this is the location of the previous definition
+ #define DIO_u8PIN_31_INITIAL DIO_LOW
+ ^
+In file included from ../main.c:17:0:
+../Mc_Registers.h:11:0: warning: "INT0" redefined [enabled by default]
+ #define INT0 26
+ ^
+In file included from /usr/lib/avr/include/avr/io.h:206:0,
+                 from /usr/lib/avr/include/avr/interrupt.h:38,
+                 from ../main.c:16:
+/usr/lib/avr/include/avr/iom32.h:282:0: note: this is the location of the previous definition
+ #define INT0    6
+ ^
+../main.c:30:6: warning: return type of ‘main’ is not ‘int’ [-Wmain]
+ void main (void)
+      ^
+Finished building: ../main.c
+ 
+Building target: Interrupt.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,Interrupt.map -mmcu=atmega32 -o "Interrupt.elf"  ./DIO_Prog.o ./DIO_voidInitialize.o ./Mc_Registers.o ./delay_ms.o ./main.o   
+./DIO_voidInitialize.o: In function `DIO_voidInitialize':
+../DIO_voidInitialize.c:23: undefined reference to `DDRA_VALUE'
+../DIO_voidInitialize.c:26: undefined reference to `DDRB_VALUE'
+../DIO_voidInitialize.c:30: undefined reference to `DDRC_VALUE'
+../DIO_voidInitialize.c:33: undefined reference to `DDRD_VALUE'
+../DIO_voidInitialize.c:38: undefined reference to `PORTA_VALUE'
+../DIO_voidInitialize.c:41: undefined reference to `PORTB_VALUE'
+../DIO_voidInitialize.c:44: undefined reference to `PORTC_VALUE'
+../DIO_voidInitialize.c:47: undefined reference to `PORTD_VALUE'
+collect2: error: ld returned 1 exit status
+make: *** [Interrupt.elf] Error 1
+13:04:39 **** Build of configuration Debug for project LCD_Tasks7 ****
+make all 
+Building target: LCD_Tasks7.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,LCD_Tasks7.map -mmcu=atmega32 -o "LCD_Tasks7.elf"  ./DIO_Prog.o ./DIO_voidInitialize.o ./LCD_Prog.o ./delay_ms.o ./main.o ./main2.o ./main3.o ./main4.o   
+Finished building target: LCD_Tasks7.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S LCD_Tasks7.elf  >"LCD_Tasks7.lss"
+Finished building: LCD_Tasks7.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex LCD_Tasks7.elf  "LCD_Tasks7.hex"
+Finished building: LCD_Tasks7.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 LCD_Tasks7.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    3654 bytes (11.2% Full)
+(.text + .data + .bootloader)
+
+Data:        233 bytes (11.4% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+13:04:40 **** Build of configuration Debug for project TIMER8BIT3 ****
+make all 
+Building file: ../TIMER1.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=4000000UL -MMD -MP -MF"TIMER1.d" -MT"TIMER1.o" -c -o "TIMER1.o" "../TIMER1.c"
+In file included from ../TIMER1.c:17:0:
+../TIMER0_interface.h:13:1: warning: ‘__INTR_ATTRS’ attribute directive ignored [-Wattributes]
+ void __vector_11(void) __attribute__((signal,__INTR_ATTRS));
+ ^
+Finished building: ../TIMER1.c
+ 
+Building target: TIMER8BIT3.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,TIMER8BIT3.map -mmcu=atmega32 -o "TIMER8BIT3.elf"  ./DIO_Prog.o ./TIMER0_prog.o ./TIMER1.o ./delay_ms.o   
+/usr/lib/gcc/avr/4.8.2/../../../avr/lib/avr5/crtm32.o: In function `__bad_interrupt':
+../../../../crt1/gcrt1.S:195: undefined reference to `main'
+collect2: error: ld returned 1 exit status
+make: *** [TIMER8BIT3.elf] Error 1
+13:04:51 **** Incremental Build of configuration Debug for project Interrupt ****
+make all 
+Building target: Interrupt.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,Interrupt.map -mmcu=atmega32 -o "Interrupt.elf"  ./DIO_Prog.o ./DIO_voidInitialize.o ./Mc_Registers.o ./delay_ms.o ./main.o   
+./DIO_voidInitialize.o: In function `DIO_voidInitialize':
+../DIO_voidInitialize.c:23: undefined reference to `DDRA_VALUE'
+../DIO_voidInitialize.c:26: undefined reference to `DDRB_VALUE'
+../DIO_voidInitialize.c:30: undefined reference to `DDRC_VALUE'
+../DIO_voidInitialize.c:33: undefined reference to `DDRD_VALUE'
+../DIO_voidInitialize.c:38: undefined reference to `PORTA_VALUE'
+../DIO_voidInitialize.c:41: undefined reference to `PORTB_VALUE'
+../DIO_voidInitialize.c:44: undefined reference to `PORTC_VALUE'
+../DIO_voidInitialize.c:47: undefined reference to `PORTD_VALUE'
+collect2: error: ld returned 1 exit status
+make: *** [Interrupt.elf] Error 1
+13:04:52 **** Incremental Build of configuration Debug for project LCD_Tasks7 ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 LCD_Tasks7.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    3654 bytes (11.2% Full)
+(.text + .data + .bootloader)
+
+Data:        233 bytes (11.4% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+13:04:52 **** Incremental Build of configuration Debug for project TIMER8BIT3 ****
+make all 
+Building target: TIMER8BIT3.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,TIMER8BIT3.map -mmcu=atmega32 -o "TIMER8BIT3.elf"  ./DIO_Prog.o ./TIMER0_prog.o ./TIMER1.o ./delay_ms.o   
+/usr/lib/gcc/avr/4.8.2/../../../avr/lib/avr5/crtm32.o: In function `__bad_interrupt':
+../../../../crt1/gcrt1.S:195: undefined reference to `main'
+collect2: error: ld returned 1 exit status
+make: *** [TIMER8BIT3.elf] Error 1
+13:06:26 **** Incremental Build of configuration Debug for project TIMER8BIT3 ****
+make all 
+Building target: TIMER8BIT3.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,TIMER8BIT3.map -mmcu=atmega32 -o "TIMER8BIT3.elf"  ./DIO_Prog.o ./TIMER0_prog.o ./TIMER1.o ./delay_ms.o   
+/usr/lib/gcc/avr/4.8.2/../../../avr/lib/avr5/crtm32.o: In function `__bad_interrupt':
+../../../../crt1/gcrt1.S:195: undefined reference to `main'
+collect2: error: ld returned 1 exit status
+make: *** [TIMER8BIT3.elf] Error 1
+13:06:29 **** Incremental Build of configuration Debug for project TIMER8BIT3 ****
+make all 
+Building target: TIMER8BIT3.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,TIMER8BIT3.map -mmcu=atmega32 -o "TIMER8BIT3.elf"  ./DIO_Prog.o ./TIMER0_prog.o ./TIMER1.o ./delay_ms.o   
+/usr/lib/gcc/avr/4.8.2/../../../avr/lib/avr5/crtm32.o: In function `__bad_interrupt':
+../../../../crt1/gcrt1.S:195: undefined reference to `main'
+collect2: error: ld returned 1 exit status
+make: *** [TIMER8BIT3.elf] Error 1
+13:07:10 **** Incremental Build of configuration Debug for project TIMER8BIT3 ****
+make all 
+Building file: ../TIMER1.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=4000000UL -MMD -MP -MF"TIMER1.d" -MT"TIMER1.o" -c -o "TIMER1.o" "../TIMER1.c"
+In file included from ../TIMER1.c:17:0:
+../TIMER0_interface.h:13:1: warning: ‘__INTR_ATTRS’ attribute directive ignored [-Wattributes]
+ void __vector_11(void) __attribute__((signal,__INTR_ATTRS));
+ ^
+../TIMER1.c:58:6: warning: return type of ‘main’ is not ‘int’ [-Wmain]
+ void main(void)
+      ^
+Finished building: ../TIMER1.c
+ 
+Building target: TIMER8BIT3.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,TIMER8BIT3.map -mmcu=atmega32 -o "TIMER8BIT3.elf"  ./DIO_Prog.o ./TIMER0_prog.o ./TIMER1.o ./delay_ms.o   
+Finished building target: TIMER8BIT3.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S TIMER8BIT3.elf  >"TIMER8BIT3.lss"
+Finished building: TIMER8BIT3.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex TIMER8BIT3.elf  "TIMER8BIT3.hex"
+Finished building: TIMER8BIT3.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 TIMER8BIT3.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   13252 bytes (40.4% Full)
+(.text + .data + .bootloader)
+
+Data:          6 bytes (0.3% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+13:12:42 **** Build of configuration Debug for project Playing_Music_Using_8bit_Timer ****
+make all 
+Building file: ../TIMER0_prog.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=4000000UL -MMD -MP -MF"TIMER0_prog.d" -MT"TIMER0_prog.o" -c -o "TIMER0_prog.o" "../TIMER0_prog.c"
+In file included from ../TIMER0_prog.c:13:0:
+../TIMER0_interface.h:13:1: warning: ‘__INTR_ATTRS’ attribute directive ignored [-Wattributes]
+ void __vector_11(void) __attribute__((signal,__INTR_ATTRS));
+ ^
+Finished building: ../TIMER0_prog.c
+ 
+Building file: ../TIMER1.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=4000000UL -MMD -MP -MF"TIMER1.d" -MT"TIMER1.o" -c -o "TIMER1.o" "../TIMER1.c"
+In file included from ../TIMER1.c:17:0:
+../TIMER0_interface.h:13:1: warning: ‘__INTR_ATTRS’ attribute directive ignored [-Wattributes]
+ void __vector_11(void) __attribute__((signal,__INTR_ATTRS));
+ ^
+../TIMER1.c:58:6: warning: return type of ‘main’ is not ‘int’ [-Wmain]
+ void main(void)
+      ^
+Finished building: ../TIMER1.c
+ 
+Building target: Playing_Music_Using_8bit_Timer.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,Playing_Music_Using_8bit_Timer.map -mmcu=atmega32 -o "Playing_Music_Using_8bit_Timer.elf"  ./DIO_Prog.o ./TIMER0_prog.o ./TIMER1.o ./delay_ms.o   
+Finished building target: Playing_Music_Using_8bit_Timer.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S Playing_Music_Using_8bit_Timer.elf  >"Playing_Music_Using_8bit_Timer.lss"
+Finished building: Playing_Music_Using_8bit_Timer.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex Playing_Music_Using_8bit_Timer.elf  "Playing_Music_Using_8bit_Timer.hex"
+Finished building: Playing_Music_Using_8bit_Timer.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 Playing_Music_Using_8bit_Timer.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   13252 bytes (40.4% Full)
+(.text + .data + .bootloader)
+
+Data:          6 bytes (0.3% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+13:14:11 **** Incremental Build of configuration Debug for project Playing_Music_Using_8bit_Timer ****
+make all 
+Building file: ../TIMER1.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=4000000UL -MMD -MP -MF"TIMER1.d" -MT"TIMER1.o" -c -o "TIMER1.o" "../TIMER1.c"
+In file included from ../TIMER1.c:17:0:
+../TIMER0_interface.h:13:1: warning: ‘__INTR_ATTRS’ attribute directive ignored [-Wattributes]
+ void __vector_11(void) __attribute__((signal,__INTR_ATTRS));
+ ^
+../TIMER1.c:58:6: warning: return type of ‘main’ is not ‘int’ [-Wmain]
+ void main(void)
+      ^
+Finished building: ../TIMER1.c
+ 
+Building target: Playing_Music_Using_8bit_Timer.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,Playing_Music_Using_8bit_Timer.map -mmcu=atmega32 -o "Playing_Music_Using_8bit_Timer.elf"  ./DIO_Prog.o ./TIMER0_prog.o ./TIMER1.o ./delay_ms.o   
+Finished building target: Playing_Music_Using_8bit_Timer.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S Playing_Music_Using_8bit_Timer.elf  >"Playing_Music_Using_8bit_Timer.lss"
+Finished building: Playing_Music_Using_8bit_Timer.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex Playing_Music_Using_8bit_Timer.elf  "Playing_Music_Using_8bit_Timer.hex"
+Finished building: Playing_Music_Using_8bit_Timer.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 Playing_Music_Using_8bit_Timer.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   13252 bytes (40.4% Full)
+(.text + .data + .bootloader)
+
+Data:          6 bytes (0.3% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+13:21:49 **** Incremental Build of configuration Debug for project Stepper ****
+make all 
+Building file: ../STEPPER_prog.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=4000000UL -MMD -MP -MF"STEPPER_prog.d" -MT"STEPPER_prog.o" -c -o "STEPPER_prog.o" "../STEPPER_prog.c"
+../STEPPER_prog.c: In function ‘STEPPER_u8Init’:
+../STEPPER_prog.c:25:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+../STEPPER_prog.c: In function ‘STEPPER_u8SetRotateDirectionCounterClockWise’:
+../STEPPER_prog.c:62:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+Finished building: ../STEPPER_prog.c
+ 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=4000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+../main.c:24:6: warning: return type of ‘main’ is not ‘int’ [-Wmain]
+ void main (void)
+      ^
+../main.c: In function ‘main’:
+../main.c:100:2: error: ‘delay’ undeclared (first use in this function)
+  delay
+  ^
+../main.c:100:2: note: each undeclared identifier is reported only once for each function it appears in
+../main.c:102:1: error: expected ‘;’ before ‘}’ token
+ }
+ ^
+../main.c:27:4: warning: unused variable ‘Local_u8InputValue’ [-Wunused-variable]
+ u8 Local_u8InputValue;
+    ^
+make: *** [main.o] Error 1
+13:22:34 **** Incremental Build of configuration Debug for project Stepper ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=4000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+../main.c:24:6: warning: return type of ‘main’ is not ‘int’ [-Wmain]
+ void main (void)
+      ^
+../main.c: In function ‘main’:
+../main.c:27:4: warning: unused variable ‘Local_u8InputValue’ [-Wunused-variable]
+ u8 Local_u8InputValue;
+    ^
+Finished building: ../main.c
+ 
+Building target: Stepper.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,Stepper.map -mmcu=atmega32 -o "Stepper.elf"  ./DIO_Prog.o ./STEPPER_prog.o ./delay_ms.o ./main.o   
+Finished building target: Stepper.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S Stepper.elf  >"Stepper.lss"
+Finished building: Stepper.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex Stepper.elf  "Stepper.hex"
+Finished building: Stepper.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 Stepper.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    2600 bytes (7.9% Full)
+(.text + .data + .bootloader)
+
+Data:          0 bytes (0.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+13:23:31 **** Incremental Build of configuration Debug for project Stepper ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=4000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+../main.c:24:6: warning: return type of ‘main’ is not ‘int’ [-Wmain]
+ void main (void)
+      ^
+../main.c: In function ‘main’:
+../main.c:27:4: warning: unused variable ‘Local_u8InputValue’ [-Wunused-variable]
+ u8 Local_u8InputValue;
+    ^
+Finished building: ../main.c
+ 
+Building target: Stepper.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,Stepper.map -mmcu=atmega32 -o "Stepper.elf"  ./DIO_Prog.o ./STEPPER_prog.o ./delay_ms.o ./main.o   
+Finished building target: Stepper.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S Stepper.elf  >"Stepper.lss"
+Finished building: Stepper.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex Stepper.elf  "Stepper.hex"
+Finished building: Stepper.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 Stepper.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    2612 bytes (8.0% Full)
+(.text + .data + .bootloader)
+
+Data:          0 bytes (0.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+13:24:01 **** Incremental Build of configuration Debug for project Stepper ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=4000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+../main.c:24:6: warning: return type of ‘main’ is not ‘int’ [-Wmain]
+ void main (void)
+      ^
+../main.c: In function ‘main’:
+../main.c:27:4: warning: unused variable ‘Local_u8InputValue’ [-Wunused-variable]
+ u8 Local_u8InputValue;
+    ^
+Finished building: ../main.c
+ 
+Building target: Stepper.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,Stepper.map -mmcu=atmega32 -o "Stepper.elf"  ./DIO_Prog.o ./STEPPER_prog.o ./delay_ms.o ./main.o   
+Finished building target: Stepper.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S Stepper.elf  >"Stepper.lss"
+Finished building: Stepper.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex Stepper.elf  "Stepper.hex"
+Finished building: Stepper.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 Stepper.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    2584 bytes (7.9% Full)
+(.text + .data + .bootloader)
+
+Data:          0 bytes (0.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+13:26:10 **** Incremental Build of configuration Debug for project Stepper ****
+make all 
+Building file: ../STEPPER_prog.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=4000000UL -MMD -MP -MF"STEPPER_prog.d" -MT"STEPPER_prog.o" -c -o "STEPPER_prog.o" "../STEPPER_prog.c"
+../STEPPER_prog.c: In function ‘STEPPER_u8Init’:
+../STEPPER_prog.c:28:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+../STEPPER_prog.c: In function ‘STEPPER_u8SetRotateDirectionCounterClockWise’:
+../STEPPER_prog.c:65:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+Finished building: ../STEPPER_prog.c
+ 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=4000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+../main.c:24:6: warning: return type of ‘main’ is not ‘int’ [-Wmain]
+ void main (void)
+      ^
+../main.c: In function ‘main’:
+../main.c:27:4: warning: unused variable ‘Local_u8InputValue’ [-Wunused-variable]
+ u8 Local_u8InputValue;
+    ^
+Finished building: ../main.c
+ 
+Building target: Stepper.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,Stepper.map -mmcu=atmega32 -o "Stepper.elf"  ./DIO_Prog.o ./STEPPER_prog.o ./delay_ms.o ./main.o   
+Finished building target: Stepper.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S Stepper.elf  >"Stepper.lss"
+Finished building: Stepper.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex Stepper.elf  "Stepper.hex"
+Finished building: Stepper.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 Stepper.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    2616 bytes (8.0% Full)
+(.text + .data + .bootloader)
+
+Data:          0 bytes (0.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+13:27:21 **** Incremental Build of configuration Debug for project Stepper ****
+make all 
+Building file: ../DIO_Prog.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=4000000UL -MMD -MP -MF"DIO_Prog.d" -MT"DIO_Prog.o" -c -o "DIO_Prog.o" "../DIO_Prog.c"
+In file included from ../DIO_Prog.c:12:0:
+../DIO_Config.h:69:0: warning: "DIO_u8PIN_0_INITIAL" redefined [enabled by default]
+ #define DIO_u8PIN_0_INITIAL DIO_HIGH
+ ^
+In file included from ../DIO_Prog.c:11:0:
+../DIO_Private.h:196:0: note: this is the location of the previous definition
+  #define DIO_u8PIN_0_INITIAL DIO_LOW
+ ^
+In file included from ../DIO_Prog.c:12:0:
+../DIO_Config.h:92:0: warning: "DIO_u8PIN_17_INITIAL" redefined [enabled by default]
+ #define DIO_u8PIN_17_INITIAL DIO_HIGH
+ ^
+In file included from ../DIO_Prog.c:11:0:
+../DIO_Private.h:275:0: note: this is the location of the previous definition
+  #define DIO_u8PIN_17_INITIAL DIO_LOW
+ ^
+In file included from ../DIO_Prog.c:12:0:
+../DIO_Config.h:93:0: warning: "DIO_u8PIN_18_INITIAL" redefined [enabled by default]
+ #define DIO_u8PIN_18_INITIAL DIO_HIGH
+ ^
+In file included from ../DIO_Prog.c:11:0:
+../DIO_Private.h:279:0: note: this is the location of the previous definition
+  #define DIO_u8PIN_18_INITIAL DIO_LOW
+ ^
+In file included from ../DIO_Prog.c:12:0:
+../DIO_Config.h:94:0: warning: "DIO_u8PIN_19_INITIAL" redefined [enabled by default]
+ #define DIO_u8PIN_19_INITIAL DIO_HIGH
+ ^
+In file included from ../DIO_Prog.c:11:0:
+../DIO_Private.h:283:0: note: this is the location of the previous definition
+  #define DIO_u8PIN_19_INITIAL DIO_LOW
+ ^
+Finished building: ../DIO_Prog.c
+ 
+Building file: ../STEPPER_prog.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=4000000UL -MMD -MP -MF"STEPPER_prog.d" -MT"STEPPER_prog.o" -c -o "STEPPER_prog.o" "../STEPPER_prog.c"
+../STEPPER_prog.c: In function ‘STEPPER_u8Init’:
+../STEPPER_prog.c:25:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+../STEPPER_prog.c: In function ‘STEPPER_u8SetRotateDirectionCounterClockWise’:
+../STEPPER_prog.c:62:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+Finished building: ../STEPPER_prog.c
+ 
+Building target: Stepper.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,Stepper.map -mmcu=atmega32 -o "Stepper.elf"  ./DIO_Prog.o ./STEPPER_prog.o ./delay_ms.o ./main.o   
+Finished building target: Stepper.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S Stepper.elf  >"Stepper.lss"
+Finished building: Stepper.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex Stepper.elf  "Stepper.hex"
+Finished building: Stepper.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 Stepper.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    2586 bytes (7.9% Full)
+(.text + .data + .bootloader)
+
+Data:          0 bytes (0.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+13:32:29 **** Incremental Build of configuration Debug for project Stepper ****
+make all 
+Building file: ../STEPPER_prog.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=4000000UL -MMD -MP -MF"STEPPER_prog.d" -MT"STEPPER_prog.o" -c -o "STEPPER_prog.o" "../STEPPER_prog.c"
+../STEPPER_prog.c: In function ‘STEPPER_u8Init’:
+../STEPPER_prog.c:24:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+../STEPPER_prog.c: In function ‘STEPPER_u8SetRotateDirectionCounterClockWise’:
+../STEPPER_prog.c:61:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+Finished building: ../STEPPER_prog.c
+ 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=4000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+../main.c:24:6: warning: return type of ‘main’ is not ‘int’ [-Wmain]
+ void main (void)
+      ^
+Finished building: ../main.c
+ 
+Building target: Stepper.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,Stepper.map -mmcu=atmega32 -o "Stepper.elf"  ./DIO_Prog.o ./STEPPER_prog.o ./delay_ms.o ./main.o   
+Finished building target: Stepper.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S Stepper.elf  >"Stepper.lss"
+Finished building: Stepper.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex Stepper.elf  "Stepper.hex"
+Finished building: Stepper.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 Stepper.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    2620 bytes (8.0% Full)
+(.text + .data + .bootloader)
+
+Data:          0 bytes (0.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+13:33:58 **** Build of configuration Debug for project Stepper_Direction_Control_with_switch ****
+make all 
+Building target: Stepper_Direction_Control_with_switch.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,Stepper_Direction_Control_with_switch.map -mmcu=atmega32 -o "Stepper_Direction_Control_with_switch.elf"  ./DIO_Prog.o ./STEPPER_prog.o ./delay_ms.o ./main.o   
+Finished building target: Stepper_Direction_Control_with_switch.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S Stepper_Direction_Control_with_switch.elf  >"Stepper_Direction_Control_with_switch.lss"
+Finished building: Stepper_Direction_Control_with_switch.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex Stepper_Direction_Control_with_switch.elf  "Stepper_Direction_Control_with_switch.hex"
+Finished building: Stepper_Direction_Control_with_switch.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 Stepper_Direction_Control_with_switch.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    2620 bytes (8.0% Full)
+(.text + .data + .bootloader)
+
+Data:          0 bytes (0.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+13:36:31 **** Incremental Build of configuration Debug for project Switch ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=4000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+In file included from ../main.c:18:0:
+/usr/lib/avr/include/util/delay.h:95:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed" [-Wcpp]
+ # warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+   ^
+../main.c:24:6: warning: return type of ‘main’ is not ‘int’ [-Wmain]
+ void main(void)
+      ^
+../main.c: In function ‘main’:
+../main.c:51:1: warning: implicit declaration of function ‘DIO_u8setPinValue’ [-Wimplicit-function-declaration]
+ DIO_u8setPinValue(KEYPAD_FIRST_ROW,DIO_HIGH);
+ ^
+Finished building: ../main.c
+ 
+Building target: Switch.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,Switch.map -mmcu=atmega32 -o "Switch.elf"  ./DIO_Prog.o ./DIO_voidInitialize.o ./LCD_Prog.o ./SWITCH_Prog.o ./delay_ms.o ./main.o   
+./main.o: In function `main':
+../main.c:51: undefined reference to `DIO_u8setPinValue'
+collect2: error: ld returned 1 exit status
+make: *** [Switch.elf] Error 1
+13:36:46 **** Incremental Build of configuration Debug for project Switch ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=4000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+In file included from ../main.c:18:0:
+/usr/lib/avr/include/util/delay.h:95:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed" [-Wcpp]
+ # warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+   ^
+../main.c:24:6: warning: return type of ‘main’ is not ‘int’ [-Wmain]
+ void main(void)
+      ^
+../main.c: In function ‘main’:
+../main.c:27:4: warning: unused variable ‘Local_u8KeyPadPinValue’ [-Wunused-variable]
+ u8 Local_u8KeyPadPinValue=0;
+    ^
+Finished building: ../main.c
+ 
+Building target: Switch.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,Switch.map -mmcu=atmega32 -o "Switch.elf"  ./DIO_Prog.o ./DIO_voidInitialize.o ./LCD_Prog.o ./SWITCH_Prog.o ./delay_ms.o ./main.o   
+Finished building target: Switch.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S Switch.elf  >"Switch.lss"
+Finished building: Switch.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex Switch.elf  "Switch.hex"
+Finished building: Switch.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 Switch.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    2406 bytes (7.3% Full)
+(.text + .data + .bootloader)
+
+Data:          0 bytes (0.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+13:45:34 **** Incremental Build of configuration Debug for project Schedular_LCD_LED ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 Schedular_LCD_LED.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   15848 bytes (48.4% Full)
+(.text + .data + .bootloader)
+
+Data:         93 bytes (4.5% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+13:48:58 **** Build of configuration Debug for project Schedular_LCD_LED_Stepper_Buzzer ****
+make all 
+Building target: Schedular_LCD_LED_Stepper_Buzzer.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,Schedular_LCD_LED_Stepper_Buzzer.map -mmcu=atmega32 -o "Schedular_LCD_LED_Stepper_Buzzer.elf"  ./DIO_Prog.o ./LCD_Prog.o ./STEPPER_prog.o ./TIMER0_prog.o ./TIMER1.o ./TIMER2.o ./delay_ms.o ./schedular0.o   
+Finished building target: Schedular_LCD_LED_Stepper_Buzzer.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S Schedular_LCD_LED_Stepper_Buzzer.elf  >"Schedular_LCD_LED_Stepper_Buzzer.lss"
+Finished building: Schedular_LCD_LED_Stepper_Buzzer.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex Schedular_LCD_LED_Stepper_Buzzer.elf  "Schedular_LCD_LED_Stepper_Buzzer.hex"
+Finished building: Schedular_LCD_LED_Stepper_Buzzer.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 Schedular_LCD_LED_Stepper_Buzzer.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   15848 bytes (48.4% Full)
+(.text + .data + .bootloader)
+
+Data:         93 bytes (4.5% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 

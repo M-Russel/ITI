@@ -1,0 +1,45 @@
+13:14:11 **** Incremental Build of configuration Debug for project Playing_Music_Using_8bit_Timer ****
+make all 
+Building file: ../TIMER1.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=4000000UL -MMD -MP -MF"TIMER1.d" -MT"TIMER1.o" -c -o "TIMER1.o" "../TIMER1.c"
+In file included from ../TIMER1.c:17:0:
+../TIMER0_interface.h:13:1: warning: ‘__INTR_ATTRS’ attribute directive ignored [-Wattributes]
+ void __vector_11(void) __attribute__((signal,__INTR_ATTRS));
+ ^
+../TIMER1.c:58:6: warning: return type of ‘main’ is not ‘int’ [-Wmain]
+ void main(void)
+      ^
+Finished building: ../TIMER1.c
+ 
+Building target: Playing_Music_Using_8bit_Timer.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,Playing_Music_Using_8bit_Timer.map -mmcu=atmega32 -o "Playing_Music_Using_8bit_Timer.elf"  ./DIO_Prog.o ./TIMER0_prog.o ./TIMER1.o ./delay_ms.o   
+Finished building target: Playing_Music_Using_8bit_Timer.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S Playing_Music_Using_8bit_Timer.elf  >"Playing_Music_Using_8bit_Timer.lss"
+Finished building: Playing_Music_Using_8bit_Timer.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex Playing_Music_Using_8bit_Timer.elf  "Playing_Music_Using_8bit_Timer.hex"
+Finished building: Playing_Music_Using_8bit_Timer.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 Playing_Music_Using_8bit_Timer.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   13252 bytes (40.4% Full)
+(.text + .data + .bootloader)
+
+Data:          6 bytes (0.3% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+
+13:14:11 Build Finished (took 452ms)
+

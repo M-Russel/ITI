@@ -1,0 +1,45 @@
+13:07:10 **** Incremental Build of configuration Debug for project TIMER8BIT3 ****
+make all 
+Building file: ../TIMER1.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=4000000UL -MMD -MP -MF"TIMER1.d" -MT"TIMER1.o" -c -o "TIMER1.o" "../TIMER1.c"
+In file included from ../TIMER1.c:17:0:
+../TIMER0_interface.h:13:1: warning: ‘__INTR_ATTRS’ attribute directive ignored [-Wattributes]
+ void __vector_11(void) __attribute__((signal,__INTR_ATTRS));
+ ^
+../TIMER1.c:58:6: warning: return type of ‘main’ is not ‘int’ [-Wmain]
+ void main(void)
+      ^
+Finished building: ../TIMER1.c
+ 
+Building target: TIMER8BIT3.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,TIMER8BIT3.map -mmcu=atmega32 -o "TIMER8BIT3.elf"  ./DIO_Prog.o ./TIMER0_prog.o ./TIMER1.o ./delay_ms.o   
+Finished building target: TIMER8BIT3.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S TIMER8BIT3.elf  >"TIMER8BIT3.lss"
+Finished building: TIMER8BIT3.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex TIMER8BIT3.elf  "TIMER8BIT3.hex"
+Finished building: TIMER8BIT3.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 TIMER8BIT3.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   13252 bytes (40.4% Full)
+(.text + .data + .bootloader)
+
+Data:          6 bytes (0.3% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+
+13:07:10 Build Finished (took 123ms)
+
