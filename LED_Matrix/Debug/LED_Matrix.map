@@ -1,35 +1,36 @@
 Archive member included because of file (symbol)
 
-c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_udivmodqi4.o)
-                              ./Green.o (__udivmodqi4)
-c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
-                              c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm32.o (exit)
-c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_copy_data.o)
+/usr/lib/gcc/avr/4.8.2/avr5/libgcc.a(_exit.o)
+                              /usr/lib/gcc/avr/4.8.2/../../../avr/lib/avr5/crtm32.o (exit)
+/usr/lib/gcc/avr/4.8.2/avr5/libgcc.a(_copy_data.o)
                               ./Green.o (__do_copy_data)
 
 Memory Configuration
 
 Name             Origin             Length             Attributes
-text             0x00000000         0x00020000         xr
-data             0x00800060         0x0000ffa0         rw !x
-eeprom           0x00810000         0x00010000         rw !x
-fuse             0x00820000         0x00000400         rw !x
-lock             0x00830000         0x00000400         rw !x
-signature        0x00840000         0x00000400         rw !x
-*default*        0x00000000         0xffffffff
+text             0x0000000000000000 0x0000000000020000 xr
+data             0x0000000000800060 0x000000000000ffa0 rw !x
+eeprom           0x0000000000810000 0x0000000000010000 rw !x
+fuse             0x0000000000820000 0x0000000000000400 rw !x
+lock             0x0000000000830000 0x0000000000000400 rw !x
+signature        0x0000000000840000 0x0000000000000400 rw !x
+user_signatures  0x0000000000850000 0x0000000000000400 rw !x
+*default*        0x0000000000000000 0xffffffffffffffff
 
 Linker script and memory map
 
-LOAD c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm32.o
+LOAD /usr/lib/gcc/avr/4.8.2/../../../avr/lib/avr5/crtm32.o
 LOAD ./Green.o
 LOAD ./Initializing.o
 LOAD ./Orange.o
 LOAD ./Red.o
 LOAD ./delay_ms.o
 LOAD ./main.o
-LOAD c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a
-LOAD c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libc.a
-LOAD c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a
+START GROUP
+LOAD /usr/lib/gcc/avr/4.8.2/avr5/libgcc.a
+LOAD /usr/lib/gcc/avr/4.8.2/../../../avr/lib/avr5/libm.a
+LOAD /usr/lib/gcc/avr/4.8.2/../../../avr/lib/avr5/libc.a
+END GROUP
 
 .hash
  *(.hash)
@@ -121,46 +122,46 @@ LOAD c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a
 .rela.plt
  *(.rela.plt)
 
-.text           0x00000000      0x7d2
+.text           0x0000000000000000      0x3fc
  *(.vectors)
- .vectors       0x00000000       0x54 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm32.o
-                0x00000000                __vectors
-                0x00000000                __vector_default
+ .vectors       0x0000000000000000       0x54 /usr/lib/gcc/avr/4.8.2/../../../avr/lib/avr5/crtm32.o
+                0x0000000000000000                __vectors
+                0x0000000000000000                __vector_default
  *(.vectors)
  *(.progmem.gcc*)
  *(.progmem*)
-                0x00000054                . = ALIGN (0x2)
-                0x00000054                __trampolines_start = .
+                0x0000000000000054                . = ALIGN (0x2)
+                0x0000000000000054                __trampolines_start = .
  *(.trampolines)
- .trampolines   0x00000054        0x0 linker stubs
+ .trampolines   0x0000000000000054        0x0 linker stubs
  *(.trampolines*)
-                0x00000054                __trampolines_end = .
+                0x0000000000000054                __trampolines_end = .
  *(.jumptables)
  *(.jumptables*)
  *(.lowtext)
  *(.lowtext*)
-                0x00000054                __ctors_start = .
+                0x0000000000000054                __ctors_start = .
  *(.ctors)
-                0x00000054                __ctors_end = .
-                0x00000054                __dtors_start = .
+                0x0000000000000054                __ctors_end = .
+                0x0000000000000054                __dtors_start = .
  *(.dtors)
-                0x00000054                __dtors_end = .
+                0x0000000000000054                __dtors_end = .
  SORT(*)(.ctors)
  SORT(*)(.dtors)
  *(.init0)
- .init0         0x00000054        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm32.o
-                0x00000054                __init
+ .init0         0x0000000000000054        0x0 /usr/lib/gcc/avr/4.8.2/../../../avr/lib/avr5/crtm32.o
+                0x0000000000000054                __init
  *(.init0)
  *(.init1)
  *(.init1)
  *(.init2)
- .init2         0x00000054        0xc c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm32.o
+ .init2         0x0000000000000054        0xc /usr/lib/gcc/avr/4.8.2/../../../avr/lib/avr5/crtm32.o
  *(.init2)
  *(.init3)
  *(.init3)
  *(.init4)
- .init4         0x00000060       0x16 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_copy_data.o)
-                0x00000060                __do_copy_data
+ .init4         0x0000000000000060       0x16 /usr/lib/gcc/avr/4.8.2/avr5/libgcc.a(_copy_data.o)
+                0x0000000000000060                __do_copy_data
  *(.init4)
  *(.init5)
  *(.init5)
@@ -171,65 +172,86 @@ LOAD c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a
  *(.init8)
  *(.init8)
  *(.init9)
- .init9         0x00000076        0x8 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm32.o
+ .init9         0x0000000000000076        0x8 /usr/lib/gcc/avr/4.8.2/../../../avr/lib/avr5/crtm32.o
  *(.init9)
  *(.text)
- .text          0x0000007e        0x4 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm32.o
-                0x0000007e                __vector_1
-                0x0000007e                __vector_12
-                0x0000007e                __bad_interrupt
-                0x0000007e                __vector_6
-                0x0000007e                __vector_3
-                0x0000007e                __vector_11
-                0x0000007e                __vector_13
-                0x0000007e                __vector_17
-                0x0000007e                __vector_19
-                0x0000007e                __vector_7
-                0x0000007e                __vector_5
-                0x0000007e                __vector_4
-                0x0000007e                __vector_9
-                0x0000007e                __vector_2
-                0x0000007e                __vector_15
-                0x0000007e                __vector_8
-                0x0000007e                __vector_14
-                0x0000007e                __vector_10
-                0x0000007e                __vector_16
-                0x0000007e                __vector_18
-                0x0000007e                __vector_20
- .text          0x00000082        0x0 ./Green.o
- .text          0x00000082        0x0 ./Initializing.o
- .text          0x00000082        0x0 ./Orange.o
- .text          0x00000082        0x0 ./Red.o
- .text          0x00000082        0x0 ./delay_ms.o
- .text          0x00000082        0x0 ./main.o
- .text          0x00000082        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_udivmodqi4.o)
- .text          0x00000082        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
- .text          0x00000082        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_copy_data.o)
-                0x00000082                . = ALIGN (0x2)
+ .text          0x000000000000007e        0x4 /usr/lib/gcc/avr/4.8.2/../../../avr/lib/avr5/crtm32.o
+                0x000000000000007e                __vector_1
+                0x000000000000007e                __vector_12
+                0x000000000000007e                __bad_interrupt
+                0x000000000000007e                __vector_6
+                0x000000000000007e                __vector_3
+                0x000000000000007e                __vector_11
+                0x000000000000007e                __vector_13
+                0x000000000000007e                __vector_17
+                0x000000000000007e                __vector_19
+                0x000000000000007e                __vector_7
+                0x000000000000007e                __vector_5
+                0x000000000000007e                __vector_4
+                0x000000000000007e                __vector_9
+                0x000000000000007e                __vector_2
+                0x000000000000007e                __vector_15
+                0x000000000000007e                __vector_8
+                0x000000000000007e                __vector_14
+                0x000000000000007e                __vector_10
+                0x000000000000007e                __vector_16
+                0x000000000000007e                __vector_18
+                0x000000000000007e                __vector_20
+ .text          0x0000000000000082        0x0 ./Green.o
+ .text          0x0000000000000082        0x0 ./Initializing.o
+ .text          0x0000000000000082        0x0 ./Orange.o
+ .text          0x0000000000000082        0x0 ./Red.o
+ .text          0x0000000000000082        0x0 ./delay_ms.o
+ .text          0x0000000000000082        0x0 ./main.o
+ .text          0x0000000000000082        0x0 /usr/lib/gcc/avr/4.8.2/avr5/libgcc.a(_exit.o)
+ .text          0x0000000000000082        0x0 /usr/lib/gcc/avr/4.8.2/avr5/libgcc.a(_copy_data.o)
+                0x0000000000000082                . = ALIGN (0x2)
  *(.text.*)
- .text.Green    0x00000082      0x11c ./Green.o
-                0x00000082                Green
+ .text.Green    0x0000000000000082       0xe4 ./Green.o
+                0x0000000000000082                Green
  .text.Initializing
-                0x0000019e       0x1e ./Initializing.o
-                0x0000019e                Initializing
- .text.Orange   0x000001bc      0x104 ./Orange.o
-                0x000001bc                Orange
- .text.Red      0x000002c0      0x11c ./Red.o
-                0x000002c0                Red
+                0x0000000000000166       0x22 ./Initializing.o
+                0x0000000000000166                Initializing
+ .text.Orange   0x0000000000000188       0xc4 ./Orange.o
+                0x0000000000000188                Orange
+ .text.Red      0x000000000000024c       0xe4 ./Red.o
+                0x000000000000024c                Red
  .text.delay_ms
-                0x000003dc       0x8a ./delay_ms.o
-                0x000003dc                delay_ms
- .text.main     0x00000466      0x350 ./main.o
-                0x00000466                main
- .text.libgcc   0x000007b6       0x18 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_udivmodqi4.o)
-                0x000007b6                __udivmodqi4
- .text.libgcc   0x000007ce        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
- .text.libgcc   0x000007ce        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_copy_data.o)
-                0x000007ce                . = ALIGN (0x2)
+                0x0000000000000330       0x8a ./delay_ms.o
+                0x0000000000000330                delay_ms
+ .text.main     0x00000000000003ba       0x3e ./main.o
+                0x00000000000003ba                main
+ .text.libgcc.mul
+                0x00000000000003f8        0x0 /usr/lib/gcc/avr/4.8.2/avr5/libgcc.a(_exit.o)
+ .text.libgcc.div
+                0x00000000000003f8        0x0 /usr/lib/gcc/avr/4.8.2/avr5/libgcc.a(_exit.o)
+ .text.libgcc   0x00000000000003f8        0x0 /usr/lib/gcc/avr/4.8.2/avr5/libgcc.a(_exit.o)
+ .text.libgcc.prologue
+                0x00000000000003f8        0x0 /usr/lib/gcc/avr/4.8.2/avr5/libgcc.a(_exit.o)
+ .text.libgcc.builtins
+                0x00000000000003f8        0x0 /usr/lib/gcc/avr/4.8.2/avr5/libgcc.a(_exit.o)
+ .text.libgcc.fmul
+                0x00000000000003f8        0x0 /usr/lib/gcc/avr/4.8.2/avr5/libgcc.a(_exit.o)
+ .text.libgcc.fixed
+                0x00000000000003f8        0x0 /usr/lib/gcc/avr/4.8.2/avr5/libgcc.a(_exit.o)
+ .text.libgcc.mul
+                0x00000000000003f8        0x0 /usr/lib/gcc/avr/4.8.2/avr5/libgcc.a(_copy_data.o)
+ .text.libgcc.div
+                0x00000000000003f8        0x0 /usr/lib/gcc/avr/4.8.2/avr5/libgcc.a(_copy_data.o)
+ .text.libgcc   0x00000000000003f8        0x0 /usr/lib/gcc/avr/4.8.2/avr5/libgcc.a(_copy_data.o)
+ .text.libgcc.prologue
+                0x00000000000003f8        0x0 /usr/lib/gcc/avr/4.8.2/avr5/libgcc.a(_copy_data.o)
+ .text.libgcc.builtins
+                0x00000000000003f8        0x0 /usr/lib/gcc/avr/4.8.2/avr5/libgcc.a(_copy_data.o)
+ .text.libgcc.fmul
+                0x00000000000003f8        0x0 /usr/lib/gcc/avr/4.8.2/avr5/libgcc.a(_copy_data.o)
+ .text.libgcc.fixed
+                0x00000000000003f8        0x0 /usr/lib/gcc/avr/4.8.2/avr5/libgcc.a(_copy_data.o)
+                0x00000000000003f8                . = ALIGN (0x2)
  *(.fini9)
- .fini9         0x000007ce        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
-                0x000007ce                exit
-                0x000007ce                _exit
+ .fini9         0x00000000000003f8        0x0 /usr/lib/gcc/avr/4.8.2/avr5/libgcc.a(_exit.o)
+                0x00000000000003f8                exit
+                0x00000000000003f8                _exit
  *(.fini9)
  *(.fini8)
  *(.fini8)
@@ -248,74 +270,72 @@ LOAD c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a
  *(.fini1)
  *(.fini1)
  *(.fini0)
- .fini0         0x000007ce        0x4 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
+ .fini0         0x00000000000003f8        0x4 /usr/lib/gcc/avr/4.8.2/avr5/libgcc.a(_exit.o)
  *(.fini0)
-                0x000007d2                _etext = .
+                0x00000000000003fc                _etext = .
 
-.data           0x00800060       0x7c load address 0x000007d2
-                0x00800060                PROVIDE (__data_start, .)
+.data           0x0000000000800060      0x1f6 load address 0x00000000000003fc
+                0x0000000000800060                PROVIDE (__data_start, .)
  *(.data)
- .data          0x00800060        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm32.o
- .data          0x00800060        0x0 ./Green.o
- .data          0x00800060        0x0 ./Initializing.o
- .data          0x00800060        0x0 ./Orange.o
- .data          0x00800060        0x0 ./Red.o
- .data          0x00800060        0x0 ./delay_ms.o
- .data          0x00800060        0x0 ./main.o
- .data          0x00800060        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_udivmodqi4.o)
- .data          0x00800060        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
- .data          0x00800060        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_copy_data.o)
+ .data          0x0000000000800060        0x0 /usr/lib/gcc/avr/4.8.2/../../../avr/lib/avr5/crtm32.o
+ .data          0x0000000000800060        0x0 ./Green.o
+ .data          0x0000000000800060        0x0 ./Initializing.o
+ .data          0x0000000000800060        0x0 ./Orange.o
+ .data          0x0000000000800060        0x0 ./Red.o
+ .data          0x0000000000800060        0x0 ./delay_ms.o
+ .data          0x0000000000800060        0x0 ./main.o
+ .data          0x0000000000800060        0x0 /usr/lib/gcc/avr/4.8.2/avr5/libgcc.a(_exit.o)
+ .data          0x0000000000800060        0x0 /usr/lib/gcc/avr/4.8.2/avr5/libgcc.a(_copy_data.o)
  *(.data*)
+ .data.R        0x0000000000800060       0x40 ./main.o
+                0x0000000000800060                R
+ .data.U        0x00000000008000a0       0x60 ./main.o
+                0x00000000008000a0                U
+ .data.S1       0x0000000000800100       0x50 ./main.o
+                0x0000000000800100                S1
+ .data.S2       0x0000000000800150       0x50 ./main.o
+                0x0000000000800150                S2
+ .data.E        0x00000000008001a0       0x70 ./main.o
+                0x00000000008001a0                E
  *(.rodata)
+ .rodata        0x0000000000800210        0xa ./Green.o
+ .rodata        0x000000000080021a        0xa ./Orange.o
+ .rodata        0x0000000000800224        0xa ./Red.o
+ .rodata        0x000000000080022e       0x28 ./main.o
  *(.rodata*)
- .rodata.C.1.1209
-                0x00800060        0xa ./Green.o
- .rodata.C.0.1204
-                0x0080006a        0xa ./Green.o
- .rodata.C.1.1207
-                0x00800074        0xa ./Orange.o
- .rodata.C.0.1204
-                0x0080007e        0xa ./Orange.o
- .rodata.C.1.1209
-                0x00800088        0xa ./Red.o
- .rodata.C.0.1204
-                0x00800092        0xa ./Red.o
- .rodata.C.0.1432
-                0x0080009c       0x40 ./main.o
  *(.gnu.linkonce.d*)
-                0x008000dc                . = ALIGN (0x2)
-                0x008000dc                _edata = .
-                0x008000dc                PROVIDE (__data_end, .)
+                0x0000000000800256                . = ALIGN (0x2)
+                0x0000000000800256                _edata = .
+                0x0000000000800256                PROVIDE (__data_end, .)
 
-.bss            0x008000dc        0x0
-                0x008000dc                PROVIDE (__bss_start, .)
+.bss            0x0000000000800256        0x0
+                0x0000000000800256                PROVIDE (__bss_start, .)
  *(.bss)
- .bss           0x008000dc        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm32.o
- .bss           0x008000dc        0x0 ./Green.o
- .bss           0x008000dc        0x0 ./Initializing.o
- .bss           0x008000dc        0x0 ./Orange.o
- .bss           0x008000dc        0x0 ./Red.o
- .bss           0x008000dc        0x0 ./delay_ms.o
- .bss           0x008000dc        0x0 ./main.o
- .bss           0x008000dc        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_udivmodqi4.o)
- .bss           0x008000dc        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
- .bss           0x008000dc        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_copy_data.o)
+ .bss           0x0000000000800256        0x0 /usr/lib/gcc/avr/4.8.2/../../../avr/lib/avr5/crtm32.o
+ .bss           0x0000000000800256        0x0 ./Green.o
+ .bss           0x0000000000800256        0x0 ./Initializing.o
+ .bss           0x0000000000800256        0x0 ./Orange.o
+ .bss           0x0000000000800256        0x0 ./Red.o
+ .bss           0x0000000000800256        0x0 ./delay_ms.o
+ .bss           0x0000000000800256        0x0 ./main.o
+ .bss           0x0000000000800256        0x0 /usr/lib/gcc/avr/4.8.2/avr5/libgcc.a(_exit.o)
+ .bss           0x0000000000800256        0x0 /usr/lib/gcc/avr/4.8.2/avr5/libgcc.a(_copy_data.o)
  *(.bss*)
  *(COMMON)
-                0x008000dc                PROVIDE (__bss_end, .)
-                0x000007d2                __data_load_start = LOADADDR (.data)
-                0x0000084e                __data_load_end = (__data_load_start + SIZEOF (.data))
+                0x0000000000800256                PROVIDE (__bss_end, .)
+                0x00000000000003fc                __data_load_start = LOADADDR (.data)
+                0x00000000000005f2                __data_load_end = (__data_load_start + SIZEOF (.data))
 
-.noinit         0x008000dc        0x0
-                0x008000dc                PROVIDE (__noinit_start, .)
+.noinit         0x0000000000800256        0x0
+                0x0000000000800256                PROVIDE (__noinit_start, .)
  *(.noinit*)
-                0x008000dc                PROVIDE (__noinit_end, .)
-                0x008000dc                _end = .
-                0x008000dc                PROVIDE (__heap_start, .)
+                0x0000000000800256                PROVIDE (__noinit_end, .)
+                0x0000000000800256                _end = .
+                0x0000000000800256                PROVIDE (__heap_start, .)
 
-.eeprom         0x00810000        0x0
+.eeprom         0x0000000000810000        0x0
  *(.eeprom*)
-                0x00810000                __eeprom_end = .
+                0x0000000000810000                __eeprom_end = .
 
 .fuse
  *(.fuse)
@@ -329,23 +349,28 @@ LOAD c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a
 .signature
  *(.signature*)
 
-.stab           0x00000000      0xeb8
- *(.stab)
- .stab          0x00000000      0x270 ./Green.o
- .stab          0x00000270      0x138 ./Initializing.o
-                                0x1b0 (size before relaxing)
- .stab          0x000003a8      0x1e0 ./Orange.o
-                                0x270 (size before relaxing)
- .stab          0x00000588      0x1e0 ./Red.o
-                                0x270 (size before relaxing)
- .stab          0x00000768      0x180 ./delay_ms.o
-                                0x204 (size before relaxing)
- .stab          0x000008e8      0x5d0 ./main.o
-                                0x654 (size before relaxing)
+.user_signatures
+ *(.user_signatures*)
 
-.stabstr        0x00000000      0x966
+.stab           0x0000000000000000     0x1b3c
+ *(.stab)
+ .stab          0x0000000000000000      0x6cc /usr/lib/gcc/avr/4.8.2/../../../avr/lib/avr5/crtm32.o
+ .stab          0x00000000000006cc      0x3f0 ./Green.o
+                                        0x3fc (size before relaxing)
+ .stab          0x0000000000000abc      0x2b8 ./Initializing.o
+                                        0x330 (size before relaxing)
+ .stab          0x0000000000000d74      0x36c ./Orange.o
+                                        0x3fc (size before relaxing)
+ .stab          0x00000000000010e0      0x36c ./Red.o
+                                        0x3fc (size before relaxing)
+ .stab          0x000000000000144c      0x318 ./delay_ms.o
+                                        0x39c (size before relaxing)
+ .stab          0x0000000000001764      0x3d8 ./main.o
+                                        0x3e4 (size before relaxing)
+
+.stabstr        0x0000000000000000      0xb7f
  *(.stabstr)
- .stabstr       0x00000000      0x966 ./Green.o
+ .stabstr       0x0000000000000000      0xb7f /usr/lib/gcc/avr/4.8.2/../../../avr/lib/avr5/crtm32.o
 
 .stab.excl
  *(.stab.excl)
@@ -359,8 +384,15 @@ LOAD c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a
 .stab.indexstr
  *(.stab.indexstr)
 
-.comment
+.comment        0x0000000000000000       0x11
  *(.comment)
+ .comment       0x0000000000000000       0x11 ./Green.o
+                                         0x12 (size before relaxing)
+ .comment       0x0000000000000000       0x12 ./Initializing.o
+ .comment       0x0000000000000000       0x12 ./Orange.o
+ .comment       0x0000000000000000       0x12 ./Red.o
+ .comment       0x0000000000000000       0x12 ./delay_ms.o
+ .comment       0x0000000000000000       0x12 ./main.o
 
 .debug
  *(.debug)
@@ -401,5 +433,14 @@ LOAD c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a
 
 .debug_macinfo
  *(.debug_macinfo)
+
+.debug_pubtypes
+ *(.debug_pubtypes)
+
+.debug_ranges
+ *(.debug_ranges)
+
+.debug_macro
+ *(.debug_macro)
 OUTPUT(LED_Matrix.elf elf32-avr)
 LOAD linker stubs

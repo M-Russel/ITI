@@ -1,18 +1,5 @@
-13:48:58 **** Build of configuration Debug for project Schedular_LCD_LED_Stepper_Buzzer ****
+17:02:01 **** Incremental Build of configuration Debug for project Schedular_LCD_LED_Stepper_Buzzer ****
 make all 
-Building target: Schedular_LCD_LED_Stepper_Buzzer.elf
-Invoking: AVR C Linker
-avr-gcc -Wl,-Map,Schedular_LCD_LED_Stepper_Buzzer.map -mmcu=atmega32 -o "Schedular_LCD_LED_Stepper_Buzzer.elf"  ./DIO_Prog.o ./LCD_Prog.o ./STEPPER_prog.o ./TIMER0_prog.o ./TIMER1.o ./TIMER2.o ./delay_ms.o ./schedular0.o   
-Finished building target: Schedular_LCD_LED_Stepper_Buzzer.elf
- 
-Invoking: AVR Create Extended Listing
-avr-objdump -h -S Schedular_LCD_LED_Stepper_Buzzer.elf  >"Schedular_LCD_LED_Stepper_Buzzer.lss"
-Finished building: Schedular_LCD_LED_Stepper_Buzzer.lss
- 
-Create Flash image (ihex format)
-avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex Schedular_LCD_LED_Stepper_Buzzer.elf  "Schedular_LCD_LED_Stepper_Buzzer.hex"
-Finished building: Schedular_LCD_LED_Stepper_Buzzer.hex
- 
 Invoking: Print Size
 avr-size --format=avr --mcu=atmega32 Schedular_LCD_LED_Stepper_Buzzer.elf
 AVR Memory Usage
@@ -29,5 +16,5 @@ Data:         93 bytes (4.5% Full)
 Finished building: sizedummy
  
 
-13:48:58 Build Finished (took 163ms)
+17:02:01 Build Finished (took 78ms)
 

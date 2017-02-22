@@ -1,0 +1,30 @@
+/*
+ * INT0_config.h
+ *
+ *  Created on: Feb 21, 2017
+ *      Author: Russel
+ */
+
+#ifndef INT0_CONFIG_H_
+#define INT0_CONFIG_H_
+
+
+#define ISC11_STATUS DISABLED
+#define ISC10_STATUS DISABLED
+#define ISC01_STATUS DISABLED
+#define ISC00_STATUS DISABLED
+//MCU Control and Status Register
+#define ISC2_STATUS  DISABLED
+
+//General Interrupt Control Register
+#define INT1_STATUS  DISABLED
+#define INT0_STATUS  DISABLED
+#define INT2_STATUS  DISABLED
+
+//General Interrupt Flag Register
+#define INTF1_STATUS DISABLED
+#define INTF0_STATUS DISABLED
+#define INTF2_STATUS DISABLED
+
+
+#endif /* INT0_CONFIG_H_ */

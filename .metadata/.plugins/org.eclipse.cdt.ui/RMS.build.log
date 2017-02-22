@@ -1,0 +1,54 @@
+20:43:30 **** Incremental Build of configuration Debug for project RMS ****
+make all 
+Building file: ../RMS_Traditional.c.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=4000000UL -MMD -MP -MF"RMS_Traditional.c.d" -MT"RMS_Traditional.c.o" -c -o "RMS_Traditional.c.o" "../RMS_Traditional.c.c"
+In file included from ../RMS_Traditional.c.c:19:0:
+../TIMER0_interface.h:13:1: warning: ‘__INTR_ATTRS’ attribute directive ignored [-Wattributes]
+ void __vector_11(void) __attribute__((signal,__INTR_ATTRS));
+ ^
+../RMS_Traditional.c.c:95:6: warning: return type of ‘main’ is not ‘int’ [-Wmain]
+ void main(void)
+      ^
+Finished building: ../RMS_Traditional.c.c
+ 
+Building file: ../TIMER0_prog.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=4000000UL -MMD -MP -MF"TIMER0_prog.d" -MT"TIMER0_prog.o" -c -o "TIMER0_prog.o" "../TIMER0_prog.c"
+In file included from ../TIMER0_prog.c:13:0:
+../TIMER0_interface.h:13:1: warning: ‘__INTR_ATTRS’ attribute directive ignored [-Wattributes]
+ void __vector_11(void) __attribute__((signal,__INTR_ATTRS));
+ ^
+Finished building: ../TIMER0_prog.c
+ 
+Building target: RMS.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,RMS.map -mmcu=atmega16 -o "RMS.elf"  ./DIO_Prog.o ./RMS_Traditional.c.o ./TIMER0_prog.o   
+Finished building target: RMS.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S RMS.elf  >"RMS.lss"
+Finished building: RMS.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex RMS.elf  "RMS.hex"
+Finished building: RMS.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 RMS.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:    2652 bytes (16.2% Full)
+(.text + .data + .bootloader)
+
+Data:         42 bytes (4.1% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+
+20:43:31 Build Finished (took 135ms)
+

@@ -1,0 +1,15 @@
+/*
+ * INT0_private.h
+ *
+ *  Created on: Feb 21, 2017
+ *      Author: root
+ */
+
+#ifndef INT0_PRIVATE_H_
+#define INT0_PRIVATE_H_
+//55
+#define MCUCR (*((volatile u8 *)0x55))
+#define MCUCSR (*((volatile u8 *)0x54))
+#define GICR (*((volatile u8 * )0x5B))
+#define GIFR (*((volatile u8 *)0x5A))
+#endif /* INT0_PRIVATE_H_ */

@@ -30,11 +30,14 @@
 			<item value="org.eclipse.egit.ui.commitSearchPage"/>
 		</list>
 	</section>
+	<section name="org.eclipse.cdt.ui.pdomSearchViewPage">
+		<item value="true" key="showEnclosingDefinitions"/>
+	</section>
 	<section name="SearchDialog">
-		<item value="org.eclipse.search.internal.ui.text.TextSearchPage" key="PREVIOUS_PAGE"/>
+		<item value="org.eclipse.cdt.ui.pdomSearchPage" key="PREVIOUS_PAGE"/>
 	</section>
 	<section name="DialogBounds_SearchDialog">
-		<item value="647" key="DIALOG_WIDTH"/>
+		<item value="659" key="DIALOG_WIDTH"/>
 		<item value="1|Ubuntu|11.0|0|GTK|1|" key="DIALOG_FONT_NAME"/>
 		<item value="529" key="DIALOG_HEIGHT"/>
 		<item value="418" key="DIALOG_X_ORIGIN"/>

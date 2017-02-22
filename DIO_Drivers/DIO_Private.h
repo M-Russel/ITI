@@ -22,18 +22,18 @@
 
 
 
-#define DDRA (*((u8 *)0x3A))    //Data Direction Register For Port A
-#define PORTA (*((u8 *)0x3B))  //Output for Port A
-#define PINA (*((u8 *)0x39))  //Input for Port A
-#define DDRB (*((u8 *)0x37))   //Data Direction Register For Port B
-#define PORTB (*((u8 *)0x38)) //Output Register for Port B
-#define PINB (*((u8 *)0x36)) //Input Register for Port B
-#define DDRC (*((u8 *)0x34))   //Data Direction Register For Port C
-#define PORTC (*((u8 *)0x35)) //Output Register for Port C
-#define PINC (*((u8 *)0x33)) //Input Register for Port C
-#define DDRD (*((u8 *)0x31))   //Data Direction Register For Port D
-#define PORTD (*((u8 *)0x32)) //Output Register for Port D
-#define PIND (*((u8 *)0x30)) //Input Register for Port D
+#define DDRA volatile(*((u8 *)0x3A))    //Data Direction Register For Port A
+#define PORTA volatile(*((u8 *)0x3B))  //Output for Port A
+#define PINA volatile(*((u8 *)0x39))  //Input for Port A
+#define DDRB volatile(*((u8 *)0x37))   //Data Direction Register For Port B
+#define PORTB volatile(*((u8 *)0x38)) //Output Register for Port B
+#define PINB volatile(*((u8 *)0x36)) //Input Register for Port B
+#define DDRC volatile(*((u8 *)0x34))   //Data Direction Register For Port C
+#define PORTC volatile(*((u8 *)0x35)) //Output Register for Port C
+#define PINC volatile(*((u8 *)0x33)) //Input Register for Port C
+#define DDRD volatile(*((u8 *)0x31))   //Data Direction Register For Port D
+#define PORTD volatile(*((u8 *)0x32)) //Output Register for Port D
+#define PIND volatile(*((u8 *)0x30)) //Input Register for Port D
 
 
 
