@@ -1,0 +1,13 @@
+20:11:04 **** Build of configuration Debug for project TIMER0_Drivers ****
+make all 
+Building file: ../TIMER0_prog.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=4000000UL -MMD -MP -MF"TIMER0_prog.d" -MT"TIMER0_prog.o" -c -o "TIMER0_prog.o" "../TIMER0_prog.c"
+../TIMER0_prog.c:9:23: fatal error: std_types.h: No such file or directory
+ #include "std_types.h"
+                       ^
+compilation terminated.
+make: *** [TIMER0_prog.o] Error 1
+
+20:11:04 Build Finished (took 63ms)
+

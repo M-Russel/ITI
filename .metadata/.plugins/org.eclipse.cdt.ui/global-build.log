@@ -1,1023 +1,351 @@
-17:01:40 **** Clean-only build of configuration Debug for project EXternal_Interrupt_INT0 ****
+19:19:34 **** Clean-only build of configuration Debug for project RTO ****
 make clean 
-rm -rf  ./DIO_Prog.o ./INT0_prog.o ./TIMER0_prog.o ./delay_ms.o ./main.o  sizedummy  EXternal_Interrupt_INT0.lss  ./DIO_Prog.d ./INT0_prog.d ./TIMER0_prog.d ./delay_ms.d ./main.d  EXternal_Interrupt_INT0.elf
+rm -rf  ./DIO_Prog.o ./RTO_prog.o  sizedummy  RTO.lss  ./DIO_Prog.d ./RTO_prog.d  RTO.elf
  
-17:01:59 **** Incremental Build of configuration Debug for project Schedular_LCD_LED_Stepper_Buzzer ****
-make all 
-Invoking: Print Size
-avr-size --format=avr --mcu=atmega32 Schedular_LCD_LED_Stepper_Buzzer.elf
-AVR Memory Usage
-----------------
-Device: atmega32
-
-Program:   15848 bytes (48.4% Full)
-(.text + .data + .bootloader)
-
-Data:         93 bytes (4.5% Full)
-(.data + .bss + .noinit)
-
-
-Finished building: sizedummy
- 
-17:02:01 **** Incremental Build of configuration Debug for project Schedular_LCD_LED_Stepper_Buzzer ****
-make all 
-Invoking: Print Size
-avr-size --format=avr --mcu=atmega32 Schedular_LCD_LED_Stepper_Buzzer.elf
-AVR Memory Usage
-----------------
-Device: atmega32
-
-Program:   15848 bytes (48.4% Full)
-(.text + .data + .bootloader)
-
-Data:         93 bytes (4.5% Full)
-(.data + .bss + .noinit)
-
-
-Finished building: sizedummy
- 
-17:02:58 **** Build of configuration Debug for project EXternal_Interrupt_INT0 ****
-make all 
-Building file: ../DIO_Prog.c
-Invoking: AVR Compiler
-avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"DIO_Prog.d" -MT"DIO_Prog.o" -c -o "DIO_Prog.o" "../DIO_Prog.c"
-In file included from ../DIO_Prog.c:9:0:
-../DIO_Prog.c: In function ‘DIO_u8GetPinValue’:
-../DIO_Private.h:27:31: error: expected ‘)’ before numeric constant
- #define PINA volatile(*((u8 *)0x39))  //Input for Port A
-                               ^
-../utils.h:12:33: note: in definition of macro ‘getBit’
- #define getBit(Reg,bitNum)    ((Reg>>bitNum)&1)
-                                 ^
-../DIO_Prog.c:423:42: note: in expansion of macro ‘PINA’
-          *(Copy_pu8ReturnedValue)=getBit(PINA,Copy_u8PinNumber);
-                                          ^
-../utils.h:12:36: error: expected ‘)’ before ‘>>’ token
- #define getBit(Reg,bitNum)    ((Reg>>bitNum)&1)
-                                    ^
-../DIO_Prog.c:423:35: note: in expansion of macro ‘getBit’
-          *(Copy_pu8ReturnedValue)=getBit(PINA,Copy_u8PinNumber);
-                                   ^
-../DIO_Private.h:30:31: error: expected ‘)’ before numeric constant
- #define PINB volatile(*((u8 *)0x36)) //Input Register for Port B
-                               ^
-../utils.h:12:33: note: in definition of macro ‘getBit’
- #define getBit(Reg,bitNum)    ((Reg>>bitNum)&1)
-                                 ^
-../DIO_Prog.c:434:41: note: in expansion of macro ‘PINB’
-         *(Copy_pu8ReturnedValue)=getBit(PINB,Copy_u8PinNumber%8);
-                                         ^
-../utils.h:12:36: error: expected ‘)’ before ‘>>’ token
- #define getBit(Reg,bitNum)    ((Reg>>bitNum)&1)
-                                    ^
-../DIO_Prog.c:434:34: note: in expansion of macro ‘getBit’
-         *(Copy_pu8ReturnedValue)=getBit(PINB,Copy_u8PinNumber%8);
-                                  ^
-../DIO_Private.h:33:31: error: expected ‘)’ before numeric constant
- #define PINC volatile(*((u8 *)0x33)) //Input Register for Port C
-                               ^
-../utils.h:12:33: note: in definition of macro ‘getBit’
- #define getBit(Reg,bitNum)    ((Reg>>bitNum)&1)
-                                 ^
-../DIO_Prog.c:445:41: note: in expansion of macro ‘PINC’
-         *(Copy_pu8ReturnedValue)=getBit(PINC,Copy_u8PinNumber%8);
-                                         ^
-../utils.h:12:36: error: expected ‘)’ before ‘>>’ token
- #define getBit(Reg,bitNum)    ((Reg>>bitNum)&1)
-                                    ^
-../DIO_Prog.c:445:34: note: in expansion of macro ‘getBit’
-         *(Copy_pu8ReturnedValue)=getBit(PINC,Copy_u8PinNumber%8);
-                                  ^
-../DIO_Private.h:36:32: error: expected ‘)’ before numeric constant
- #define PIND volatile (*((u8 *)0x30)) //Input Register for Port D
-                                ^
-../utils.h:12:33: note: in definition of macro ‘getBit’
- #define getBit(Reg,bitNum)    ((Reg>>bitNum)&1)
-                                 ^
-../DIO_Prog.c:456:41: note: in expansion of macro ‘PIND’
-         *(Copy_pu8ReturnedValue)=getBit(PIND,Copy_u8PinNumber%8);
-                                         ^
-../utils.h:12:36: error: expected ‘)’ before ‘>>’ token
- #define getBit(Reg,bitNum)    ((Reg>>bitNum)&1)
-                                    ^
-../DIO_Prog.c:456:34: note: in expansion of macro ‘getBit’
-         *(Copy_pu8ReturnedValue)=getBit(PIND,Copy_u8PinNumber%8);
-                                  ^
-make: *** [DIO_Prog.o] Error 1
-17:03:11 **** Incremental Build of configuration Debug for project EXternal_Interrupt_INT0 ****
-make all 
-Building file: ../DIO_Prog.c
-Invoking: AVR Compiler
-avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"DIO_Prog.d" -MT"DIO_Prog.o" -c -o "DIO_Prog.o" "../DIO_Prog.c"
-In file included from ../DIO_Prog.c:9:0:
-../DIO_Prog.c: In function ‘DIO_u8GetPinValue’:
-../DIO_Private.h:30:31: error: expected ‘)’ before numeric constant
- #define PINB volatile(*((u8 *)0x36)) //Input Register for Port B
-                               ^
-../utils.h:12:33: note: in definition of macro ‘getBit’
- #define getBit(Reg,bitNum)    ((Reg>>bitNum)&1)
-                                 ^
-../DIO_Prog.c:434:41: note: in expansion of macro ‘PINB’
-         *(Copy_pu8ReturnedValue)=getBit(PINB,Copy_u8PinNumber%8);
-                                         ^
-../utils.h:12:36: error: expected ‘)’ before ‘>>’ token
- #define getBit(Reg,bitNum)    ((Reg>>bitNum)&1)
-                                    ^
-../DIO_Prog.c:434:34: note: in expansion of macro ‘getBit’
-         *(Copy_pu8ReturnedValue)=getBit(PINB,Copy_u8PinNumber%8);
-                                  ^
-../DIO_Private.h:33:31: error: expected ‘)’ before numeric constant
- #define PINC volatile(*((u8 *)0x33)) //Input Register for Port C
-                               ^
-../utils.h:12:33: note: in definition of macro ‘getBit’
- #define getBit(Reg,bitNum)    ((Reg>>bitNum)&1)
-                                 ^
-../DIO_Prog.c:445:41: note: in expansion of macro ‘PINC’
-         *(Copy_pu8ReturnedValue)=getBit(PINC,Copy_u8PinNumber%8);
-                                         ^
-../utils.h:12:36: error: expected ‘)’ before ‘>>’ token
- #define getBit(Reg,bitNum)    ((Reg>>bitNum)&1)
-                                    ^
-../DIO_Prog.c:445:34: note: in expansion of macro ‘getBit’
-         *(Copy_pu8ReturnedValue)=getBit(PINC,Copy_u8PinNumber%8);
-                                  ^
-../DIO_Private.h:36:32: error: expected ‘)’ before numeric constant
- #define PIND volatile (*((u8 *)0x30)) //Input Register for Port D
-                                ^
-../utils.h:12:33: note: in definition of macro ‘getBit’
- #define getBit(Reg,bitNum)    ((Reg>>bitNum)&1)
-                                 ^
-../DIO_Prog.c:456:41: note: in expansion of macro ‘PIND’
-         *(Copy_pu8ReturnedValue)=getBit(PIND,Copy_u8PinNumber%8);
-                                         ^
-../utils.h:12:36: error: expected ‘)’ before ‘>>’ token
- #define getBit(Reg,bitNum)    ((Reg>>bitNum)&1)
-                                    ^
-../DIO_Prog.c:456:34: note: in expansion of macro ‘getBit’
-         *(Copy_pu8ReturnedValue)=getBit(PIND,Copy_u8PinNumber%8);
-                                  ^
-make: *** [DIO_Prog.o] Error 1
-17:03:28 **** Incremental Build of configuration Debug for project EXternal_Interrupt_INT0 ****
+19:41:21 **** Build of configuration Debug for project RTO ****
 make all 
 Building file: ../DIO_Prog.c
 Invoking: AVR Compiler
 avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"DIO_Prog.d" -MT"DIO_Prog.o" -c -o "DIO_Prog.o" "../DIO_Prog.c"
 Finished building: ../DIO_Prog.c
  
-Building file: ../INT0_prog.c
+Building file: ../RTO_prog.c
 Invoking: AVR Compiler
-avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"INT0_prog.d" -MT"INT0_prog.o" -c -o "INT0_prog.o" "../INT0_prog.c"
-../INT0_prog.c:9:31: fatal error: io_ports_atmega32.h: No such file or directory
- #include "io_ports_atmega32.h"
-                               ^
-compilation terminated.
-make: *** [INT0_prog.o] Error 1
-17:03:53 **** Incremental Build of configuration Debug for project EXternal_Interrupt_INT0 ****
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"RTO_prog.d" -MT"RTO_prog.o" -c -o "RTO_prog.o" "../RTO_prog.c"
+In file included from ../RTO_prog.c:7:0:
+../RTO_interface.h:17:2: error: unknown type name ‘u32’
+  u32 Task_u32Periodicity;
+  ^
+../RTO_interface.h:18:2: error: unknown type name ‘u32’
+  u32 Task_u32First_Delay;
+  ^
+../RTO_interface.h:26:1: error: unknown type name ‘u8’
+ u8 RTO_u8CreatTask(Task *Copy_pTaskPointer,u8 Copy_u8TaskPriority);
+ ^
+../RTO_interface.h:26:44: error: unknown type name ‘u8’
+ u8 RTO_u8CreatTask(Task *Copy_pTaskPointer,u8 Copy_u8TaskPriority);
+                                            ^
+../RTO_interface.h:27:1: error: unknown type name ‘u8’
+ u8 RTO_u8DeleteTask(u8 Copy_u8TaskPriority);
+ ^
+../RTO_interface.h:27:21: error: unknown type name ‘u8’
+ u8 RTO_u8DeleteTask(u8 Copy_u8TaskPriority);
+                     ^
+../RTO_interface.h:28:1: error: unknown type name ‘u8’
+ u8 RTO_u8StartTask(u8 Copy_u8TaskPriority);
+ ^
+../RTO_interface.h:28:20: error: unknown type name ‘u8’
+ u8 RTO_u8StartTask(u8 Copy_u8TaskPriority);
+                    ^
+../RTO_interface.h:29:1: error: unknown type name ‘u8’
+ u8 RTO_u8StopTask(u8 Copy_u8TaskPriority);
+ ^
+../RTO_interface.h:29:19: error: unknown type name ‘u8’
+ u8 RTO_u8StopTask(u8 Copy_u8TaskPriority);
+                   ^
+In file included from ../RTO_prog.c:9:0:
+../RTO_private.h:11:1: error: unknown type name ‘u8’
+ static u8 Schedular(void);
+ ^
+../RTO_prog.c:12:8: warning: type defaults to ‘int’ in declaration of ‘RTO_u8Status’ [enabled by default]
+ static RTO_u8Status=RTO_OK;
+        ^
+../RTO_prog.c: In function ‘RTO_voidInit’:
+../RTO_prog.c:18:2: error: unknown type name ‘u8’
+  u8 RTO_u8Counter=RTO_SCHEDULAR_INITIAL_TASK;
+  ^
+../RTO_prog.c:21:2: error: unknown type name ‘u8’
+  RTO_TaskScheduler[RTO_u8Counter]=NULL;
+  ^
+../RTO_prog.c: At top level:
+../RTO_prog.c:24:1: error: unknown type name ‘u8’
+ u8 RTO_u8CreatTask(Task *Copy_pTaskPointer,u8 Copy_u8TaskPriority)
+ ^
+../RTO_prog.c:24:44: error: unknown type name ‘u8’
+ u8 RTO_u8CreatTask(Task *Copy_pTaskPointer,u8 Copy_u8TaskPriority)
+                                            ^
+../RTO_prog.c:38:1: error: unknown type name ‘u8’
+ u8 RTO_u8DeleteTask(u8 Copy_u8TaskPriority)
+ ^
+../RTO_prog.c:38:21: error: unknown type name ‘u8’
+ u8 RTO_u8DeleteTask(u8 Copy_u8TaskPriority)
+                     ^
+../RTO_prog.c:54:1: error: unknown type name ‘u8’
+ u8 RTO_u8StartTask(u8 Copy_u8TaskPriority)
+ ^
+../RTO_prog.c:54:20: error: unknown type name ‘u8’
+ u8 RTO_u8StartTask(u8 Copy_u8TaskPriority)
+                    ^
+../RTO_prog.c:70:1: error: unknown type name ‘u8’
+ u8 RTO_u8StopTask(u8 Copy_u8TaskPriority)
+ ^
+../RTO_prog.c:70:19: error: unknown type name ‘u8’
+ u8 RTO_u8StopTask(u8 Copy_u8TaskPriority)
+                   ^
+../RTO_prog.c: In function ‘RTO_voidSchedular’:
+../RTO_prog.c:88:2: error: unknown type name ‘u8’
+  u8 RTO__u8SchedularCounter;
+  ^
+../RTO_prog.c:92:4: error: unknown type name ‘u8’
+    if( RTO_TaskScheduler[RTO__u8SchedularCounter]->ptr != NULL && RTO_TaskScheduler[RTO__u8SchedularCounter]->state !=Paused)
+    ^
+In file included from ../RTO_prog.c:7:0:
+../RTO_prog.c: At top level:
+../RTO_interface.h:30:13: warning: ‘RTO_u8Schedular’ declared ‘static’ but never defined [-Wunused-function]
+ static void RTO_u8Schedular(void);
+             ^
+In file included from ../RTO_prog.c:9:0:
+../RTO_private.h:11:11: warning: ‘Schedular’ declared ‘static’ but never defined [-Wunused-function]
+ static u8 Schedular(void);
+           ^
+../RTO_prog.c:12:8: warning: ‘RTO_u8Status’ defined but not used [-Wunused-variable]
+ static RTO_u8Status=RTO_OK;
+        ^
+../RTO_prog.c:86:13: warning: ‘RTO_voidSchedular’ defined but not used [-Wunused-function]
+ static void RTO_voidSchedular(void)
+             ^
+make: *** [RTO_prog.o] Error 1
+19:42:33 **** Incremental Build of configuration Debug for project RTO ****
 make all 
-Building file: ../DIO_Prog.c
+Building file: ../RTO_prog.c
 Invoking: AVR Compiler
-avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"DIO_Prog.d" -MT"DIO_Prog.o" -c -o "DIO_Prog.o" "../DIO_Prog.c"
-Finished building: ../DIO_Prog.c
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"RTO_prog.d" -MT"RTO_prog.o" -c -o "RTO_prog.o" "../RTO_prog.c"
+../RTO_prog.c:13:8: warning: type defaults to ‘int’ in declaration of ‘RTO_u8Status’ [enabled by default]
+ static RTO_u8Status=RTO_OK;
+        ^
+../RTO_prog.c: In function ‘RTO_voidInit’:
+../RTO_prog.c:22:34: warning: assignment from incompatible pointer type [enabled by default]
+  RTO_TaskScheduler[RTO_u8Counter]=NULL;
+                                  ^
+../RTO_prog.c: In function ‘RTO_u8CreatTask’:
+../RTO_prog.c:27:96: warning: comparison of distinct pointer types lacks a cast [enabled by default]
+  if (RTO_MAXIMUM_TASK_NUMBER>Copy_u8TaskPriority && RTO_TaskScheduler[Copy_u8TaskPriority]->ptr!=NULL)
+                                                                                                ^
+../RTO_prog.c: In function ‘RTO_u8DeleteTask’:
+../RTO_prog.c:41:96: warning: comparison of distinct pointer types lacks a cast [enabled by default]
+  if (RTO_MAXIMUM_TASK_NUMBER>Copy_u8TaskPriority && RTO_TaskScheduler[Copy_u8TaskPriority]->ptr!=NULL)
+                                                                                                ^
+../RTO_prog.c:43:40: warning: assignment from incompatible pointer type [enabled by default]
+  RTO_TaskScheduler[Copy_u8TaskPriority]=NULL;
+                                        ^
+../RTO_prog.c: In function ‘RTO_u8StartTask’:
+../RTO_prog.c:57:96: warning: comparison of distinct pointer types lacks a cast [enabled by default]
+  if (RTO_MAXIMUM_TASK_NUMBER>Copy_u8TaskPriority && RTO_TaskScheduler[Copy_u8TaskPriority]->ptr!=NULL)
+                                                                                                ^
+../RTO_prog.c: In function ‘RTO_u8StopTask’:
+../RTO_prog.c:73:96: warning: comparison of distinct pointer types lacks a cast [enabled by default]
+  if (RTO_MAXIMUM_TASK_NUMBER>Copy_u8TaskPriority && RTO_TaskScheduler[Copy_u8TaskPriority]->ptr!=NULL)
+                                                                                                ^
+../RTO_prog.c: In function ‘RTO_voidSchedular’:
+../RTO_prog.c:93:56: warning: comparison of distinct pointer types lacks a cast [enabled by default]
+    if( RTO_TaskScheduler[RTO__u8SchedularCounter]->ptr != NULL && RTO_TaskScheduler[RTO__u8SchedularCounter]->state !=Paused)
+                                                        ^
+In file included from ../RTO_prog.c:8:0:
+../RTO_prog.c: At top level:
+../RTO_interface.h:30:13: warning: ‘RTO_u8Schedular’ declared ‘static’ but never defined [-Wunused-function]
+ static void RTO_u8Schedular(void);
+             ^
+In file included from ../RTO_prog.c:10:0:
+../RTO_private.h:11:11: warning: ‘Schedular’ declared ‘static’ but never defined [-Wunused-function]
+ static u8 Schedular(void);
+           ^
+../RTO_prog.c:87:13: warning: ‘RTO_voidSchedular’ defined but not used [-Wunused-function]
+ static void RTO_voidSchedular(void)
+             ^
+Finished building: ../RTO_prog.c
  
-Building file: ../INT0_prog.c
-Invoking: AVR Compiler
-avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"INT0_prog.d" -MT"INT0_prog.o" -c -o "INT0_prog.o" "../INT0_prog.c"
-../INT0_prog.c:9:31: fatal error: io_ports_atmega32.h: No such file or directory
- #include "io_ports_atmega32.h"
-                               ^
-compilation terminated.
-make: *** [INT0_prog.o] Error 1
-17:04:25 **** Incremental Build of configuration Debug for project EXternal_Interrupt_INT0 ****
-make all 
-Building file: ../DIO_Prog.c
-Invoking: AVR Compiler
-avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"DIO_Prog.d" -MT"DIO_Prog.o" -c -o "DIO_Prog.o" "../DIO_Prog.c"
-Finished building: ../DIO_Prog.c
- 
-Building file: ../INT0_prog.c
-Invoking: AVR Compiler
-avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"INT0_prog.d" -MT"INT0_prog.o" -c -o "INT0_prog.o" "../INT0_prog.c"
-../INT0_prog.c:9:31: fatal error: io_ports_atmega32.h: No such file or directory
- #include "io_ports_atmega32.h"
-                               ^
-compilation terminated.
-make: *** [INT0_prog.o] Error 1
-17:04:37 **** Incremental Build of configuration Debug for project EXternal_Interrupt_INT0 ****
-make all 
-Building file: ../INT0_prog.c
-Invoking: AVR Compiler
-avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"INT0_prog.d" -MT"INT0_prog.o" -c -o "INT0_prog.o" "../INT0_prog.c"
-In file included from ../INT0_prog.c:15:0:
-../INT0_Interface.h:12:0: warning: "INT0" redefined [enabled by default]
- #define INT0 26
- ^
-In file included from /usr/lib/avr/include/avr/io.h:238:0,
-                 from /usr/lib/avr/include/avr/interrupt.h:38,
-                 from ../INT0_prog.c:13:
-/usr/lib/avr/include/avr/iom16.h:469:0: note: this is the location of the previous definition
- #define INT0    6
- ^
-Finished building: ../INT0_prog.c
- 
-Building file: ../TIMER0_prog.c
-Invoking: AVR Compiler
-avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"TIMER0_prog.d" -MT"TIMER0_prog.o" -c -o "TIMER0_prog.o" "../TIMER0_prog.c"
-In file included from ../TIMER0_prog.c:13:0:
-../TIMER0_interface.h:13:1: warning: ‘__INTR_ATTRS’ attribute directive ignored [-Wattributes]
- void __vector_11(void) __attribute__((signal,__INTR_ATTRS));
- ^
-In file included from ../TIMER0_prog.c:12:0:
-../TIMER0_prog.c: In function ‘TIMER0_init’:
-../TIMER0_private.h:11:27: error: expected identifier or ‘(’ before ‘u8’
- #define TCNT0 volatile(*((u8 *)0x52)) //VALUE OF THE COUNTER
-                           ^
-../TIMER0_prog.c:23:2: note: in expansion of macro ‘TCNT0’
-  TCNT0=TCNT0_INITIAL_VALUE; // Timer initial value
-  ^
-../TIMER0_private.h:11:32: error: expected ‘)’ before numeric constant
- #define TCNT0 volatile(*((u8 *)0x52)) //VALUE OF THE COUNTER
-                                ^
-../TIMER0_prog.c:23:2: note: in expansion of macro ‘TCNT0’
-  TCNT0=TCNT0_INITIAL_VALUE; // Timer initial value
-  ^
-../TIMER0_private.h:25:27: error: expected identifier or ‘(’ before ‘u8’
- #define TCCR0 volatile(*((u8 *)0x53))
-                           ^
-../TIMER0_prog.c:27:2: note: in expansion of macro ‘TCCR0’
-  TCCR0|=(FOC0_STATUS<<FOC0)|(WGM00_STATUS<<WGM00)|(COM01_STATUS<<COM01)|(COM00_STATUS<<COM00)
-  ^
-../TIMER0_private.h:25:32: error: expected ‘)’ before numeric constant
- #define TCCR0 volatile(*((u8 *)0x53))
-                                ^
-../TIMER0_prog.c:27:2: note: in expansion of macro ‘TCCR0’
-  TCCR0|=(FOC0_STATUS<<FOC0)|(WGM00_STATUS<<WGM00)|(COM01_STATUS<<COM01)|(COM00_STATUS<<COM00)
-  ^
-../TIMER0_private.h:39:27: error: expected identifier or ‘(’ before ‘u8’
- #define TIMSK volatile(*((u8 *)0x59))
-                           ^
-../TIMER0_prog.c:31:2: note: in expansion of macro ‘TIMSK’
-  TIMSK|=(OCIE0_STATUS<<OCIE0)|(TOIE0_STATUS<<TOIE0);
-  ^
-../TIMER0_private.h:39:32: error: expected ‘)’ before numeric constant
- #define TIMSK volatile(*((u8 *)0x59))
-                                ^
-../TIMER0_prog.c:31:2: note: in expansion of macro ‘TIMSK’
-  TIMSK|=(OCIE0_STATUS<<OCIE0)|(TOIE0_STATUS<<TOIE0);
-  ^
-../TIMER0_private.h:66:26: error: expected identifier or ‘(’ before ‘u8’
- #define SREG volatile(*((u8 *)0x5F)) // GLOBAL INTERRUPT
-                          ^
-../TIMER0_prog.c:33:2: note: in expansion of macro ‘SREG’
-  SREG|=(GLOBAL_INTERRUPT_STATUS<<GLOBAL_INTERRUPT);
-  ^
-../TIMER0_private.h:66:31: error: expected ‘)’ before numeric constant
- #define SREG volatile(*((u8 *)0x5F)) // GLOBAL INTERRUPT
-                               ^
-../TIMER0_prog.c:33:2: note: in expansion of macro ‘SREG’
-  SREG|=(GLOBAL_INTERRUPT_STATUS<<GLOBAL_INTERRUPT);
-  ^
-make: *** [TIMER0_prog.o] Error 1
-17:05:03 **** Incremental Build of configuration Debug for project EXternal_Interrupt_INT0 ****
-make all 
-Building file: ../TIMER0_prog.c
-Invoking: AVR Compiler
-avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"TIMER0_prog.d" -MT"TIMER0_prog.o" -c -o "TIMER0_prog.o" "../TIMER0_prog.c"
-In file included from ../TIMER0_prog.c:13:0:
-../TIMER0_interface.h:13:1: warning: ‘__INTR_ATTRS’ attribute directive ignored [-Wattributes]
- void __vector_11(void) __attribute__((signal,__INTR_ATTRS));
- ^
-In file included from ../TIMER0_prog.c:12:0:
-../TIMER0_prog.c: In function ‘TIMER0_init’:
-../TIMER0_private.h:11:27: error: expected identifier or ‘(’ before ‘u8’
- #define TCNT0 volatile(*((u8 *)0x52)) //VALUE OF THE COUNTER
-                           ^
-../TIMER0_prog.c:23:2: note: in expansion of macro ‘TCNT0’
-  TCNT0=TCNT0_INITIAL_VALUE; // Timer initial value
-  ^
-../TIMER0_private.h:11:32: error: expected ‘)’ before numeric constant
- #define TCNT0 volatile(*((u8 *)0x52)) //VALUE OF THE COUNTER
-                                ^
-../TIMER0_prog.c:23:2: note: in expansion of macro ‘TCNT0’
-  TCNT0=TCNT0_INITIAL_VALUE; // Timer initial value
-  ^
-../TIMER0_private.h:25:27: error: expected identifier or ‘(’ before ‘u8’
- #define TCCR0 volatile(*((u8 *)0x53))
-                           ^
-../TIMER0_prog.c:27:2: note: in expansion of macro ‘TCCR0’
-  TCCR0|=(FOC0_STATUS<<FOC0)|(WGM00_STATUS<<WGM00)|(COM01_STATUS<<COM01)|(COM00_STATUS<<COM00)
-  ^
-../TIMER0_private.h:25:32: error: expected ‘)’ before numeric constant
- #define TCCR0 volatile(*((u8 *)0x53))
-                                ^
-../TIMER0_prog.c:27:2: note: in expansion of macro ‘TCCR0’
-  TCCR0|=(FOC0_STATUS<<FOC0)|(WGM00_STATUS<<WGM00)|(COM01_STATUS<<COM01)|(COM00_STATUS<<COM00)
-  ^
-../TIMER0_private.h:39:27: error: expected identifier or ‘(’ before ‘u8’
- #define TIMSK volatile(*((u8 *)0x59))
-                           ^
-../TIMER0_prog.c:31:2: note: in expansion of macro ‘TIMSK’
-  TIMSK|=(OCIE0_STATUS<<OCIE0)|(TOIE0_STATUS<<TOIE0);
-  ^
-../TIMER0_private.h:39:32: error: expected ‘)’ before numeric constant
- #define TIMSK volatile(*((u8 *)0x59))
-                                ^
-../TIMER0_prog.c:31:2: note: in expansion of macro ‘TIMSK’
-  TIMSK|=(OCIE0_STATUS<<OCIE0)|(TOIE0_STATUS<<TOIE0);
-  ^
-../TIMER0_private.h:66:26: error: expected identifier or ‘(’ before ‘u8’
- #define SREG volatile(*((u8 *)0x5F)) // GLOBAL INTERRUPT
-                          ^
-../TIMER0_prog.c:33:2: note: in expansion of macro ‘SREG’
-  SREG|=(GLOBAL_INTERRUPT_STATUS<<GLOBAL_INTERRUPT);
-  ^
-../TIMER0_private.h:66:31: error: expected ‘)’ before numeric constant
- #define SREG volatile(*((u8 *)0x5F)) // GLOBAL INTERRUPT
-                               ^
-../TIMER0_prog.c:33:2: note: in expansion of macro ‘SREG’
-  SREG|=(GLOBAL_INTERRUPT_STATUS<<GLOBAL_INTERRUPT);
-  ^
-make: *** [TIMER0_prog.o] Error 1
-17:05:20 **** Incremental Build of configuration Debug for project EXternal_Interrupt_INT0 ****
-make all 
-Building file: ../TIMER0_prog.c
-Invoking: AVR Compiler
-avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"TIMER0_prog.d" -MT"TIMER0_prog.o" -c -o "TIMER0_prog.o" "../TIMER0_prog.c"
-In file included from ../TIMER0_prog.c:13:0:
-../TIMER0_interface.h:13:1: warning: ‘__INTR_ATTRS’ attribute directive ignored [-Wattributes]
- void __vector_11(void) __attribute__((signal,__INTR_ATTRS));
- ^
-In file included from ../TIMER0_prog.c:12:0:
-../TIMER0_prog.c: In function ‘TIMER0_init’:
-../TIMER0_private.h:25:27: error: expected identifier or ‘(’ before ‘u8’
- #define TCCR0 volatile(*((u8 *)0x53))
-                           ^
-../TIMER0_prog.c:27:2: note: in expansion of macro ‘TCCR0’
-  TCCR0|=(FOC0_STATUS<<FOC0)|(WGM00_STATUS<<WGM00)|(COM01_STATUS<<COM01)|(COM00_STATUS<<COM00)
-  ^
-../TIMER0_private.h:25:32: error: expected ‘)’ before numeric constant
- #define TCCR0 volatile(*((u8 *)0x53))
-                                ^
-../TIMER0_prog.c:27:2: note: in expansion of macro ‘TCCR0’
-  TCCR0|=(FOC0_STATUS<<FOC0)|(WGM00_STATUS<<WGM00)|(COM01_STATUS<<COM01)|(COM00_STATUS<<COM00)
-  ^
-../TIMER0_private.h:39:27: error: expected identifier or ‘(’ before ‘u8’
- #define TIMSK volatile(*((u8 *)0x59))
-                           ^
-../TIMER0_prog.c:31:2: note: in expansion of macro ‘TIMSK’
-  TIMSK|=(OCIE0_STATUS<<OCIE0)|(TOIE0_STATUS<<TOIE0);
-  ^
-../TIMER0_private.h:39:32: error: expected ‘)’ before numeric constant
- #define TIMSK volatile(*((u8 *)0x59))
-                                ^
-../TIMER0_prog.c:31:2: note: in expansion of macro ‘TIMSK’
-  TIMSK|=(OCIE0_STATUS<<OCIE0)|(TOIE0_STATUS<<TOIE0);
-  ^
-../TIMER0_private.h:66:26: error: expected identifier or ‘(’ before ‘u8’
- #define SREG volatile(*((u8 *)0x5F)) // GLOBAL INTERRUPT
-                          ^
-../TIMER0_prog.c:33:2: note: in expansion of macro ‘SREG’
-  SREG|=(GLOBAL_INTERRUPT_STATUS<<GLOBAL_INTERRUPT);
-  ^
-../TIMER0_private.h:66:31: error: expected ‘)’ before numeric constant
- #define SREG volatile(*((u8 *)0x5F)) // GLOBAL INTERRUPT
-                               ^
-../TIMER0_prog.c:33:2: note: in expansion of macro ‘SREG’
-  SREG|=(GLOBAL_INTERRUPT_STATUS<<GLOBAL_INTERRUPT);
-  ^
-make: *** [TIMER0_prog.o] Error 1
-17:05:52 **** Incremental Build of configuration Debug for project EXternal_Interrupt_INT0 ****
-make all 
-Building file: ../TIMER0_prog.c
-Invoking: AVR Compiler
-avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"TIMER0_prog.d" -MT"TIMER0_prog.o" -c -o "TIMER0_prog.o" "../TIMER0_prog.c"
-In file included from ../TIMER0_prog.c:13:0:
-../TIMER0_interface.h:13:1: warning: ‘__INTR_ATTRS’ attribute directive ignored [-Wattributes]
- void __vector_11(void) __attribute__((signal,__INTR_ATTRS));
- ^
-Finished building: ../TIMER0_prog.c
- 
-Building file: ../delay_ms.c
-Invoking: AVR Compiler
-avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"delay_ms.d" -MT"delay_ms.o" -c -o "delay_ms.o" "../delay_ms.c"
-Finished building: ../delay_ms.c
- 
-Building file: ../main.c
-Invoking: AVR Compiler
-avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
-../main.c:10:31: fatal error: io_ports_atmega32.h: No such file or directory
- #include "io_ports_atmega32.h"
-                               ^
-compilation terminated.
-make: *** [main.o] Error 1
-17:06:05 **** Incremental Build of configuration Debug for project EXternal_Interrupt_INT0 ****
-make all 
-Building file: ../main.c
-Invoking: AVR Compiler
-avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
-In file included from ../main.c:16:0:
-../INT0_Interface.h:12:0: warning: "INT0" redefined [enabled by default]
- #define INT0 26
- ^
-In file included from /usr/lib/avr/include/avr/io.h:238:0,
-                 from /usr/lib/avr/include/avr/interrupt.h:38,
-                 from ../main.c:14:
-/usr/lib/avr/include/avr/iom16.h:469:0: note: this is the location of the previous definition
- #define INT0    6
- ^
-../main.c:29:6: warning: return type of ‘main’ is not ‘int’ [-Wmain]
- void main (void)
-      ^
-Finished building: ../main.c
- 
-Building target: EXternal_Interrupt_INT0.elf
+Building target: RTO.elf
 Invoking: AVR C Linker
-avr-gcc -Wl,-Map,EXternal_Interrupt_INT0.map -mmcu=atmega16 -o "EXternal_Interrupt_INT0.elf"  ./DIO_Prog.o ./INT0_prog.o ./TIMER0_prog.o ./delay_ms.o ./main.o   
-Finished building target: EXternal_Interrupt_INT0.elf
- 
-Invoking: AVR Create Extended Listing
-avr-objdump -h -S EXternal_Interrupt_INT0.elf  >"EXternal_Interrupt_INT0.lss"
-Finished building: EXternal_Interrupt_INT0.lss
- 
-Invoking: Print Size
-avr-size --format=avr --mcu=atmega16 EXternal_Interrupt_INT0.elf
-AVR Memory Usage
-----------------
-Device: atmega16
-
-Program:    2508 bytes (15.3% Full)
-(.text + .data + .bootloader)
-
-Data:          2 bytes (0.2% Full)
-(.data + .bss + .noinit)
-
-
-Finished building: sizedummy
- 
-17:53:39 **** Incremental Build of configuration Debug for project EXternal_Interrupt_INT0 ****
-make all 
-Building file: ../EXTINT_prog.c
-Invoking: AVR Compiler
-avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"EXTINT_prog.d" -MT"EXTINT_prog.o" -c -o "EXTINT_prog.o" "../EXTINT_prog.c"
-In file included from ../EXTINT_prog.c:16:0:
-../EXTINT_Interface.h:12:0: warning: "INT0" redefined [enabled by default]
- #define INT0 26
- ^
-In file included from /usr/lib/avr/include/avr/io.h:238:0,
-                 from /usr/lib/avr/include/avr/interrupt.h:38,
-                 from ../EXTINT_prog.c:13:
-/usr/lib/avr/include/avr/iom16.h:469:0: note: this is the location of the previous definition
- #define INT0    6
- ^
-In file included from ../EXTINT_prog.c:17:0:
-../EXTINT_private.h:15:0: warning: "MCUCR" redefined [enabled by default]
- #define MCUCR (*((volatile u8 *)0x55))
- ^
-In file included from /usr/lib/avr/include/avr/io.h:238:0,
-                 from /usr/lib/avr/include/avr/interrupt.h:38,
-                 from ../EXTINT_prog.c:13:
-/usr/lib/avr/include/avr/iom16.h:412:0: note: this is the location of the previous definition
- #define MCUCR   _SFR_IO8(0x35)
- ^
-In file included from ../EXTINT_prog.c:17:0:
-../EXTINT_private.h:16:0: warning: "SE" redefined [enabled by default]
- #define SE      7
- ^
-In file included from /usr/lib/avr/include/avr/io.h:238:0,
-                 from /usr/lib/avr/include/avr/interrupt.h:38,
-                 from ../EXTINT_prog.c:13:
-/usr/lib/avr/include/avr/iom16.h:419:0: note: this is the location of the previous definition
- #define SE      6
- ^
-In file included from ../EXTINT_prog.c:17:0:
-../EXTINT_private.h:17:0: warning: "SM2" redefined [enabled by default]
- #define SM2   6
- ^
-In file included from /usr/lib/avr/include/avr/io.h:238:0,
-                 from /usr/lib/avr/include/avr/interrupt.h:38,
-                 from ../EXTINT_prog.c:13:
-/usr/lib/avr/include/avr/iom16.h:420:0: note: this is the location of the previous definition
- #define SM2     7
- ^
-In file included from ../EXTINT_prog.c:17:0:
-../EXTINT_private.h:25:0: warning: "MCUCSR" redefined [enabled by default]
- #define MCUCSR (*((volatile u8 *)0x54))
- ^
-In file included from /usr/lib/avr/include/avr/io.h:238:0,
-                 from /usr/lib/avr/include/avr/interrupt.h:38,
-                 from ../EXTINT_prog.c:13:
-/usr/lib/avr/include/avr/iom16.h:403:0: note: this is the location of the previous definition
- #define MCUCSR  _SFR_IO8(0x34)
- ^
-In file included from ../EXTINT_prog.c:17:0:
-../EXTINT_private.h:35:0: warning: "GICR" redefined [enabled by default]
- #define GICR (*((volatile u8 * )0x5B))
- ^
-Finished building: ../EXTINT_prog.c
-In file included from /usr/lib/avr/include/avr/io.h:238:0,
-                 from /usr/lib/avr/include/avr/interrupt.h:38,
-                 from ../EXTINT_prog.c:13:
-/usr/lib/avr/include/avr/iom16.h:465:0: note: this is the location of the previous definition
- 
- #define GICR    _SFR_IO8(0x3B)
- ^
-In file included from ../EXTINT_prog.c:17:0:
-Building file: ../main.c
-../EXTINT_private.h:37:0: warning: "INT0" redefined [enabled by default]
-Invoking: AVR Compiler
-avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
- #define INT0  6
- ^
-In file included from ../EXTINT_prog.c:16:0:
-../EXTINT_Interface.h:12:0: note: this is the location of the previous definition
- #define INT0 26
- ^
-In file included from ../EXTINT_prog.c:17:0:
-../EXTINT_private.h:42:0: warning: "GIFR" redefined [enabled by default]
- #define GIFR (*((volatile u8 *)0x5A))
- ^
-In file included from /usr/lib/avr/include/avr/io.h:238:0,
-                 from /usr/lib/avr/include/avr/interrupt.h:38,
-                 from ../EXTINT_prog.c:13:
-/usr/lib/avr/include/avr/iom16.h:460:0: note: this is the location of the previous definition
- #define GIFR    _SFR_IO8(0x3A)
- ^
-In file included from ../main.c:16:0:
-../EXTINT_Interface.h:12:0: warning: "INT0" redefined [enabled by default]
- #define INT0 26
- ^
-In file included from /usr/lib/avr/include/avr/io.h:238:0,
-                 from /usr/lib/avr/include/avr/interrupt.h:38,
-                 from ../main.c:14:
-/usr/lib/avr/include/avr/iom16.h:469:0: note: this is the location of the previous definition
- #define INT0    6
- ^
-../main.c:29:6: warning: return type of ‘main’ is not ‘int’ [-Wmain]
- void main (void)
-      ^
-Finished building: ../main.c
- 
-Building target: EXternal_Interrupt_INT0.elf
-Invoking: AVR C Linker
-avr-gcc -Wl,-Map,EXternal_Interrupt_INT0.map -mmcu=atmega16 -o "EXternal_Interrupt_INT0.elf"  ./DIO_Prog.o ./EXTINT_prog.o ./TIMER0_prog.o ./delay_ms.o ./main.o   
-Finished building target: EXternal_Interrupt_INT0.elf
- 
-Invoking: AVR Create Extended Listing
-avr-objdump -h -S EXternal_Interrupt_INT0.elf  >"EXternal_Interrupt_INT0.lss"
-Finished building: EXternal_Interrupt_INT0.lss
- 
-Invoking: Print Size
-avr-size --format=avr --mcu=atmega16 EXternal_Interrupt_INT0.elf
-AVR Memory Usage
-----------------
-Device: atmega16
-
-Program:    2562 bytes (15.6% Full)
-(.text + .data + .bootloader)
-
-Data:          2 bytes (0.2% Full)
-(.data + .bss + .noinit)
-
-
-Finished building: sizedummy
- 
-17:55:46 **** Incremental Build of configuration Debug for project EXternal_Interrupt_INT0 ****
-make all 
-Building file: ../DIO_Prog.c
-Invoking: AVR Compiler
-avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"DIO_Prog.d" -MT"DIO_Prog.o" -c -o "DIO_Prog.o" "../DIO_Prog.c"
-Finished building: ../DIO_Prog.c
- 
-Building file: ../main.c
-Invoking: AVR Compiler
-avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
-../main.c:29:6: warning: return type of ‘main’ is not ‘int’ [-Wmain]
- void main (void)
-      ^
-Finished building: ../main.c
- 
-Building target: EXternal_Interrupt_INT0.elf
-Invoking: AVR C Linker
-avr-gcc -Wl,-Map,EXternal_Interrupt_INT0.map -mmcu=atmega16 -o "EXternal_Interrupt_INT0.elf"  ./DIO_Prog.o ./EXTINT_prog.o ./TIMER0_prog.o ./delay_ms.o ./main.o   
-Finished building target: EXternal_Interrupt_INT0.elf
- 
-Invoking: AVR Create Extended Listing
-avr-objdump -h -S EXternal_Interrupt_INT0.elf  >"EXternal_Interrupt_INT0.lss"
-Finished building: EXternal_Interrupt_INT0.lss
- 
-Invoking: Print Size
-avr-size --format=avr --mcu=atmega16 EXternal_Interrupt_INT0.elf
-AVR Memory Usage
-----------------
-Device: atmega16
-
-Program:    2426 bytes (14.8% Full)
-(.text + .data + .bootloader)
-
-Data:          2 bytes (0.2% Full)
-(.data + .bss + .noinit)
-
-
-Finished building: sizedummy
- 
-17:55:50 **** Incremental Build of configuration Debug for project EXternal_Interrupt_INT0 ****
-make all 
-Invoking: Print Size
-avr-size --format=avr --mcu=atmega16 EXternal_Interrupt_INT0.elf
-AVR Memory Usage
-----------------
-Device: atmega16
-
-Program:    2426 bytes (14.8% Full)
-(.text + .data + .bootloader)
-
-Data:          2 bytes (0.2% Full)
-(.data + .bss + .noinit)
-
-
-Finished building: sizedummy
- 
-17:57:29 **** Incremental Build of configuration Debug for project EXternal_Interrupt_INT0 ****
-make all 
-Building file: ../EXTINT_prog.c
-Invoking: AVR Compiler
-avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"EXTINT_prog.d" -MT"EXTINT_prog.o" -c -o "EXTINT_prog.o" "../EXTINT_prog.c"
-In file included from ../EXTINT_prog.c:16:0:
-../EXTINT_Interface.h:12:0: warning: "INT0" redefined [enabled by default]
- #define INT0 26
- ^
-In file included from /usr/lib/avr/include/avr/io.h:238:0,
-                 from /usr/lib/avr/include/avr/interrupt.h:38,
-                 from ../EXTINT_prog.c:13:
-/usr/lib/avr/include/avr/iom16.h:469:0: note: this is the location of the previous definition
- #define INT0    6
- ^
-In file included from ../EXTINT_prog.c:17:0:
-../EXTINT_private.h:15:0: warning: "MCUCR" redefined [enabled by default]
- #define MCUCR (*((volatile u8 *)0x55))
- ^
-In file included from /usr/lib/avr/include/avr/io.h:238:0,
-                 from /usr/lib/avr/include/avr/interrupt.h:38,
-                 from ../EXTINT_prog.c:13:
-/usr/lib/avr/include/avr/iom16.h:412:0: note: this is the location of the previous definition
- #define MCUCR   _SFR_IO8(0x35)
- ^
-In file included from ../EXTINT_prog.c:17:0:
-../EXTINT_private.h:16:0: warning: "SE" redefined [enabled by default]
- #define SE      7
- ^
-In file included from /usr/lib/avr/include/avr/io.h:238:0,
-                 from /usr/lib/avr/include/avr/interrupt.h:38,
-                 from ../EXTINT_prog.c:13:
-/usr/lib/avr/include/avr/iom16.h:419:0: note: this is the location of the previous definition
- #define SE      6
- ^
-In file included from ../EXTINT_prog.c:17:0:
-../EXTINT_private.h:17:0: warning: "SM2" redefined [enabled by default]
- #define SM2   6
- ^
-In file included from /usr/lib/avr/include/avr/io.h:238:0,
-                 from /usr/lib/avr/include/avr/interrupt.h:38,
-                 from ../EXTINT_prog.c:13:
-/usr/lib/avr/include/avr/iom16.h:420:0: note: this is the location of the previous definition
- #define SM2     7
- ^
-In file included from ../EXTINT_prog.c:17:0:
-../EXTINT_private.h:25:0: warning: "MCUCSR" redefined [enabled by default]
- #define MCUCSR (*((volatile u8 *)0x54))
- ^
-In file included from /usr/lib/avr/include/avr/io.h:238:0,
-                 from /usr/lib/avr/include/avr/interrupt.h:38,
-                 from ../EXTINT_prog.c:13:
-/usr/lib/avr/include/avr/iom16.h:403:0: note: this is the location of the previous definition
- #define MCUCSR  _SFR_IO8(0x34)
- ^
-In file included from ../EXTINT_prog.c:17:0:
-../EXTINT_private.h:35:0: warning: "GICR" redefined [enabled by default]
- #define GICR (*((volatile u8 * )0x5B))
- ^
-Finished building: ../EXTINT_prog.c
-In file included from /usr/lib/avr/include/avr/io.h:238:0,
-                 from /usr/lib/avr/include/avr/interrupt.h:38,
- 
-                 from ../EXTINT_prog.c:13:
-/usr/lib/avr/include/avr/iom16.h:465:0: note: this is the location of the previous definition
-Building file: ../main.c
- #define GICR    _SFR_IO8(0x3B)
- ^
-In file included from ../EXTINT_prog.c:17:0:
-Invoking: AVR Compiler
-avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
-../EXTINT_private.h:37:0: warning: "INT0" redefined [enabled by default]
- #define INT0  6
- ^
-In file included from ../EXTINT_prog.c:16:0:
-../EXTINT_Interface.h:12:0: note: this is the location of the previous definition
- #define INT0 26
- ^
-In file included from ../EXTINT_prog.c:17:0:
-../EXTINT_private.h:42:0: warning: "GIFR" redefined [enabled by default]
- #define GIFR (*((volatile u8 *)0x5A))
- ^
-In file included from /usr/lib/avr/include/avr/io.h:238:0,
-                 from /usr/lib/avr/include/avr/interrupt.h:38,
-                 from ../EXTINT_prog.c:13:
-/usr/lib/avr/include/avr/iom16.h:460:0: note: this is the location of the previous definition
- #define GIFR    _SFR_IO8(0x3A)
- ^
-../main.c:29:6: warning: return type of ‘main’ is not ‘int’ [-Wmain]
- void main (void)
-      ^
-../main.c: In function ‘main’:
-../main.c:33:1: warning: implicit declaration of function ‘INT0_Initialization’ [-Wimplicit-function-declaration]
- INT0_Initialization();
- ^
-Finished building: ../main.c
- 
-Building target: EXternal_Interrupt_INT0.elf
-Invoking: AVR C Linker
-avr-gcc -Wl,-Map,EXternal_Interrupt_INT0.map -mmcu=atmega16 -o "EXternal_Interrupt_INT0.elf"  ./DIO_Prog.o ./EXTINT_prog.o ./TIMER0_prog.o ./delay_ms.o ./main.o   
-./main.o: In function `main':
-../main.c:33: undefined reference to `INT0_Initialization'
+avr-gcc -Wl,-Map,RTO.map -mmcu=atmega16 -o "RTO.elf"  ./DIO_Prog.o ./RTO_prog.o   
+/usr/lib/gcc/avr/4.8.2/../../../avr/lib/avr5/crtm16.o: In function `__bad_interrupt':
+../../../../crt1/gcrt1.S:195: undefined reference to `main'
 collect2: error: ld returned 1 exit status
-make: *** [EXternal_Interrupt_INT0.elf] Error 1
-17:57:46 **** Incremental Build of configuration Debug for project EXternal_Interrupt_INT0 ****
+make: *** [RTO.elf] Error 1
+19:43:18 **** Incremental Build of configuration Debug for project RTO ****
 make all 
 Building file: ../main.c
 Invoking: AVR Compiler
 avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
-../main.c:29:6: warning: return type of ‘main’ is not ‘int’ [-Wmain]
- void main (void)
+../main.c:8:6: warning: return type of ‘main’ is not ‘int’ [-Wmain]
+ void main(void)
       ^
 Finished building: ../main.c
  
-Building target: EXternal_Interrupt_INT0.elf
+Building target: RTO.elf
 Invoking: AVR C Linker
-avr-gcc -Wl,-Map,EXternal_Interrupt_INT0.map -mmcu=atmega16 -o "EXternal_Interrupt_INT0.elf"  ./DIO_Prog.o ./EXTINT_prog.o ./TIMER0_prog.o ./delay_ms.o ./main.o   
-Finished building target: EXternal_Interrupt_INT0.elf
+avr-gcc -Wl,-Map,RTO.map -mmcu=atmega16 -o "RTO.elf"  ./DIO_Prog.o ./RTO_prog.o ./main.o   
+Finished building target: RTO.elf
  
 Invoking: AVR Create Extended Listing
-avr-objdump -h -S EXternal_Interrupt_INT0.elf  >"EXternal_Interrupt_INT0.lss"
-Finished building: EXternal_Interrupt_INT0.lss
+avr-objdump -h -S RTO.elf  >"RTO.lss"
+Finished building: RTO.lss
  
 Invoking: Print Size
-avr-size --format=avr --mcu=atmega16 EXternal_Interrupt_INT0.elf
+avr-size --format=avr --mcu=atmega16 RTO.elf
 AVR Memory Usage
 ----------------
 Device: atmega16
 
-Program:    2394 bytes (14.6% Full)
+Program:    2750 bytes (16.8% Full)
 (.text + .data + .bootloader)
 
-Data:          2 bytes (0.2% Full)
+Data:         12 bytes (1.2% Full)
 (.data + .bss + .noinit)
 
 
 Finished building: sizedummy
  
-18:16:26 **** Incremental Build of configuration Debug for project EXternal_Interrupt_INT0 ****
+20:11:04 **** Incremental Build of configuration Debug for project RTO ****
 make all 
-Building file: ../EXTINT_prog.c
+Building file: ../TIMER0_prog.c
 Invoking: AVR Compiler
-avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"EXTINT_prog.d" -MT"EXTINT_prog.o" -c -o "EXTINT_prog.o" "../EXTINT_prog.c"
-In file included from ../EXTINT_prog.c:16:0:
-../EXTINT_Interface.h:12:0: warning: "INT0" redefined [enabled by default]
- #define INT0 26
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"TIMER0_prog.d" -MT"TIMER0_prog.o" -c -o "TIMER0_prog.o" "../TIMER0_prog.c"
+In file included from ../TIMER0_prog.c:13:0:
+../TIMER0_interface.h:13:1: warning: ‘__INTR_ATTRS’ attribute directive ignored [-Wattributes]
+ void __vector_11(void) __attribute__((signal,__INTR_ATTRS));
  ^
-In file included from /usr/lib/avr/include/avr/io.h:238:0,
-                 from /usr/lib/avr/include/avr/interrupt.h:38,
-                 from ../EXTINT_prog.c:13:
-/usr/lib/avr/include/avr/iom16.h:469:0: note: this is the location of the previous definition
- #define INT0    6
- ^
-In file included from ../EXTINT_prog.c:17:0:
-../EXTINT_private.h:15:0: warning: "MCUCR" redefined [enabled by default]
- #define MCUCR (*((volatile u8 *)0x55))
- ^
-In file included from /usr/lib/avr/include/avr/io.h:238:0,
-                 from /usr/lib/avr/include/avr/interrupt.h:38,
-                 from ../EXTINT_prog.c:13:
-/usr/lib/avr/include/avr/iom16.h:412:0: note: this is the location of the previous definition
- #define MCUCR   _SFR_IO8(0x35)
- ^
-In file included from ../EXTINT_prog.c:17:0:
-../EXTINT_private.h:16:0: warning: "SE" redefined [enabled by default]
- #define SE      7
- ^
-In file included from /usr/lib/avr/include/avr/io.h:238:0,
-                 from /usr/lib/avr/include/avr/interrupt.h:38,
-                 from ../EXTINT_prog.c:13:
-/usr/lib/avr/include/avr/iom16.h:419:0: note: this is the location of the previous definition
- #define SE      6
- ^
-In file included from ../EXTINT_prog.c:17:0:
-../EXTINT_private.h:17:0: warning: "SM2" redefined [enabled by default]
- #define SM2   6
- ^
-In file included from /usr/lib/avr/include/avr/io.h:238:0,
-                 from /usr/lib/avr/include/avr/interrupt.h:38,
-                 from ../EXTINT_prog.c:13:
-/usr/lib/avr/include/avr/iom16.h:420:0: note: this is the location of the previous definition
- #define SM2     7
- ^
-In file included from ../EXTINT_prog.c:17:0:
-../EXTINT_private.h:25:0: warning: "MCUCSR" redefined [enabled by default]
- #define MCUCSR (*((volatile u8 *)0x54))
- ^
-In file included from /usr/lib/avr/include/avr/io.h:238:0,
-                 from /usr/lib/avr/include/avr/interrupt.h:38,
-                 from ../EXTINT_prog.c:13:
-/usr/lib/avr/include/avr/iom16.h:403:0: note: this is the location of the previous definition
- #define MCUCSR  _SFR_IO8(0x34)
- ^
-In file included from ../EXTINT_prog.c:17:0:
-../EXTINT_private.h:35:0: warning: "GICR" redefined [enabled by default]
- #define GICR (*((volatile u8 * )0x5B))
- ^
-In file included from /usr/lib/avr/include/avr/io.h:238:0,
-                 from /usr/lib/avr/include/avr/interrupt.h:38,
-                 from ../EXTINT_prog.c:13:
-/usr/lib/avr/include/avr/iom16.h:465:0: note: this is the location of the previous definition
- #define GICR    _SFR_IO8(0x3B)
- ^
-In file included from ../EXTINT_prog.c:17:0:
-../EXTINT_private.h:37:0: warning: "INT0" redefined [enabled by default]
- #define INT0  6
- ^
-In file included from ../EXTINT_prog.c:16:0:
-../EXTINT_Interface.h:12:0: note: this is the location of the previous definition
- #define INT0 26
- ^
-In file included from ../EXTINT_prog.c:17:0:
-../EXTINT_private.h:42:0: warning: "GIFR" redefined [enabled by default]
- #define GIFR (*((volatile u8 *)0x5A))
- ^
-In file included from /usr/lib/avr/include/avr/io.h:238:0,
-                 from /usr/lib/avr/include/avr/interrupt.h:38,
-                 from ../EXTINT_prog.c:13:
-/usr/lib/avr/include/avr/iom16.h:460:0: note: this is the location of the previous definition
- #define GIFR    _SFR_IO8(0x3A)
- ^
-Finished building: ../EXTINT_prog.c
- 
-Building file: ../main.c
-Invoking: AVR Compiler
-avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
-In file included from ../main.c:14:0:
-../EXTINT_Interface.h:19:1: warning: ‘__INTR_ATTRS’ attribute directive ignored [-Wattributes]
- volatile void __vector_1(void)__attribute__((signal,__INTR_ATTRS));
- ^
-../main.c:27:15: warning: function definition has qualified void return type [enabled by default]
- volatile void __vector_1(void)
-               ^
-../main.c:34:6: warning: return type of ‘main’ is not ‘int’ [-Wmain]
- void main (void)
+../TIMER0_prog.c:41:6: error: conflicting types for ‘TIMER0_voidSetTimerCallBack’
+ void TIMER0_voidSetTimerCallBack(void (* Copy_voidCallBackFunction)(void))
       ^
-Finished building: ../main.c
- 
-Building target: EXternal_Interrupt_INT0.elf
-Invoking: AVR C Linker
-avr-gcc -Wl,-Map,EXternal_Interrupt_INT0.map -mmcu=atmega16 -o "EXternal_Interrupt_INT0.elf"  ./DIO_Prog.o ./EXTINT_prog.o ./TIMER0_prog.o ./delay_ms.o ./main.o   
-Finished building target: EXternal_Interrupt_INT0.elf
- 
-Invoking: AVR Create Extended Listing
-avr-objdump -h -S EXternal_Interrupt_INT0.elf  >"EXternal_Interrupt_INT0.lss"
-Finished building: EXternal_Interrupt_INT0.lss
- 
-Invoking: Print Size
-avr-size --format=avr --mcu=atmega16 EXternal_Interrupt_INT0.elf
-AVR Memory Usage
-----------------
-Device: atmega16
-
-Program:    2386 bytes (14.6% Full)
-(.text + .data + .bootloader)
-
-Data:          2 bytes (0.2% Full)
-(.data + .bss + .noinit)
-
-
-Finished building: sizedummy
- 
-18:53:17 **** Incremental Build of configuration Debug for project EXternal_Interrupt_INT0 ****
+In file included from ../TIMER0_prog.c:13:0:
+../TIMER0_interface.h:14:6: note: previous declaration of ‘TIMER0_voidSetTimerCallBack’ was here
+ void TIMER0_voidSetTimerCallBack(void *(Copy_voidCallBackFunction)(void));
+      ^
+make: *** [TIMER0_prog.o] Error 1
+20:11:04 **** Build of configuration Debug for project TIMER0_Drivers ****
+make all 
+Building file: ../TIMER0_prog.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=4000000UL -MMD -MP -MF"TIMER0_prog.d" -MT"TIMER0_prog.o" -c -o "TIMER0_prog.o" "../TIMER0_prog.c"
+../TIMER0_prog.c:9:23: fatal error: std_types.h: No such file or directory
+ #include "std_types.h"
+                       ^
+compilation terminated.
+make: *** [TIMER0_prog.o] Error 1
+20:11:56 **** Incremental Build of configuration Debug for project RTO ****
 make all 
 Building file: ../DIO_Prog.c
 Invoking: AVR Compiler
 avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"DIO_Prog.d" -MT"DIO_Prog.o" -c -o "DIO_Prog.o" "../DIO_Prog.c"
 Finished building: ../DIO_Prog.c
  
-Building file: ../EXTINT_prog.c
+Building file: ../RTO_prog.c
 Invoking: AVR Compiler
-avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"EXTINT_prog.d" -MT"EXTINT_prog.o" -c -o "EXTINT_prog.o" "../EXTINT_prog.c"
-In file included from ../EXTINT_prog.c:17:0:
-../EXTINT_private.h:15:0: warning: "MCUCR" redefined [enabled by default]
- #define MCUCR (*((volatile u8 *)0x55))
- ^
-In file included from /usr/lib/avr/include/avr/io.h:238:0,
-                 from /usr/lib/avr/include/avr/interrupt.h:38,
-                 from ../EXTINT_prog.c:13:
-/usr/lib/avr/include/avr/iom16.h:412:0: note: this is the location of the previous definition
- #define MCUCR   _SFR_IO8(0x35)
- ^
-In file included from ../EXTINT_prog.c:17:0:
-../EXTINT_private.h:16:0: warning: "SE" redefined [enabled by default]
- #define SE      7
- ^
-In file included from /usr/lib/avr/include/avr/io.h:238:0,
-                 from /usr/lib/avr/include/avr/interrupt.h:38,
-                 from ../EXTINT_prog.c:13:
-/usr/lib/avr/include/avr/iom16.h:419:0: note: this is the location of the previous definition
- #define SE      6
- ^
-In file included from ../EXTINT_prog.c:17:0:
-../EXTINT_private.h:17:0: warning: "SM2" redefined [enabled by default]
- #define SM2   6
- ^
-In file included from /usr/lib/avr/include/avr/io.h:238:0,
-                 from /usr/lib/avr/include/avr/interrupt.h:38,
-                 from ../EXTINT_prog.c:13:
-/usr/lib/avr/include/avr/iom16.h:420:0: note: this is the location of the previous definition
- #define SM2     7
- ^
-In file included from ../EXTINT_prog.c:17:0:
-../EXTINT_private.h:25:0: warning: "MCUCSR" redefined [enabled by default]
- #define MCUCSR (*((volatile u8 *)0x54))
- ^
-In file included from /usr/lib/avr/include/avr/io.h:238:0,
-                 from /usr/lib/avr/include/avr/interrupt.h:38,
-                 from ../EXTINT_prog.c:13:
-/usr/lib/avr/include/avr/iom16.h:403:0: note: this is the location of the previous definition
- #define MCUCSR  _SFR_IO8(0x34)
- ^
-In file included from ../EXTINT_prog.c:17:0:
-../EXTINT_private.h:35:0: warning: "GICR" redefined [enabled by default]
- #define GICR (*((volatile u8 * )0x5B))
- ^
-In file included from /usr/lib/avr/include/avr/io.h:238:0,
-                 from /usr/lib/avr/include/avr/interrupt.h:38,
-                 from ../EXTINT_prog.c:13:
-/usr/lib/avr/include/avr/iom16.h:465:0: note: this is the location of the previous definition
- #define GICR    _SFR_IO8(0x3B)
-Finished building: ../EXTINT_prog.c
- ^
-In file included from ../EXTINT_prog.c:17:0:
-../EXTINT_private.h:42:0: warning: "GIFR" redefined [enabled by default]
- #define GIFR (*((volatile u8 *)0x5A))
- ^
-In file included from /usr/lib/avr/include/avr/io.h:238:0,
-                 from /usr/lib/avr/include/avr/interrupt.h:38,
-                 from ../EXTINT_prog.c:13:
-/usr/lib/avr/include/avr/iom16.h:460:0: note: this is the location of the previous definition
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"RTO_prog.d" -MT"RTO_prog.o" -c -o "RTO_prog.o" "../RTO_prog.c"
+../RTO_prog.c:13:8: warning: type defaults to ‘int’ in declaration of ‘RTO_u8Status’ [enabled by default]
+ static RTO_u8Status=RTO_OK;
+        ^
+../RTO_prog.c: In function ‘RTO_voidInit’:
+../RTO_prog.c:22:34: warning: assignment from incompatible pointer type [enabled by default]
+  RTO_TaskScheduler[RTO_u8Counter]=NULL;
+                                  ^
+../RTO_prog.c: In function ‘RTO_u8CreatTask’:
+../RTO_prog.c:27:96: warning: comparison of distinct pointer types lacks a cast [enabled by default]
+  if (RTO_MAXIMUM_TASK_NUMBER>Copy_u8TaskPriority && RTO_TaskScheduler[Copy_u8TaskPriority]->ptr!=NULL)
+                                                                                                ^
+../RTO_prog.c: In function ‘RTO_u8DeleteTask’:
+../RTO_prog.c:41:96: warning: comparison of distinct pointer types lacks a cast [enabled by default]
+  if (RTO_MAXIMUM_TASK_NUMBER>Copy_u8TaskPriority && RTO_TaskScheduler[Copy_u8TaskPriority]->ptr!=NULL)
+                                                                                                ^
+../RTO_prog.c:43:40: warning: assignment from incompatible pointer type [enabled by default]
+  RTO_TaskScheduler[Copy_u8TaskPriority]=NULL;
+                                        ^
+../RTO_prog.c: In function ‘RTO_u8StartTask’:
+../RTO_prog.c:57:96: warning: comparison of distinct pointer types lacks a cast [enabled by default]
+  if (RTO_MAXIMUM_TASK_NUMBER>Copy_u8TaskPriority && RTO_TaskScheduler[Copy_u8TaskPriority]->ptr!=NULL)
+                                                                                                ^
+../RTO_prog.c: In function ‘RTO_u8StopTask’:
+../RTO_prog.c:73:96: warning: comparison of distinct pointer types lacks a cast [enabled by default]
+  if (RTO_MAXIMUM_TASK_NUMBER>Copy_u8TaskPriority && RTO_TaskScheduler[Copy_u8TaskPriority]->ptr!=NULL)
+                                                                                                ^
+../RTO_prog.c: In function ‘RTO_voidSchedular’:
+../RTO_prog.c:93:56: warning: comparison of distinct pointer types lacks a cast [enabled by default]
+    if( RTO_TaskScheduler[RTO__u8SchedularCounter]->ptr != NULL && RTO_TaskScheduler[RTO__u8SchedularCounter]->state !=Paused)
+                                                        ^
+In file included from ../RTO_prog.c:8:0:
+../RTO_prog.c: At top level:
+../RTO_interface.h:30:13: warning: ‘RTO_u8Schedular’ declared ‘static’ but never defined [-Wunused-function]
+ static void RTO_u8Schedular(void);
+             ^
+In file included from ../RTO_prog.c:10:0:
+../RTO_private.h:11:11: warning: ‘Schedular’ declared ‘static’ but never defined [-Wunused-function]
+ static u8 Schedular(void);
+           ^
+../RTO_prog.c:87:13: warning: ‘RTO_voidSchedular’ defined but not used [-Wunused-function]
+ static void RTO_voidSchedular(void)
+             ^
+Finished building: ../RTO_prog.c
  
- #define GIFR    _SFR_IO8(0x3A)
+Building file: ../TIMER0_prog.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"TIMER0_prog.d" -MT"TIMER0_prog.o" -c -o "TIMER0_prog.o" "../TIMER0_prog.c"
+In file included from ../TIMER0_prog.c:13:0:
+../TIMER0_interface.h:13:1: warning: ‘__INTR_ATTRS’ attribute directive ignored [-Wattributes]
+ void __vector_11(void) __attribute__((signal,__INTR_ATTRS));
  ^
-In file included from ../EXTINT_prog.c:17:0:
-../EXTINT_private.h:53:0: warning: "SREG" redefined [enabled by default]
- #define SREG (*((volatile u8 *)0x5F)) // GLOBAL INTERRUPT
+../TIMER0_prog.c:41:6: error: conflicting types for ‘TIMER0_voidSetTimerCallBack’
+ void TIMER0_voidSetTimerCallBack(void (* Copy_voidCallBackFunction)(void))
+      ^
+In file included from ../TIMER0_prog.c:13:0:
+../TIMER0_interface.h:14:6: note: previous declaration of ‘TIMER0_voidSetTimerCallBack’ was here
+ void TIMER0_voidSetTimerCallBack(void *(Copy_voidCallBackFunction)(void));
+      ^
+make: *** [TIMER0_prog.o] Error 1
+20:12:27 **** Incremental Build of configuration Debug for project RTO ****
+make all 
+Building file: ../TIMER0_prog.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"TIMER0_prog.d" -MT"TIMER0_prog.o" -c -o "TIMER0_prog.o" "../TIMER0_prog.c"
+In file included from ../TIMER0_prog.c:13:0:
+../TIMER0_interface.h:13:1: warning: ‘__INTR_ATTRS’ attribute directive ignored [-Wattributes]
+Finished building: ../TIMER0_prog.c
+ void __vector_11(void) __attribute__((signal,__INTR_ATTRS));
  ^
-In file included from /usr/lib/avr/include/avr/io.h:434:0,
-                 from /usr/lib/avr/include/avr/interrupt.h:38,
-                 from ../EXTINT_prog.c:13:
-/usr/lib/avr/include/avr/common.h:103:0: note: this is the location of the previous definition
+ 
 Building file: ../main.c
- #    define SREG _SFR_IO8(0x3F)
- ^
 Invoking: AVR Compiler
 avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
-In file included from ../main.c:14:0:
-../EXTINT_Interface.h:18:1: warning: ‘__INTR_ATTRS’ attribute directive ignored [-Wattributes]
- volatile void __vector_1(void)__attribute__((signal,__INTR_ATTRS));
- ^
-../main.c:27:15: warning: function definition has qualified void return type [enabled by default]
- volatile void __vector_1(void)
-               ^
-../main.c:35:6: warning: return type of ‘main’ is not ‘int’ [-Wmain]
- void main (void)
+../main.c:8:6: warning: return type of ‘main’ is not ‘int’ [-Wmain]
+ void main(void)
       ^
 Finished building: ../main.c
  
-Building target: EXternal_Interrupt_INT0.elf
+Building target: RTO.elf
 Invoking: AVR C Linker
-avr-gcc -Wl,-Map,EXternal_Interrupt_INT0.map -mmcu=atmega16 -o "EXternal_Interrupt_INT0.elf"  ./DIO_Prog.o ./EXTINT_prog.o ./TIMER0_prog.o ./delay_ms.o ./main.o   
-Finished building target: EXternal_Interrupt_INT0.elf
+avr-gcc -Wl,-Map,RTO.map -mmcu=atmega16 -o "RTO.elf"  ./DIO_Prog.o ./RTO_prog.o ./TIMER0_prog.o ./main.o   
+Finished building target: RTO.elf
  
 Invoking: AVR Create Extended Listing
-avr-objdump -h -S EXternal_Interrupt_INT0.elf  >"EXternal_Interrupt_INT0.lss"
-Finished building: EXternal_Interrupt_INT0.lss
- 
-Create Flash image (ihex format)
-avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex EXternal_Interrupt_INT0.elf  "EXternal_Interrupt_INT0.hex"
-Finished building: EXternal_Interrupt_INT0.hex
+avr-objdump -h -S RTO.elf  >"RTO.lss"
+Finished building: RTO.lss
  
 Invoking: Print Size
-avr-size --format=avr --mcu=atmega16 EXternal_Interrupt_INT0.elf
+avr-size --format=avr --mcu=atmega16 RTO.elf
 AVR Memory Usage
 ----------------
 Device: atmega16
 
-Program:    2448 bytes (14.9% Full)
+Program:    2960 bytes (18.1% Full)
 (.text + .data + .bootloader)
 
-Data:          2 bytes (0.2% Full)
+Data:         14 bytes (1.4% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+20:19:49 **** Incremental Build of configuration Debug for project RTO ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 RTO.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:    2960 bytes (18.1% Full)
+(.text + .data + .bootloader)
+
+Data:         14 bytes (1.4% Full)
 (.data + .bss + .noinit)
 
 

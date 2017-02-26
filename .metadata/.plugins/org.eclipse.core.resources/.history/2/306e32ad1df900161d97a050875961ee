@@ -1,0 +1,29 @@
+/*
+ * RTO_prog.c
+ *
+ *  Created on: Feb 22, 2017
+ *      Author: Russel
+ */
+
+void RTO_voidInit(void)
+{
+
+}
+u8 RTO_u8CreatTask(Task *ptr,u8 Copy_pTask)
+{
+
+}
+u8 RTO_u8DeleteTask()
+{
+
+}
+u8 RTO_u8StartTask()
+{
+
+}
+u8 RTO_u8StopTask()
+{
+
+}
+
+static u8 Schedular(void);

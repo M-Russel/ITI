@@ -1,0 +1,40 @@
+/*
+ * SCHEDULAR_u8interface.h
+ *
+ *  Created on: Feb 15, 2017
+ *      Author: root
+ */
+
+#ifndef SCHEDULAR_U8INTERFACE_H_
+#define SCHEDULAR_U8INTERFACE_H_
+
+
+#define SCHEDULAR_INITIAL_TASK 0
+#define SCHEDULAR_MAXIMUM_TASK 4
+#define SCHEDULAR_INITIAL_DELAY 0
+#define SCHEDULAR_PERIODICITY_OFFSET 1
+
+
+
+
+#define SCHEDULAR_TASKONE_PERIODICITY 1
+#define SCHEDULAR_TASKONE_FIRST_DELAY 0
+
+#define SCHEDULAR_TASKTWO_PERIODICITY 1
+#define SCHEDULAR_TASKTWO_FIRST_DELAY 1
+
+
+#define SCHEDULAR_TASKTHREE_PERIODICITY 1
+#define SCHEDULAR_TASKTHREE_FIRST_DELAY 2
+
+
+
+
+void Task_u8FirstEdge (void);
+void Task_u8FallingEdge (void);
+void Task_u8RisingEdge (void);
+
+void SCHEDULAR_voidStart(void);
+
+
+#endif /* SCHEDULAR_U8INTERFACE_H_ */

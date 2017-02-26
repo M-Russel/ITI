@@ -1,0 +1,32 @@
+/*
+ * RTO_interface.h
+ *
+ *  Created on: Feb 22, 2017
+ *      Author: Russel
+ */
+
+#ifndef RTO_INTERFACE_H_
+#define RTO_INTERFACE_H_
+
+
+typedef enum
+{Paused,Running}Task_State;
+
+typedef struct
+{
+	u32 Task_u8Periodicity;
+	u32 Task_u8First_Delay;
+	void (* ptr)();
+	Task_State state;
+
+}Task;
+
+
+void RTO_voidInit(void);
+u8 RTO_u8CreatTask();
+u8 RTO_u8DeleteTask();
+u8 RTO_u8StartTask();
+u8 RTO_u8StopTask();
+
+
+#endif /* RTO_INTERFACE_H_ */

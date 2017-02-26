@@ -1,0 +1,165 @@
+14:42:19 **** Incremental Build of configuration Debug for project ICU ****
+make all 
+Building file: ../LCD_Prog.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"LCD_Prog.d" -MT"LCD_Prog.o" -c -o "LCD_Prog.o" "../LCD_Prog.c"
+../LCD_Prog.c:20:0: warning: "ERROR" redefined [enabled by default]
+ #define ERROR 1
+ ^
+In file included from ../LCD_Prog.c:13:0:
+../DIO_Private.h:162:0: note: this is the location of the previous definition
+ #define ERROR 0
+ ^
+../LCD_Prog.c:21:0: warning: "OK" redefined [enabled by default]
+ #define OK 0
+ ^
+In file included from ../LCD_Prog.c:13:0:
+../DIO_Private.h:161:0: note: this is the location of the previous definition
+ #define OK 1
+ ^
+../LCD_Prog.c: In function ‘LCD_u8WriteCommand’:
+../LCD_Prog.c:39:2: warning: passing argument 1 of ‘DIO_u8SetPinValue’ makes integer from pointer without a cast [enabled by default]
+  DIO_u8SetPinValue(PORT_A,PINA_2,DIO_LOW);
+  ^
+In file included from ../LCD_Prog.c:11:0:
+../DIO_Interface.h:97:4: note: expected ‘u8’ but argument is of type ‘u8 *’
+ u8 DIO_u8SetPinValue(u8 Copy_u8PinNumber,u8 Copy_u8PinValue);
+    ^
+../LCD_Prog.c:39:2: error: too many arguments to function ‘DIO_u8SetPinValue’
+  DIO_u8SetPinValue(PORT_A,PINA_2,DIO_LOW);
+  ^
+In file included from ../LCD_Prog.c:11:0:
+../DIO_Interface.h:97:4: note: declared here
+ u8 DIO_u8SetPinValue(u8 Copy_u8PinNumber,u8 Copy_u8PinValue);
+    ^
+../LCD_Prog.c:40:2: warning: passing argument 1 of ‘DIO_u8SetPinValue’ makes integer from pointer without a cast [enabled by default]
+  DIO_u8SetPinValue(PORT_A,PINA_0,DIO_LOW);
+  ^
+In file included from ../LCD_Prog.c:11:0:
+../DIO_Interface.h:97:4: note: expected ‘u8’ but argument is of type ‘u8 *’
+ u8 DIO_u8SetPinValue(u8 Copy_u8PinNumber,u8 Copy_u8PinValue);
+    ^
+../LCD_Prog.c:40:2: error: too many arguments to function ‘DIO_u8SetPinValue’
+  DIO_u8SetPinValue(PORT_A,PINA_0,DIO_LOW);
+  ^
+In file included from ../LCD_Prog.c:11:0:
+../DIO_Interface.h:97:4: note: declared here
+ u8 DIO_u8SetPinValue(u8 Copy_u8PinNumber,u8 Copy_u8PinValue);
+    ^
+../LCD_Prog.c:41:2: warning: passing argument 1 of ‘DIO_u8SetPinValue’ makes integer from pointer without a cast [enabled by default]
+  DIO_u8SetPinValue(PORT_A,PINA_1,DIO_LOW);
+  ^
+In file included from ../LCD_Prog.c:11:0:
+../DIO_Interface.h:97:4: note: expected ‘u8’ but argument is of type ‘u8 *’
+ u8 DIO_u8SetPinValue(u8 Copy_u8PinNumber,u8 Copy_u8PinValue);
+    ^
+../LCD_Prog.c:41:2: error: too many arguments to function ‘DIO_u8SetPinValue’
+  DIO_u8SetPinValue(PORT_A,PINA_1,DIO_LOW);
+  ^
+In file included from ../LCD_Prog.c:11:0:
+../DIO_Interface.h:97:4: note: declared here
+ u8 DIO_u8SetPinValue(u8 Copy_u8PinNumber,u8 Copy_u8PinValue);
+    ^
+../LCD_Prog.c:43:2: warning: passing argument 1 of ‘DIO_u8SetPinValue’ makes integer from pointer without a cast [enabled by default]
+  DIO_u8SetPinValue(PORT_A,PINA_2,DIO_HIGH);
+  ^
+In file included from ../LCD_Prog.c:11:0:
+../DIO_Interface.h:97:4: note: expected ‘u8’ but argument is of type ‘u8 *’
+ u8 DIO_u8SetPinValue(u8 Copy_u8PinNumber,u8 Copy_u8PinValue);
+    ^
+../LCD_Prog.c:43:2: error: too many arguments to function ‘DIO_u8SetPinValue’
+  DIO_u8SetPinValue(PORT_A,PINA_2,DIO_HIGH);
+  ^
+In file included from ../LCD_Prog.c:11:0:
+../DIO_Interface.h:97:4: note: declared here
+ u8 DIO_u8SetPinValue(u8 Copy_u8PinNumber,u8 Copy_u8PinValue);
+    ^
+../LCD_Prog.c:45:2: warning: passing argument 1 of ‘DIO_u8SetPinValue’ makes integer from pointer without a cast [enabled by default]
+  DIO_u8SetPinValue(PORT_A,PINA_2,DIO_LOW);
+  ^
+In file included from ../LCD_Prog.c:11:0:
+../DIO_Interface.h:97:4: note: expected ‘u8’ but argument is of type ‘u8 *’
+ u8 DIO_u8SetPinValue(u8 Copy_u8PinNumber,u8 Copy_u8PinValue);
+    ^
+../LCD_Prog.c:45:2: error: too many arguments to function ‘DIO_u8SetPinValue’
+  DIO_u8SetPinValue(PORT_A,PINA_2,DIO_LOW);
+  ^
+In file included from ../LCD_Prog.c:11:0:
+../DIO_Interface.h:97:4: note: declared here
+ u8 DIO_u8SetPinValue(u8 Copy_u8PinNumber,u8 Copy_u8PinValue);
+    ^
+../LCD_Prog.c: In function ‘LCD_u8WriteData’:
+../LCD_Prog.c:59:2: warning: passing argument 1 of ‘DIO_u8SetPinValue’ makes integer from pointer without a cast [enabled by default]
+  DIO_u8SetPinValue(PORT_A,PINA_2,DIO_LOW);
+  ^
+In file included from ../LCD_Prog.c:11:0:
+../DIO_Interface.h:97:4: note: expected ‘u8’ but argument is of type ‘u8 *’
+ u8 DIO_u8SetPinValue(u8 Copy_u8PinNumber,u8 Copy_u8PinValue);
+    ^
+../LCD_Prog.c:59:2: error: too many arguments to function ‘DIO_u8SetPinValue’
+  DIO_u8SetPinValue(PORT_A,PINA_2,DIO_LOW);
+  ^
+In file included from ../LCD_Prog.c:11:0:
+../DIO_Interface.h:97:4: note: declared here
+ u8 DIO_u8SetPinValue(u8 Copy_u8PinNumber,u8 Copy_u8PinValue);
+    ^
+../LCD_Prog.c:60:2: warning: passing argument 1 of ‘DIO_u8SetPinValue’ makes integer from pointer without a cast [enabled by default]
+  DIO_u8SetPinValue(PORT_A,PINA_0,DIO_HIGH);
+  ^
+In file included from ../LCD_Prog.c:11:0:
+../DIO_Interface.h:97:4: note: expected ‘u8’ but argument is of type ‘u8 *’
+ u8 DIO_u8SetPinValue(u8 Copy_u8PinNumber,u8 Copy_u8PinValue);
+    ^
+../LCD_Prog.c:60:2: error: too many arguments to function ‘DIO_u8SetPinValue’
+  DIO_u8SetPinValue(PORT_A,PINA_0,DIO_HIGH);
+  ^
+In file included from ../LCD_Prog.c:11:0:
+../DIO_Interface.h:97:4: note: declared here
+ u8 DIO_u8SetPinValue(u8 Copy_u8PinNumber,u8 Copy_u8PinValue);
+    ^
+../LCD_Prog.c:61:2: warning: passing argument 1 of ‘DIO_u8SetPinValue’ makes integer from pointer without a cast [enabled by default]
+  DIO_u8SetPinValue(PORT_A,PINA_1,DIO_LOW);
+  ^
+In file included from ../LCD_Prog.c:11:0:
+../DIO_Interface.h:97:4: note: expected ‘u8’ but argument is of type ‘u8 *’
+ u8 DIO_u8SetPinValue(u8 Copy_u8PinNumber,u8 Copy_u8PinValue);
+    ^
+../LCD_Prog.c:61:2: error: too many arguments to function ‘DIO_u8SetPinValue’
+  DIO_u8SetPinValue(PORT_A,PINA_1,DIO_LOW);
+  ^
+In file included from ../LCD_Prog.c:11:0:
+../DIO_Interface.h:97:4: note: declared here
+ u8 DIO_u8SetPinValue(u8 Copy_u8PinNumber,u8 Copy_u8PinValue);
+    ^
+../LCD_Prog.c:63:2: warning: passing argument 1 of ‘DIO_u8SetPinValue’ makes integer from pointer without a cast [enabled by default]
+  DIO_u8SetPinValue(PORT_A,PINA_2,DIO_HIGH);
+  ^
+In file included from ../LCD_Prog.c:11:0:
+../DIO_Interface.h:97:4: note: expected ‘u8’ but argument is of type ‘u8 *’
+ u8 DIO_u8SetPinValue(u8 Copy_u8PinNumber,u8 Copy_u8PinValue);
+    ^
+../LCD_Prog.c:63:2: error: too many arguments to function ‘DIO_u8SetPinValue’
+  DIO_u8SetPinValue(PORT_A,PINA_2,DIO_HIGH);
+  ^
+In file included from ../LCD_Prog.c:11:0:
+../DIO_Interface.h:97:4: note: declared here
+ u8 DIO_u8SetPinValue(u8 Copy_u8PinNumber,u8 Copy_u8PinValue);
+    ^
+../LCD_Prog.c:65:2: warning: passing argument 1 of ‘DIO_u8SetPinValue’ makes integer from pointer without a cast [enabled by default]
+  DIO_u8SetPinValue(PORT_A,PINA_2,DIO_LOW);
+  ^
+In file included from ../LCD_Prog.c:11:0:
+../DIO_Interface.h:97:4: note: expected ‘u8’ but argument is of type ‘u8 *’
+ u8 DIO_u8SetPinValue(u8 Copy_u8PinNumber,u8 Copy_u8PinValue);
+    ^
+../LCD_Prog.c:65:2: error: too many arguments to function ‘DIO_u8SetPinValue’
+  DIO_u8SetPinValue(PORT_A,PINA_2,DIO_LOW);
+  ^
+In file included from ../LCD_Prog.c:11:0:
+../DIO_Interface.h:97:4: note: declared here
+ u8 DIO_u8SetPinValue(u8 Copy_u8PinNumber,u8 Copy_u8PinValue);
+    ^
+make: *** [LCD_Prog.o] Error 1
+
+14:42:19 Build Finished (took 67ms)
+

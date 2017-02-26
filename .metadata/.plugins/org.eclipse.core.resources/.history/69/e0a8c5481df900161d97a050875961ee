@@ -1,0 +1,14 @@
+/*
+ * RTO_interface.h
+ *
+ *  Created on: Feb 22, 2017
+ *      Author: Russel
+ */
+
+#ifndef RTO_INTERFACE_H_
+#define RTO_INTERFACE_H_
+
+#define RTO_MAXIMUM_TASK_NUMBER 5
+
+
+#endif /* RTO_INTERFACE_H_ */

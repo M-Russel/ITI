@@ -1,0 +1,20 @@
+20:19:49 **** Incremental Build of configuration Debug for project RTO ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 RTO.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:    2960 bytes (18.1% Full)
+(.text + .data + .bootloader)
+
+Data:         14 bytes (1.4% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+
+20:19:49 Build Finished (took 67ms)
+

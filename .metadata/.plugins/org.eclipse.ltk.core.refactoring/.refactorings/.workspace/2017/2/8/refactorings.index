@@ -28,3 +28,6 @@
 1487591336339	Rename resource 'Schedular_LCD_LED'
 1487613713566	Delete resource 'RMS/RMS_Traditional.c'
 1487676444330	Delete resource 'ICU/RMS_Traditional.c'
+1487767382780	Delete 2 resources
+1487783794587	Delete resource 'RTO/schedular0.c'
+1487783825341	Delete resource 'RTO/SCHEDULAR_u8interface.h'
