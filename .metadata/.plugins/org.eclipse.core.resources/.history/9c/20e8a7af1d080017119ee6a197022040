@@ -1,0 +1,13 @@
+/*
+ * UART_Private.h
+ *
+ *  Created on: Mar 13, 2017
+ *      Author: root
+ */
+
+#ifndef UART_PRIVATE_H_
+#define UART_PRIVATE_H_
+
+
+
+#endif /* UART_PRIVATE_H_ */

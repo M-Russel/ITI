@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;TIMER8BIT&apos; to &apos;TIMER8BIT_PWM_FAST_MODE&apos;" description="Rename resource &apos;TIMER8BIT&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="/TIMER8BIT" name="TIMER8BIT_PWM_FAST_MODE" stamp="1488126044469" updateReferences="true"/>
+</session>

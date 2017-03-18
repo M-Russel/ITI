@@ -1,0 +1,42 @@
+/*
+ * Test.c
+ *
+ *  Created on: Feb 27, 2017
+ *      Author: root
+ */
+
+#include <stdio.h>
+
+void main (void)
+{
+int x=7;
+int y;
+int k;
+int h;
+
+for (x=0;x<7;x++)
+{
+	if (x<4)
+	{
+		for (h=3;h>=0;h--)
+		{
+			printf(" ");
+		}
+		for (y=0;y<x+1;y++)
+		{
+			printf("*");
+
+		}
+		printf("\n");
+	}
+	else if (x>=4 && x<7)
+	{
+		for (k=6;k>=x;k--)
+		{
+			printf ("*");
+		}
+		printf("\n");
+	}
+}
+return ;
+}

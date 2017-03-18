@@ -1,20 +1,46 @@
-20:19:49 **** Incremental Build of configuration Debug for project RTO ****
+17:20:44 **** Incremental Build of configuration Debug for project RTO ****
 make all 
+Building file: ../RTO_prog.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"RTO_prog.d" -MT"RTO_prog.o" -c -o "RTO_prog.o" "../RTO_prog.c"
+In file included from ../RTO_prog.c:11:0:
+../TIMER0_interface.h:13:1: warning: ‘__INTR_ATTRS’ attribute directive ignored [-Wattributes]
+ void __vector_11(void) __attribute__((signal,__INTR_ATTRS));
+ ^
+In file included from ../RTO_prog.c:10:0:
+../RTO_private.h:11:11: warning: ‘Schedular’ declared ‘static’ but never defined [-Wunused-function]
+ static u8 Schedular(void);
+           ^
+Finished building: ../RTO_prog.c
+ 
+Building target: RTO.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,RTO.map -mmcu=atmega16 -o "RTO.elf"  ./DIO_Prog.o ./RTO_prog.o ./TIMER0_prog.o ./delay_ms.o ./main.o   
+Finished building target: RTO.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S RTO.elf  >"RTO.lss"
+Finished building: RTO.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex RTO.elf  "RTO.hex"
+Finished building: RTO.hex
+ 
 Invoking: Print Size
 avr-size --format=avr --mcu=atmega16 RTO.elf
 AVR Memory Usage
 ----------------
 Device: atmega16
 
-Program:    2960 bytes (18.1% Full)
+Program:    3186 bytes (19.4% Full)
 (.text + .data + .bootloader)
 
-Data:         14 bytes (1.4% Full)
+Data:          8 bytes (0.8% Full)
 (.data + .bss + .noinit)
 
 
 Finished building: sizedummy
  
 
-20:19:49 Build Finished (took 67ms)
+17:20:44 Build Finished (took 113ms)
 

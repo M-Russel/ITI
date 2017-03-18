@@ -1,0 +1,72 @@
+/*
+ * main.c
+ *
+ *  Created on: Mar 9, 2017
+ *      Author: Russel
+ */
+#include "std_types.h"
+#include "utils.h"
+#include "DIO_Interface.h"
+#include "DIO_Private.h"
+#include "ADC_interface.h"
+#include "ADC_private.h"
+#include "delay_ms.h"
+#define LED_ZERO 1
+#define LED_ONE 3
+#define RESISTANCE 300
+
+
+
+u8 LDR_u8Value(pu8 LDR_pu8CopyResValue)
+{
+
+u8 Local_u8Temp,Local_u8ADC_Value;
+
+ADC_u8ReadADC_Value(ZERO,&Local_u8ADC_Value);
+Local_u8Temp=(((VREF-Local_u8ADC_Value)*RESISTANCE)/Local_u8ADC_Value);
+*LDR_pu8CopyResValue=Local_u8Temp;
+/*
+ * The Equation for the LDR_Resistance
+ * http://www.petervis.com/electronics%20guides/calculators/LDR/LDR.html
+ * */
+
+}
+
+
+
+void main (void)
+{
+
+u8 MAIN_u8LocalADC_Analog_Value=ZERO;
+DIO_voidInitialize();
+ADC_u8Init();
+while (TRUE)
+{
+ADC_u8ReadADC_Value(ZERO,&MAIN_u8LocalADC_Analog_Value);
+if (MAIN_u8LocalADC_Analog_Value < 1)
+{
+
+	DIO_u8SetPinValue(PIN_24,DIO_HIGH);
+	DIO_u8SetPinValue(PIN_25,DIO_LOW);
+	DIO_u8SetPinValue(PIN_26,DIO_LOW);
+}
+else if (MAIN_u8LocalADC_Analog_Value >=1 && MAIN_u8LocalADC_Analog_Value<3)
+{
+	DIO_u8SetPinValue(PIN_24,DIO_LOW);
+	DIO_u8SetPinValue(PIN_25,DIO_HIGH);
+	DIO_u8SetPinValue(PIN_26,DIO_LOW);
+
+}
+else
+{
+	DIO_u8SetPinValue(PIN_24,DIO_LOW);
+	DIO_u8SetPinValue(PIN_25,DIO_LOW);
+	DIO_u8SetPinValue(PIN_26,DIO_HIGH);
+
+}
+
+}
+
+
+return ;
+}

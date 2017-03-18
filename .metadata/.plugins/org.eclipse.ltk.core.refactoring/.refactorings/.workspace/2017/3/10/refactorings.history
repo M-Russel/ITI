@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">&#x0A;<refactoring comment="Delete 2 resources" deleteContents="false" description="Delete 2 resources" element1="/ADC/LCD_Interface.h" element2="/ADC/LCD_Prog.c" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="2" stamp="1489074732372"/>&#x0A;<refactoring comment="Delete 4 resources" deleteContents="false" description="Delete 4 resources" element1="/ADC/DIO_Config.h" element2="/ADC/DIO_Interface.h" element3="/ADC/DIO_Private.h" element4="/ADC/DIO_Prog.c" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="4" stamp="1489155089389"/>
+</session>

@@ -1,0 +1,21 @@
+/*
+ * Test.c
+ *
+ *  Created on: Feb 27, 2017
+ *      Author: root
+ */
+
+#include <stdio.h>
+#include "std_types.h"
+void main (void)
+{
+
+u8 x[10]={};
+
+x++;
+
+
+printf("%d",x);
+
+return ;
+}

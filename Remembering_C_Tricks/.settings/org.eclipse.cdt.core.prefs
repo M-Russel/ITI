@@ -1,0 +1,12 @@
+eclipse.preferences.version=1
+environment/project/cdt.managedbuild.config.gnu.mingw.exe.debug.1201114537/JDK/delimiter=;
+environment/project/cdt.managedbuild.config.gnu.mingw.exe.debug.1201114537/JDK/operation=replace
+environment/project/cdt.managedbuild.config.gnu.mingw.exe.debug.1201114537/JDK/value=/usr/lib/jvm/java-7-openjdk-amd64/bin
+environment/project/cdt.managedbuild.config.gnu.mingw.exe.debug.1201114537/JRE/delimiter=;
+environment/project/cdt.managedbuild.config.gnu.mingw.exe.debug.1201114537/JRE/operation=replace
+environment/project/cdt.managedbuild.config.gnu.mingw.exe.debug.1201114537/JRE/value=/usr/lib/jvm/java-7-openjdk-amd64/jre/bin
+environment/project/cdt.managedbuild.config.gnu.mingw.exe.debug.1201114537/MINGW/delimiter=;
+environment/project/cdt.managedbuild.config.gnu.mingw.exe.debug.1201114537/MINGW/operation=replace
+environment/project/cdt.managedbuild.config.gnu.mingw.exe.debug.1201114537/MINGW/value=/home/russel/MinGW/bin
+environment/project/cdt.managedbuild.config.gnu.mingw.exe.debug.1201114537/append=true
+environment/project/cdt.managedbuild.config.gnu.mingw.exe.debug.1201114537/appendContributed=true

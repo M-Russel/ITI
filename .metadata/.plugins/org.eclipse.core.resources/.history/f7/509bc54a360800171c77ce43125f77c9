@@ -1,0 +1,22 @@
+/*
+ * UART_prog.c
+ *
+ *  Created on: Mar 13, 2017
+ *      Author: Russel
+ */
+#include "std_types.h"
+#include "utils.h"
+#include "DIO_Interface.h"
+#include "UART_Private.h"
+#include "UART_Interface.h"
+#include "UART_Config.h"
+
+
+
+
+u8 UART_u8Init(void)
+{
+	UBRRL=UART_BAUD_RATE;
+
+}
+

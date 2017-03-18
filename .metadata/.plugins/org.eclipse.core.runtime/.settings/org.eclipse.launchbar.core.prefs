@@ -1,8 +1,10 @@
 LaunchTargetManager/org.eclipse.launchbar.core.launchTargetType.local,Local/arch=x86_64
 LaunchTargetManager/org.eclipse.launchbar.core.launchTargetType.local,Local/os=linux
-configDescList=org.eclipse.launchbar.core.descriptorType.default\:opencv_project,org.eclipse.launchbar.core.descriptorType.default\:Test.exe,org.eclipse.launchbar.core.descriptorType.default\:PointerToArray,org.eclipse.launchbar.core.descriptorType.default\:Stepper.elf
+configDescList=org.eclipse.launchbar.core.descriptorType.default\:opencv_project,org.eclipse.launchbar.core.descriptorType.default\:Test.exe,org.eclipse.launchbar.core.descriptorType.default\:PointerToArray,org.eclipse.launchbar.core.descriptorType.default\:Stepper.elf,org.eclipse.launchbar.core.descriptorType.default\:Remembering_C_Tricks Debug,org.eclipse.launchbar.core.descriptorType.default\:ADC.elf
 eclipse.preferences.version=1
+org.eclipse.launchbar.core.descriptorType.default\:ADC.elf/activeLaunchMode=debug
 org.eclipse.launchbar.core.descriptorType.default\:PointerToArray/activeLaunchMode=run
+org.eclipse.launchbar.core.descriptorType.default\:Remembering_C_Tricks\ Debug/activeLaunchMode=run
 org.eclipse.launchbar.core.descriptorType.default\:Stepper.elf/activeLaunchMode=debug
 org.eclipse.launchbar.core.descriptorType.default\:Test.exe/activeLaunchMode=run
 org.eclipse.launchbar.core.descriptorType.default\:Test.exe/activeLaunchTarget=org.eclipse.launchbar.core.launchTargetType.local\:Local

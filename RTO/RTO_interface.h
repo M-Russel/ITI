@@ -27,6 +27,9 @@ u8 RTO_u8CreatTask(Task *Copy_pTaskPointer,u8 Copy_u8TaskPriority);
 u8 RTO_u8DeleteTask(u8 Copy_u8TaskPriority);
 u8 RTO_u8StartTask(u8 Copy_u8TaskPriority);
 u8 RTO_u8StopTask(u8 Copy_u8TaskPriority);
-static void RTO_u8Schedular(void);
+static void RTO_voidSchedular(void);
+
+#define TASK_NUMBER1_PERIODICITY 1
+#define TASK_NUMBER1_FIRST_DELAY 0
 
 #endif /* RTO_INTERFACE_H_ */

@@ -1,0 +1,16 @@
+/*
+ * ADC_config.h
+ *
+ *  Created on: Mar 8, 2017
+ *      Author: Russel
+ */
+
+#ifndef ADC_CONFIG_H_
+#define ADC_CONFIG_H_
+
+
+#define REFS1_STATUS
+#define REFS0_STATUS 6
+
+
+#endif /* ADC_CONFIG_H_ */

@@ -1,0 +1,36 @@
+/*
+ * main.c
+ *
+ *  Created on: Mar 13, 2017
+ *      Author: Russel
+ */
+#include "std_types.h"
+#include "utils.h"
+#include "DIO_Interface.h"
+#include "UART_Interface.h"
+
+
+void USART_Init( unsigned int baud )
+{
+/* Set baud rate */
+UBRRL = (unsigned char)baud;
+/* Enable receiver and transmitter */
+UCSRB = (1<<RXEN)|(1<<TXEN);
+/* Set frame format: 8data, 2stop bit */
+UCSRC = (1<<URSEL)|(1<<USBS)|(3<<UCSZ0);
+}
+void main (void)
+{
+DIO_voidInitialize();
+//UART_u8Init();
+
+while(TRUE)
+{
+
+UART_u8Transmit('5');
+}
+
+}
+
+
+

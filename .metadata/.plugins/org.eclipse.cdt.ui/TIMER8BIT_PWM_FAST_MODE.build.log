@@ -1,0 +1,69 @@
+18:43:40 **** Incremental Build of configuration Debug for project TIMER8BIT_PWM_FAST_MODE ****
+make all 
+Building file: ../Fast_PWM.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=4000000UL -MMD -MP -MF"Fast_PWM.d" -MT"Fast_PWM.o" -c -o "Fast_PWM.o" "../Fast_PWM.c"
+In file included from ../Fast_PWM.c:14:0:
+../TIMER0_interface.h:13:1: warning: ‘__INTR_ATTRS’ attribute directive ignored [-Wattributes]
+ void __vector_11(void) __attribute__((signal,__INTR_ATTRS));
+ ^
+../Fast_PWM.c:17:6: warning: return type of ‘main’ is not ‘int’ [-Wmain]
+ void main (void)
+      ^
+Finished building: ../Fast_PWM.c
+ 
+Building file: ../TIMER0.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=4000000UL -MMD -MP -MF"TIMER0.d" -MT"TIMER0.o" -c -o "TIMER0.o" "../TIMER0.c"
+Finished building: ../TIMER0.c
+ 
+Building file: ../TIMER0_prog.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=4000000UL -MMD -MP -MF"TIMER0_prog.d" -MT"TIMER0_prog.o" -c -o "TIMER0_prog.o" "../TIMER0_prog.c"
+In file included from ../TIMER0_prog.c:13:0:
+../TIMER0_interface.h:13:1: warning: ‘__INTR_ATTRS’ attribute directive ignored [-Wattributes]
+ void __vector_11(void) __attribute__((signal,__INTR_ATTRS));
+ ^
+Finished building: ../TIMER0_prog.c
+ 
+Building file: ../TIMER1.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=4000000UL -MMD -MP -MF"TIMER1.d" -MT"TIMER1.o" -c -o "TIMER1.o" "../TIMER1.c"
+Finished building: ../TIMER1.c
+ 
+Building file: ../TIMER2.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=4000000UL -MMD -MP -MF"TIMER2.d" -MT"TIMER2.o" -c -o "TIMER2.o" "../TIMER2.c"
+Finished building: ../TIMER2.c
+ 
+Building target: TIMER8BIT_PWM_FAST_MODE.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,TIMER8BIT_PWM_FAST_MODE.map -mmcu=atmega32 -o "TIMER8BIT_PWM_FAST_MODE.elf"  ./DIO_Prog.o ./Fast_PWM.o ./TIMER0.o ./TIMER0_prog.o ./TIMER1.o ./TIMER2.o ./delay_ms.o   
+Finished building target: TIMER8BIT_PWM_FAST_MODE.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S TIMER8BIT_PWM_FAST_MODE.elf  >"TIMER8BIT_PWM_FAST_MODE.lss"
+Finished building: TIMER8BIT_PWM_FAST_MODE.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex TIMER8BIT_PWM_FAST_MODE.elf  "TIMER8BIT_PWM_FAST_MODE.hex"
+Finished building: TIMER8BIT_PWM_FAST_MODE.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 TIMER8BIT_PWM_FAST_MODE.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    2170 bytes (6.6% Full)
+(.text + .data + .bootloader)
+
+Data:          0 bytes (0.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+
+18:43:42 Build Finished (took 1s.829ms)
+

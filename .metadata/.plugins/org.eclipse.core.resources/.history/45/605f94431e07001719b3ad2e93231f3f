@@ -1,0 +1,44 @@
+/*
+ * ADC_prog.c
+ *
+ *  Created on: Mar 8, 2017
+ *      Author: Russel
+ */
+#include "std_types.h"
+#include "utils.h"
+#include "DIO_Interface.h"
+#include "DIO_Private.h"
+#include "ADC_interface.h"
+#include "ADC_config.h"
+#include "ADC_private.h"
+u8 ADC_u8Init(void)
+{
+
+ADMUX|=(REFS1_STATUS<<REFS1)|(REFS0_STATUS<<REFS0)|(ADLAR_STATUS<<ADLAR)|(MUX4_STATUS<<MUX4)
+		|(MUX3_STATUS<<MUX3)|(MUX2_STATUS<<MUX2)|(MUX1_STATUS<<MUX1)|(MUX0_STATUS<<MUX0);
+ADCSRA|=(ADEN_STATUS<<ADEN)|(ADATE_STATUS<<ADATE)|(ADIE_STATUS<<ADIE)|(ADPS2_STATUS<<ADPS2)|(ADPS1_STATUS<<ADPS1)|(ADPS0_STATUS<<ADPS0);
+
+
+//SREG|=(GLOBAL_INTERRUPT_STATUS<<GLOBAL_INTERRUPT);
+
+
+	return OK;
+
+}
+
+u8 ADC_u8ReadADC_Value(u8 ADC_u8CopyChannel,pu8 ADC_pu8CopyReturnValue)
+{
+	u8 Local_u8Temp=ZERO;
+	//Start Conversion
+	setBit(ADCSRA,ADSC);
+
+	//check on the End of conversion flag
+	while(getBit(ADCSRA,ADIF) == 0){}
+	DIO_u8SetPinValue(PIN_24,DIO_HIGH);
+	//clear the conversion flag by writing one on it
+	setBit(ADCSRA,ADIF);
+	Local_u8Temp|=ADCH;
+	Local_u8Temp=(Local_u8Temp*((VREF*FIXED_POINT)/RESOLUTION));
+    *ADC_pu8CopyReturnValue=Local_u8Temp;
+return 1;
+}

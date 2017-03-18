@@ -1,0 +1,41 @@
+/*
+ * UART_prog.c
+ *
+ *  Created on: Mar 13, 2017
+ *      Author: Russel
+ */
+#include "std_types.h"
+#include "utils.h"
+#include "DIO_Interface.h"
+#include "UART_Private.h"
+#include "UART_Interface.h"
+#include "UART_Config.h"
+
+
+
+
+u8 UART_u8Init(void)
+{
+	UCSRA=REGISTER_VALUE(RXC_STATUS,TXC_STATUS, UDRE_STATUS, FE_STATUS, DOR_STATUS, PE_STATUS, U2X_STATUS, MPCM_STATUS);
+	UCSRB=REGISTER_VALUE(RXCIE_STATUS, TXCIE_STATUS, UDRIE_STATUS, RXEN_STATUS, TXEN_STATUS, UCSZ2_STATUS, RXB8_STATUS, TXB8_STATUS);
+	UCSRC=REGISTER_VALUE(URSEL_STATUS, UMSEL_STATUS, UPM1_STATUS, UPM0_STATUS, USBS_STATUS, UCSZ1_STATUS, UCSZ0_STATUS, UCPOL_STATUS);
+	UBRRL=UART_BAUD_RATE;
+}
+
+u8 UART_u8Recieve(void)
+{
+	{
+	/* Wait for data to be received */
+	while ( getBit(UCSRA,RXC)==0 );
+	/* Get and return received data from buffer */
+	return UDR;
+}
+
+u8 UART_u8Transmit(u8 Copy_u8Data)
+{
+	/* Wait for empty transmit buffer */
+	while ( getBit(UCSRA,UDRE)==0 );
+	/* Put data into buffer, sends the data */
+	UDR = Copy_u8Data ;
+}
+

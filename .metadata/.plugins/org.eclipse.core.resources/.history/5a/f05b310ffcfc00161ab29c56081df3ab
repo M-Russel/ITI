@@ -1,0 +1,28 @@
+/*
+ * Test.c
+ *
+ *  Created on: Feb 27, 2017
+ *      Author: root
+ */
+
+#include <stdio.h>
+
+void main (void)
+{
+int x=4,y=4;
+
+for (x=3;x>=0;x--)
+{
+
+	for (y=3;y>x;y--)
+	{
+
+		printf (" ");
+
+
+	}
+
+	printf("\n");
+}
+return ;
+}

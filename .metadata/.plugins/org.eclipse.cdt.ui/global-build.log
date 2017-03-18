@@ -1,351 +1,1411 @@
-19:19:34 **** Clean-only build of configuration Debug for project RTO ****
-make clean 
-rm -rf  ./DIO_Prog.o ./RTO_prog.o  sizedummy  RTO.lss  ./DIO_Prog.d ./RTO_prog.d  RTO.elf
+19:15:16 **** Incremental Build of configuration Debug for project ADC ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=1000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+../main.c:37:6: warning: return type of ‘main’ is not ‘int’ [-Wmain]
+ void main (void)
+      ^
+../main.c: In function ‘LDR_u8Value’:
+../main.c:33:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+Finished building: ../main.c
  
-19:41:21 **** Build of configuration Debug for project RTO ****
+Building target: ADC.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,ADC.map -mmcu=atmega32 -o "ADC.elf"  ./ADC_prog.o ./DIO_Prog.o ./delay_ms.o ./main.o   
+Finished building target: ADC.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S ADC.elf  >"ADC.lss"
+Finished building: ADC.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex ADC.elf  "ADC.hex"
+Finished building: ADC.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 ADC.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    2518 bytes (7.7% Full)
+(.text + .data + .bootloader)
+
+Data:          0 bytes (0.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+11:26:57 **** Incremental Build of configuration Debug for project ADC ****
+make all 
+Building file: ../ADC_prog.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=1000000UL -MMD -MP -MF"ADC_prog.d" -MT"ADC_prog.o" -c -o "ADC_prog.o" "../ADC_prog.c"
+Finished building: ../ADC_prog.c
+ 
+Building file: ../DIO_Prog.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=1000000UL -MMD -MP -MF"DIO_Prog.d" -MT"DIO_Prog.o" -c -o "DIO_Prog.o" "../DIO_Prog.c"
+Finished building: ../DIO_Prog.c
+ 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=1000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+../main.c:37:6: warning: return type of ‘main’ is not ‘int’ [-Wmain]
+Finished building: ../main.c
+ void main (void)
+      ^
+ 
+Building target: ADC.elf
+Invoking: AVR C Linker
+../main.c: In function ‘LDR_u8Value’:
+avr-gcc -Wl,-Map,ADC.map -mmcu=atmega32 -o "ADC.elf"  ./ADC_prog.o ./DIO_Prog.o ./delay_ms.o ./main.o   
+../main.c:33:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+Finished building target: ADC.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S ADC.elf  >"ADC.lss"
+Finished building: ADC.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex ADC.elf  "ADC.hex"
+Finished building: ADC.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 ADC.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    2500 bytes (7.6% Full)
+(.text + .data + .bootloader)
+
+Data:          0 bytes (0.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+11:28:32 **** Incremental Build of configuration Debug for project ADC ****
+make all 
+Building file: ../ADC_prog.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=1000000UL -MMD -MP -MF"ADC_prog.d" -MT"ADC_prog.o" -c -o "ADC_prog.o" "../ADC_prog.c"
+Finished building: ../ADC_prog.c
+ 
+Building target: ADC.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,ADC.map -mmcu=atmega32 -o "ADC.elf"  ./ADC_prog.o ./DIO_Prog.o ./delay_ms.o ./main.o   
+Finished building target: ADC.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S ADC.elf  >"ADC.lss"
+Finished building: ADC.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex ADC.elf  "ADC.hex"
+Finished building: ADC.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 ADC.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    2500 bytes (7.6% Full)
+(.text + .data + .bootloader)
+
+Data:          0 bytes (0.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+11:29:29 **** Incremental Build of configuration Debug for project ADC ****
+make all 
+Building file: ../ADC_prog.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=1000000UL -MMD -MP -MF"ADC_prog.d" -MT"ADC_prog.o" -c -o "ADC_prog.o" "../ADC_prog.c"
+Finished building: ../ADC_prog.c
+ 
+Building target: ADC.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,ADC.map -mmcu=atmega32 -o "ADC.elf"  ./ADC_prog.o ./DIO_Prog.o ./delay_ms.o ./main.o   
+Finished building target: ADC.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S ADC.elf  >"ADC.lss"
+Finished building: ADC.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex ADC.elf  "ADC.hex"
+Finished building: ADC.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 ADC.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    2500 bytes (7.6% Full)
+(.text + .data + .bootloader)
+
+Data:          0 bytes (0.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+11:45:08 **** Incremental Build of configuration Debug for project ADC ****
+make all 
+Building file: ../ADC_prog.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=1000000UL -MMD -MP -MF"ADC_prog.d" -MT"ADC_prog.o" -c -o "ADC_prog.o" "../ADC_prog.c"
+Finished building: ../ADC_prog.c
+ 
+Building target: ADC.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,ADC.map -mmcu=atmega32 -o "ADC.elf"  ./ADC_prog.o ./DIO_Prog.o ./delay_ms.o ./main.o   
+Finished building target: ADC.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S ADC.elf  >"ADC.lss"
+Finished building: ADC.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex ADC.elf  "ADC.hex"
+Finished building: ADC.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 ADC.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    2718 bytes (8.3% Full)
+(.text + .data + .bootloader)
+
+Data:          0 bytes (0.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+11:45:45 **** Incremental Build of configuration Debug for project ADC ****
+make all 
+Building file: ../ADC_prog.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=1000000UL -MMD -MP -MF"ADC_prog.d" -MT"ADC_prog.o" -c -o "ADC_prog.o" "../ADC_prog.c"
+Finished building: ../ADC_prog.c
+ 
+Building target: ADC.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,ADC.map -mmcu=atmega32 -o "ADC.elf"  ./ADC_prog.o ./DIO_Prog.o ./delay_ms.o ./main.o   
+Finished building target: ADC.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S ADC.elf  >"ADC.lss"
+Finished building: ADC.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex ADC.elf  "ADC.hex"
+Finished building: ADC.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 ADC.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    2718 bytes (8.3% Full)
+(.text + .data + .bootloader)
+
+Data:          0 bytes (0.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+11:45:49 **** Incremental Build of configuration Debug for project ADC ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 ADC.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    2718 bytes (8.3% Full)
+(.text + .data + .bootloader)
+
+Data:          0 bytes (0.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+12:10:11 **** Incremental Build of configuration Debug for project ADC ****
+make all 
+Building file: ../ADC_prog.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=1000000UL -MMD -MP -MF"ADC_prog.d" -MT"ADC_prog.o" -c -o "ADC_prog.o" "../ADC_prog.c"
+Finished building: ../ADC_prog.c
+ 
+Building target: ADC.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,ADC.map -mmcu=atmega32 -o "ADC.elf"  ./ADC_prog.o ./DIO_Prog.o ./delay_ms.o ./main.o   
+Finished building target: ADC.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S ADC.elf  >"ADC.lss"
+Finished building: ADC.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex ADC.elf  "ADC.hex"
+Finished building: ADC.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 ADC.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    2500 bytes (7.6% Full)
+(.text + .data + .bootloader)
+
+Data:          0 bytes (0.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+13:47:54 **** Incremental Build of configuration Debug for project ADC ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 ADC.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    2500 bytes (7.6% Full)
+(.text + .data + .bootloader)
+
+Data:          0 bytes (0.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+14:20:23 **** Incremental Build of configuration Debug for project ADC ****
+make all 
+Building file: ../ADC_prog.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=1000000UL -MMD -MP -MF"ADC_prog.d" -MT"ADC_prog.o" -c -o "ADC_prog.o" "../ADC_prog.c"
+Finished building: ../ADC_prog.c
+ 
+Building target: ADC.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,ADC.map -mmcu=atmega32 -o "ADC.elf"  ./ADC_prog.o ./DIO_Prog.o ./delay_ms.o ./main.o   
+Finished building target: ADC.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S ADC.elf  >"ADC.lss"
+Finished building: ADC.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex ADC.elf  "ADC.hex"
+Finished building: ADC.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 ADC.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    2516 bytes (7.7% Full)
+(.text + .data + .bootloader)
+
+Data:          0 bytes (0.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+14:22:05 **** Incremental Build of configuration Debug for project ADC ****
+make all 
+Building file: ../ADC_prog.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=1000000UL -MMD -MP -MF"ADC_prog.d" -MT"ADC_prog.o" -c -o "ADC_prog.o" "../ADC_prog.c"
+Finished building: ../ADC_prog.c
+ 
+Building target: ADC.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,ADC.map -mmcu=atmega32 -o "ADC.elf"  ./ADC_prog.o ./DIO_Prog.o ./delay_ms.o ./main.o   
+Finished building target: ADC.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S ADC.elf  >"ADC.lss"
+Finished building: ADC.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex ADC.elf  "ADC.hex"
+Finished building: ADC.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 ADC.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    2516 bytes (7.7% Full)
+(.text + .data + .bootloader)
+
+Data:          0 bytes (0.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+14:22:07 **** Incremental Build of configuration Debug for project ADC ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 ADC.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    2516 bytes (7.7% Full)
+(.text + .data + .bootloader)
+
+Data:          0 bytes (0.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+15:34:02 **** Incremental Build of configuration Debug for project ADC ****
+make all 
+Building file: ../ADC_prog.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=1000000UL -MMD -MP -MF"ADC_prog.d" -MT"ADC_prog.o" -c -o "ADC_prog.o" "../ADC_prog.c"
+Finished building: ../ADC_prog.c
+ 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=1000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+../main.c:37:6: warning: return type of ‘main’ is not ‘int’ [-Wmain]
+Finished building: ../main.c
+ void main (void)
+      ^
+../main.c: In function ‘LDR_u8Value’:
+../main.c:33:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ 
+ ^
+Building target: ADC.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,ADC.map -mmcu=atmega32 -o "ADC.elf"  ./ADC_prog.o ./DIO_Prog.o ./delay_ms.o ./main.o   
+Finished building target: ADC.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S ADC.elf  >"ADC.lss"
+Finished building: ADC.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex ADC.elf  "ADC.hex"
+Finished building: ADC.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 ADC.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    2516 bytes (7.7% Full)
+(.text + .data + .bootloader)
+
+Data:          0 bytes (0.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+15:35:33 **** Incremental Build of configuration Debug for project ADC ****
+make all 
+Building file: ../ADC_prog.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=1000000UL -MMD -MP -MF"ADC_prog.d" -MT"ADC_prog.o" -c -o "ADC_prog.o" "../ADC_prog.c"
+Finished building: ../ADC_prog.c
+ 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=1000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+../main.c:37:6: warning: return type of ‘main’ is not ‘int’ [-Wmain]
+ void main (void)
+      ^
+../main.c: In function ‘LDR_u8Value’:
+../main.c:33:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+Finished building: ../main.c
+ 
+Building target: ADC.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,ADC.map -mmcu=atmega32 -o "ADC.elf"  ./ADC_prog.o ./DIO_Prog.o ./delay_ms.o ./main.o   
+Finished building target: ADC.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S ADC.elf  >"ADC.lss"
+Finished building: ADC.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex ADC.elf  "ADC.hex"
+Finished building: ADC.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 ADC.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    2500 bytes (7.6% Full)
+(.text + .data + .bootloader)
+
+Data:          0 bytes (0.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+15:35:36 **** Incremental Build of configuration Debug for project ADC ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 ADC.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    2500 bytes (7.6% Full)
+(.text + .data + .bootloader)
+
+Data:          0 bytes (0.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+15:42:48 **** Incremental Build of configuration Debug for project ADC ****
+make all 
+Building file: ../ADC_prog.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=1000000UL -MMD -MP -MF"ADC_prog.d" -MT"ADC_prog.o" -c -o "ADC_prog.o" "../ADC_prog.c"
+Finished building: ../ADC_prog.c
+ 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=1000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+../main.c:37:6: warning: return type of ‘main’ is not ‘int’ [-Wmain]
+ void main (void)
+      ^
+../main.c: In function ‘LDR_u8Value’:
+../main.c:33:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+Finished building: ../main.c
+ 
+Building target: ADC.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,ADC.map -mmcu=atmega32 -o "ADC.elf"  ./ADC_prog.o ./DIO_Prog.o ./delay_ms.o ./main.o   
+Finished building target: ADC.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S ADC.elf  >"ADC.lss"
+Finished building: ADC.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex ADC.elf  "ADC.hex"
+Finished building: ADC.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 ADC.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    2502 bytes (7.6% Full)
+(.text + .data + .bootloader)
+
+Data:          0 bytes (0.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+15:59:15 **** Incremental Build of configuration Debug for project ADC ****
+make all 
+Building file: ../ADC_prog.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=1000000UL -MMD -MP -MF"ADC_prog.d" -MT"ADC_prog.o" -c -o "ADC_prog.o" "../ADC_prog.c"
+Finished building: ../ADC_prog.c
+ 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=1000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+../main.c:37:6: warning: return type of ‘main’ is not ‘int’ [-Wmain]
+ void main (void)
+      ^
+../main.c: In function ‘LDR_u8Value’:
+../main.c:33:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+Finished building: ../main.c
+ 
+Building target: ADC.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,ADC.map -mmcu=atmega32 -o "ADC.elf"  ./ADC_prog.o ./DIO_Prog.o ./delay_ms.o ./main.o   
+Finished building target: ADC.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S ADC.elf  >"ADC.lss"
+Finished building: ADC.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex ADC.elf  "ADC.hex"
+Finished building: ADC.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 ADC.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    2560 bytes (7.8% Full)
+(.text + .data + .bootloader)
+
+Data:          0 bytes (0.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+16:12:50 **** Incremental Build of configuration Debug for project ADC ****
+make all 
+Building file: ../ADC_prog.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=1000000UL -MMD -MP -MF"ADC_prog.d" -MT"ADC_prog.o" -c -o "ADC_prog.o" "../ADC_prog.c"
+Finished building: ../ADC_prog.c
+ 
+Building target: ADC.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,ADC.map -mmcu=atmega32 -o "ADC.elf"  ./ADC_prog.o ./DIO_Prog.o ./delay_ms.o ./main.o   
+Finished building target: ADC.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S ADC.elf  >"ADC.lss"
+Finished building: ADC.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex ADC.elf  "ADC.hex"
+Finished building: ADC.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 ADC.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    2592 bytes (7.9% Full)
+(.text + .data + .bootloader)
+
+Data:          0 bytes (0.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+16:18:39 **** Incremental Build of configuration Debug for project ADC ****
+make all 
+Building file: ../ADC_prog.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=1000000UL -MMD -MP -MF"ADC_prog.d" -MT"ADC_prog.o" -c -o "ADC_prog.o" "../ADC_prog.c"
+Finished building: ../ADC_prog.c
+ 
+Building target: ADC.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,ADC.map -mmcu=atmega32 -o "ADC.elf"  ./ADC_prog.o ./DIO_Prog.o ./delay_ms.o ./main.o   
+Finished building target: ADC.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S ADC.elf  >"ADC.lss"
+Finished building: ADC.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex ADC.elf  "ADC.hex"
+Finished building: ADC.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 ADC.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    2592 bytes (7.9% Full)
+(.text + .data + .bootloader)
+
+Data:          0 bytes (0.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+17:20:50 **** Incremental Build of configuration Debug for project ADC ****
+make all 
+Building file: ../ADC_prog.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=1000000UL -MMD -MP -MF"ADC_prog.d" -MT"ADC_prog.o" -c -o "ADC_prog.o" "../ADC_prog.c"
+Finished building: ../ADC_prog.c
+ 
+Building target: ADC.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,ADC.map -mmcu=atmega32 -o "ADC.elf"  ./ADC_prog.o ./DIO_Prog.o ./delay_ms.o ./main.o   
+Finished building target: ADC.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S ADC.elf  >"ADC.lss"
+Finished building: ADC.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex ADC.elf  "ADC.hex"
+Finished building: ADC.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 ADC.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    2600 bytes (7.9% Full)
+(.text + .data + .bootloader)
+
+Data:          0 bytes (0.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+17:24:52 **** Incremental Build of configuration Debug for project ADC ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=1000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+../main.c:37:6: warning: return type of ‘main’ is not ‘int’ [-Wmain]
+ void main (void)
+      ^
+../main.c: In function ‘LDR_u8Value’:
+../main.c:33:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+Finished building: ../main.c
+ 
+Building target: ADC.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,ADC.map -mmcu=atmega32 -o "ADC.elf"  ./ADC_prog.o ./DIO_Prog.o ./delay_ms.o ./main.o   
+Finished building target: ADC.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S ADC.elf  >"ADC.lss"
+Finished building: ADC.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex ADC.elf  "ADC.hex"
+Finished building: ADC.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 ADC.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    2602 bytes (7.9% Full)
+(.text + .data + .bootloader)
+
+Data:          0 bytes (0.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+17:29:43 **** Incremental Build of configuration Debug for project ADC ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=1000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+../main.c:37:6: warning: return type of ‘main’ is not ‘int’ [-Wmain]
+ void main (void)
+      ^
+../main.c: In function ‘LDR_u8Value’:
+../main.c:33:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+Finished building: ../main.c
+ 
+Building target: ADC.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,ADC.map -mmcu=atmega32 -o "ADC.elf"  ./ADC_prog.o ./DIO_Prog.o ./delay_ms.o ./main.o   
+Finished building target: ADC.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S ADC.elf  >"ADC.lss"
+Finished building: ADC.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex ADC.elf  "ADC.hex"
+Finished building: ADC.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 ADC.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    2602 bytes (7.9% Full)
+(.text + .data + .bootloader)
+
+Data:          0 bytes (0.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+00:02:37 **** Build of configuration Debug for project UART ****
 make all 
 Building file: ../DIO_Prog.c
 Invoking: AVR Compiler
 avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"DIO_Prog.d" -MT"DIO_Prog.o" -c -o "DIO_Prog.o" "../DIO_Prog.c"
 Finished building: ../DIO_Prog.c
  
-Building file: ../RTO_prog.c
+Building file: ../UART_Prog.c
 Invoking: AVR Compiler
-avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"RTO_prog.d" -MT"RTO_prog.o" -c -o "RTO_prog.o" "../RTO_prog.c"
-In file included from ../RTO_prog.c:7:0:
-../RTO_interface.h:17:2: error: unknown type name ‘u32’
-  u32 Task_u32Periodicity;
-  ^
-../RTO_interface.h:18:2: error: unknown type name ‘u32’
-  u32 Task_u32First_Delay;
-  ^
-../RTO_interface.h:26:1: error: unknown type name ‘u8’
- u8 RTO_u8CreatTask(Task *Copy_pTaskPointer,u8 Copy_u8TaskPriority);
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"UART_Prog.d" -MT"UART_Prog.o" -c -o "UART_Prog.o" "../UART_Prog.c"
+../UART_Prog.c: In function ‘UART_u8Transmit’:
+../UART_Prog.c:40:1: warning: no return statement in function returning non-void [-Wreturn-type]
+ }
  ^
-../RTO_interface.h:26:44: error: unknown type name ‘u8’
- u8 RTO_u8CreatTask(Task *Copy_pTaskPointer,u8 Copy_u8TaskPriority);
-                                            ^
-../RTO_interface.h:27:1: error: unknown type name ‘u8’
- u8 RTO_u8DeleteTask(u8 Copy_u8TaskPriority);
+../UART_Prog.c: In function ‘UART_u8Init’:
+../UART_Prog.c:23:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
  ^
-../RTO_interface.h:27:21: error: unknown type name ‘u8’
- u8 RTO_u8DeleteTask(u8 Copy_u8TaskPriority);
-                     ^
-../RTO_interface.h:28:1: error: unknown type name ‘u8’
- u8 RTO_u8StartTask(u8 Copy_u8TaskPriority);
+Finished building: ../UART_Prog.c
+ 
+Building file: ../delay_ms.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"delay_ms.d" -MT"delay_ms.o" -c -o "delay_ms.o" "../delay_ms.c"
+Finished building: ../delay_ms.c
+ 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+../main.c:13:6: warning: return type of ‘main’ is not ‘int’ [-Wmain]
+ void main (void)
+      ^
+../main.c: In function ‘main’:
+../main.c:21:1: error: too few arguments to function ‘UART_u8Transmit’
+ UART_u8Transmit();
  ^
-../RTO_interface.h:28:20: error: unknown type name ‘u8’
- u8 RTO_u8StartTask(u8 Copy_u8TaskPriority);
-                    ^
-../RTO_interface.h:29:1: error: unknown type name ‘u8’
- u8 RTO_u8StopTask(u8 Copy_u8TaskPriority);
- ^
-../RTO_interface.h:29:19: error: unknown type name ‘u8’
- u8 RTO_u8StopTask(u8 Copy_u8TaskPriority);
-                   ^
-In file included from ../RTO_prog.c:9:0:
-../RTO_private.h:11:1: error: unknown type name ‘u8’
- static u8 Schedular(void);
- ^
-../RTO_prog.c:12:8: warning: type defaults to ‘int’ in declaration of ‘RTO_u8Status’ [enabled by default]
- static RTO_u8Status=RTO_OK;
-        ^
-../RTO_prog.c: In function ‘RTO_voidInit’:
-../RTO_prog.c:18:2: error: unknown type name ‘u8’
-  u8 RTO_u8Counter=RTO_SCHEDULAR_INITIAL_TASK;
-  ^
-../RTO_prog.c:21:2: error: unknown type name ‘u8’
-  RTO_TaskScheduler[RTO_u8Counter]=NULL;
-  ^
-../RTO_prog.c: At top level:
-../RTO_prog.c:24:1: error: unknown type name ‘u8’
- u8 RTO_u8CreatTask(Task *Copy_pTaskPointer,u8 Copy_u8TaskPriority)
- ^
-../RTO_prog.c:24:44: error: unknown type name ‘u8’
- u8 RTO_u8CreatTask(Task *Copy_pTaskPointer,u8 Copy_u8TaskPriority)
-                                            ^
-../RTO_prog.c:38:1: error: unknown type name ‘u8’
- u8 RTO_u8DeleteTask(u8 Copy_u8TaskPriority)
- ^
-../RTO_prog.c:38:21: error: unknown type name ‘u8’
- u8 RTO_u8DeleteTask(u8 Copy_u8TaskPriority)
-                     ^
-../RTO_prog.c:54:1: error: unknown type name ‘u8’
- u8 RTO_u8StartTask(u8 Copy_u8TaskPriority)
- ^
-../RTO_prog.c:54:20: error: unknown type name ‘u8’
- u8 RTO_u8StartTask(u8 Copy_u8TaskPriority)
-                    ^
-../RTO_prog.c:70:1: error: unknown type name ‘u8’
- u8 RTO_u8StopTask(u8 Copy_u8TaskPriority)
- ^
-../RTO_prog.c:70:19: error: unknown type name ‘u8’
- u8 RTO_u8StopTask(u8 Copy_u8TaskPriority)
-                   ^
-../RTO_prog.c: In function ‘RTO_voidSchedular’:
-../RTO_prog.c:88:2: error: unknown type name ‘u8’
-  u8 RTO__u8SchedularCounter;
-  ^
-../RTO_prog.c:92:4: error: unknown type name ‘u8’
-    if( RTO_TaskScheduler[RTO__u8SchedularCounter]->ptr != NULL && RTO_TaskScheduler[RTO__u8SchedularCounter]->state !=Paused)
+In file included from ../main.c:10:0:
+../UART_Interface.h:15:4: note: declared here
+ u8 UART_u8Transmit(u8 Copy_u8Data);
     ^
-In file included from ../RTO_prog.c:7:0:
-../RTO_prog.c: At top level:
-../RTO_interface.h:30:13: warning: ‘RTO_u8Schedular’ declared ‘static’ but never defined [-Wunused-function]
- static void RTO_u8Schedular(void);
-             ^
-In file included from ../RTO_prog.c:9:0:
-../RTO_private.h:11:11: warning: ‘Schedular’ declared ‘static’ but never defined [-Wunused-function]
- static u8 Schedular(void);
-           ^
-../RTO_prog.c:12:8: warning: ‘RTO_u8Status’ defined but not used [-Wunused-variable]
- static RTO_u8Status=RTO_OK;
-        ^
-../RTO_prog.c:86:13: warning: ‘RTO_voidSchedular’ defined but not used [-Wunused-function]
- static void RTO_voidSchedular(void)
-             ^
-make: *** [RTO_prog.o] Error 1
-19:42:33 **** Incremental Build of configuration Debug for project RTO ****
+make: *** [main.o] Error 1
+00:02:52 **** Incremental Build of configuration Debug for project UART ****
 make all 
-Building file: ../RTO_prog.c
+Building file: ../main.c
 Invoking: AVR Compiler
-avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"RTO_prog.d" -MT"RTO_prog.o" -c -o "RTO_prog.o" "../RTO_prog.c"
-../RTO_prog.c:13:8: warning: type defaults to ‘int’ in declaration of ‘RTO_u8Status’ [enabled by default]
- static RTO_u8Status=RTO_OK;
-        ^
-../RTO_prog.c: In function ‘RTO_voidInit’:
-../RTO_prog.c:22:34: warning: assignment from incompatible pointer type [enabled by default]
-  RTO_TaskScheduler[RTO_u8Counter]=NULL;
-                                  ^
-../RTO_prog.c: In function ‘RTO_u8CreatTask’:
-../RTO_prog.c:27:96: warning: comparison of distinct pointer types lacks a cast [enabled by default]
-  if (RTO_MAXIMUM_TASK_NUMBER>Copy_u8TaskPriority && RTO_TaskScheduler[Copy_u8TaskPriority]->ptr!=NULL)
-                                                                                                ^
-../RTO_prog.c: In function ‘RTO_u8DeleteTask’:
-../RTO_prog.c:41:96: warning: comparison of distinct pointer types lacks a cast [enabled by default]
-  if (RTO_MAXIMUM_TASK_NUMBER>Copy_u8TaskPriority && RTO_TaskScheduler[Copy_u8TaskPriority]->ptr!=NULL)
-                                                                                                ^
-../RTO_prog.c:43:40: warning: assignment from incompatible pointer type [enabled by default]
-  RTO_TaskScheduler[Copy_u8TaskPriority]=NULL;
-                                        ^
-../RTO_prog.c: In function ‘RTO_u8StartTask’:
-../RTO_prog.c:57:96: warning: comparison of distinct pointer types lacks a cast [enabled by default]
-  if (RTO_MAXIMUM_TASK_NUMBER>Copy_u8TaskPriority && RTO_TaskScheduler[Copy_u8TaskPriority]->ptr!=NULL)
-                                                                                                ^
-../RTO_prog.c: In function ‘RTO_u8StopTask’:
-../RTO_prog.c:73:96: warning: comparison of distinct pointer types lacks a cast [enabled by default]
-  if (RTO_MAXIMUM_TASK_NUMBER>Copy_u8TaskPriority && RTO_TaskScheduler[Copy_u8TaskPriority]->ptr!=NULL)
-                                                                                                ^
-../RTO_prog.c: In function ‘RTO_voidSchedular’:
-../RTO_prog.c:93:56: warning: comparison of distinct pointer types lacks a cast [enabled by default]
-    if( RTO_TaskScheduler[RTO__u8SchedularCounter]->ptr != NULL && RTO_TaskScheduler[RTO__u8SchedularCounter]->state !=Paused)
-                                                        ^
-In file included from ../RTO_prog.c:8:0:
-../RTO_prog.c: At top level:
-../RTO_interface.h:30:13: warning: ‘RTO_u8Schedular’ declared ‘static’ but never defined [-Wunused-function]
- static void RTO_u8Schedular(void);
-             ^
-In file included from ../RTO_prog.c:10:0:
-../RTO_private.h:11:11: warning: ‘Schedular’ declared ‘static’ but never defined [-Wunused-function]
- static u8 Schedular(void);
-           ^
-../RTO_prog.c:87:13: warning: ‘RTO_voidSchedular’ defined but not used [-Wunused-function]
- static void RTO_voidSchedular(void)
-             ^
-Finished building: ../RTO_prog.c
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+../main.c:13:6: warning: return type of ‘main’ is not ‘int’ [-Wmain]
+ void main (void)
+      ^
+Finished building: ../main.c
  
-Building target: RTO.elf
+Building target: UART.elf
 Invoking: AVR C Linker
-avr-gcc -Wl,-Map,RTO.map -mmcu=atmega16 -o "RTO.elf"  ./DIO_Prog.o ./RTO_prog.o   
-/usr/lib/gcc/avr/4.8.2/../../../avr/lib/avr5/crtm16.o: In function `__bad_interrupt':
-../../../../crt1/gcrt1.S:195: undefined reference to `main'
+avr-gcc -Wl,-Map,UART.map -mmcu=atmega16 -o "UART.elf"  ./DIO_Prog.o ./UART_Prog.o ./delay_ms.o ./main.o   
+./main.o: In function `main':
+../main.c:21: undefined reference to `UART_u8Transmit'
 collect2: error: ld returned 1 exit status
-make: *** [RTO.elf] Error 1
-19:43:18 **** Incremental Build of configuration Debug for project RTO ****
+make: *** [UART.elf] Error 1
+00:03:05 **** Incremental Build of configuration Debug for project UART ****
 make all 
 Building file: ../main.c
 Invoking: AVR Compiler
 avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
-../main.c:8:6: warning: return type of ‘main’ is not ‘int’ [-Wmain]
- void main(void)
+../main.c:13:6: warning: return type of ‘main’ is not ‘int’ [-Wmain]
+ void main (void)
       ^
 Finished building: ../main.c
  
-Building target: RTO.elf
+Building target: UART.elf
 Invoking: AVR C Linker
-avr-gcc -Wl,-Map,RTO.map -mmcu=atmega16 -o "RTO.elf"  ./DIO_Prog.o ./RTO_prog.o ./main.o   
-Finished building target: RTO.elf
+avr-gcc -Wl,-Map,UART.map -mmcu=atmega16 -o "UART.elf"  ./DIO_Prog.o ./UART_Prog.o ./delay_ms.o ./main.o   
+./main.o: In function `main':
+../main.c:21: undefined reference to `UART_u8Transmit'
+collect2: error: ld returned 1 exit status
+make: *** [UART.elf] Error 1
+00:03:59 **** Incremental Build of configuration Debug for project UART ****
+make all 
+Building file: ../UART_Prog.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"UART_Prog.d" -MT"UART_Prog.o" -c -o "UART_Prog.o" "../UART_Prog.c"
+../UART_Prog.c: In function ‘UART_u8Transmit’:
+../UART_Prog.c:40:1: warning: no return statement in function returning non-void [-Wreturn-type]
+ }
+ ^
+../UART_Prog.c: In function ‘UART_u8Recieve’:
+../UART_Prog.c:40:1: error: expected declaration or statement at end of input
+../UART_Prog.c: In function ‘UART_u8Init’:
+../UART_Prog.c:23:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+make: *** [UART_Prog.o] Error 1
+00:04:30 **** Incremental Build of configuration Debug for project UART ****
+make all 
+Building file: ../UART_Prog.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"UART_Prog.d" -MT"UART_Prog.o" -c -o "UART_Prog.o" "../UART_Prog.c"
+../UART_Prog.c: In function ‘UART_u8Init’:
+../UART_Prog.c:23:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+../UART_Prog.c: In function ‘UART_u8Transmit’:
+../UART_Prog.c:40:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+Finished building: ../UART_Prog.c
+ 
+Building target: UART.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,UART.map -mmcu=atmega16 -o "UART.elf"  ./DIO_Prog.o ./UART_Prog.o ./delay_ms.o ./main.o   
+Finished building target: UART.elf
  
 Invoking: AVR Create Extended Listing
-avr-objdump -h -S RTO.elf  >"RTO.lss"
-Finished building: RTO.lss
+avr-objdump -h -S UART.elf  >"UART.lss"
+Finished building: UART.lss
  
 Invoking: Print Size
-avr-size --format=avr --mcu=atmega16 RTO.elf
+avr-size --format=avr --mcu=atmega16 UART.elf
 AVR Memory Usage
 ----------------
 Device: atmega16
 
-Program:    2750 bytes (16.8% Full)
+Program:    2258 bytes (13.8% Full)
 (.text + .data + .bootloader)
 
-Data:         12 bytes (1.2% Full)
+Data:          0 bytes (0.0% Full)
 (.data + .bss + .noinit)
 
 
 Finished building: sizedummy
  
-20:11:04 **** Incremental Build of configuration Debug for project RTO ****
+00:08:02 **** Incremental Build of configuration Debug for project UART ****
 make all 
-Building file: ../TIMER0_prog.c
+Building target: UART.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,UART.map -mmcu=atmega16 -o "UART.elf"  ./DIO_Prog.o ./UART_Prog.o ./delay_ms.o ./main.o   
+Finished building target: UART.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S UART.elf  >"UART.lss"
+Finished building: UART.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex UART.elf  "UART.hex"
+Finished building: UART.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 UART.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:    2258 bytes (13.8% Full)
+(.text + .data + .bootloader)
+
+Data:          0 bytes (0.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+00:18:21 **** Incremental Build of configuration Debug for project UART ****
+make all 
+Building file: ../UART_Prog.c
 Invoking: AVR Compiler
-avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"TIMER0_prog.d" -MT"TIMER0_prog.o" -c -o "TIMER0_prog.o" "../TIMER0_prog.c"
-In file included from ../TIMER0_prog.c:13:0:
-../TIMER0_interface.h:13:1: warning: ‘__INTR_ATTRS’ attribute directive ignored [-Wattributes]
- void __vector_11(void) __attribute__((signal,__INTR_ATTRS));
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"UART_Prog.d" -MT"UART_Prog.o" -c -o "UART_Prog.o" "../UART_Prog.c"
+../UART_Prog.c: In function ‘UART_u8Init’:
+../UART_Prog.c:23:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
  ^
-../TIMER0_prog.c:41:6: error: conflicting types for ‘TIMER0_voidSetTimerCallBack’
- void TIMER0_voidSetTimerCallBack(void (* Copy_voidCallBackFunction)(void))
-      ^
-In file included from ../TIMER0_prog.c:13:0:
-../TIMER0_interface.h:14:6: note: previous declaration of ‘TIMER0_voidSetTimerCallBack’ was here
- void TIMER0_voidSetTimerCallBack(void *(Copy_voidCallBackFunction)(void));
-      ^
-make: *** [TIMER0_prog.o] Error 1
-20:11:04 **** Build of configuration Debug for project TIMER0_Drivers ****
+../UART_Prog.c: In function ‘UART_u8Transmit’:
+../UART_Prog.c:40:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+Finished building: ../UART_Prog.c
+ 
+Building target: UART.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,UART.map -mmcu=atmega16 -o "UART.elf"  ./DIO_Prog.o ./UART_Prog.o ./delay_ms.o ./main.o   
+Finished building target: UART.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S UART.elf  >"UART.lss"
+Finished building: UART.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex UART.elf  "UART.hex"
+Finished building: UART.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 UART.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:    2258 bytes (13.8% Full)
+(.text + .data + .bootloader)
+
+Data:          0 bytes (0.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+00:22:17 **** Incremental Build of configuration Debug for project UART ****
 make all 
-Building file: ../TIMER0_prog.c
+Building file: ../UART_Prog.c
 Invoking: AVR Compiler
-avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=4000000UL -MMD -MP -MF"TIMER0_prog.d" -MT"TIMER0_prog.o" -c -o "TIMER0_prog.o" "../TIMER0_prog.c"
-../TIMER0_prog.c:9:23: fatal error: std_types.h: No such file or directory
- #include "std_types.h"
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"UART_Prog.d" -MT"UART_Prog.o" -c -o "UART_Prog.o" "../UART_Prog.c"
+../UART_Prog.c: In function ‘UART_u8Init’:
+../UART_Prog.c:23:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+../UART_Prog.c: In function ‘UART_u8Transmit’:
+../UART_Prog.c:40:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+Finished building: ../UART_Prog.c
+ 
+Building target: UART.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,UART.map -mmcu=atmega16 -o "UART.elf"  ./DIO_Prog.o ./UART_Prog.o ./delay_ms.o ./main.o   
+Finished building target: UART.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S UART.elf  >"UART.lss"
+Finished building: UART.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex UART.elf  "UART.hex"
+Finished building: UART.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 UART.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:    2258 bytes (13.8% Full)
+(.text + .data + .bootloader)
+
+Data:          0 bytes (0.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+00:22:20 **** Incremental Build of configuration Debug for project UART ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 UART.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:    2258 bytes (13.8% Full)
+(.text + .data + .bootloader)
+
+Data:          0 bytes (0.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+00:23:39 **** Incremental Build of configuration Debug for project UART ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+../main.c:13:6: warning: return type of ‘main’ is not ‘int’ [-Wmain]
+ void main (void)
+      ^
+Finished building: ../main.c
+ 
+Building target: UART.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,UART.map -mmcu=atmega16 -o "UART.elf"  ./DIO_Prog.o ./UART_Prog.o ./delay_ms.o ./main.o   
+Finished building target: UART.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S UART.elf  >"UART.lss"
+Finished building: UART.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex UART.elf  "UART.hex"
+Finished building: UART.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 UART.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:    2258 bytes (13.8% Full)
+(.text + .data + .bootloader)
+
+Data:          0 bytes (0.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+00:26:34 **** Incremental Build of configuration Debug for project UART ****
+make all 
+Building file: ../main.c
+../main.c: In function ‘USART_Init’:
+Invoking: AVR Compiler
+../main.c:16:1: error: ‘UBRRL’ undeclared (first use in this function)
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+ UBRRL = (unsigned char)baud;
+ ^
+../main.c:16:1: note: each undeclared identifier is reported only once for each function it appears in
+../main.c:18:1: error: ‘UCSRB’ undeclared (first use in this function)
+ UCSRB = (1<<RXEN)|(1<<TXEN);
+ ^
+../main.c:18:13: error: ‘RXEN’ undeclared (first use in this function)
+ UCSRB = (1<<RXEN)|(1<<TXEN);
+             ^
+../main.c:18:23: error: ‘TXEN’ undeclared (first use in this function)
+ UCSRB = (1<<RXEN)|(1<<TXEN);
                        ^
-compilation terminated.
-make: *** [TIMER0_prog.o] Error 1
-20:11:56 **** Incremental Build of configuration Debug for project RTO ****
-make all 
-Building file: ../DIO_Prog.c
-Invoking: AVR Compiler
-avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"DIO_Prog.d" -MT"DIO_Prog.o" -c -o "DIO_Prog.o" "../DIO_Prog.c"
-Finished building: ../DIO_Prog.c
- 
-Building file: ../RTO_prog.c
-Invoking: AVR Compiler
-avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"RTO_prog.d" -MT"RTO_prog.o" -c -o "RTO_prog.o" "../RTO_prog.c"
-../RTO_prog.c:13:8: warning: type defaults to ‘int’ in declaration of ‘RTO_u8Status’ [enabled by default]
- static RTO_u8Status=RTO_OK;
-        ^
-../RTO_prog.c: In function ‘RTO_voidInit’:
-../RTO_prog.c:22:34: warning: assignment from incompatible pointer type [enabled by default]
-  RTO_TaskScheduler[RTO_u8Counter]=NULL;
+../main.c:20:1: error: ‘UCSRC’ undeclared (first use in this function)
+ UCSRC = (1<<URSEL)|(1<<USBS)|(3<<UCSZ0);
+ ^
+../main.c:20:13: error: ‘URSEL’ undeclared (first use in this function)
+ UCSRC = (1<<URSEL)|(1<<USBS)|(3<<UCSZ0);
+             ^
+../main.c:20:24: error: ‘USBS’ undeclared (first use in this function)
+ UCSRC = (1<<URSEL)|(1<<USBS)|(3<<UCSZ0);
+                        ^
+../main.c:20:34: error: ‘UCSZ0’ undeclared (first use in this function)
+ UCSRC = (1<<URSEL)|(1<<USBS)|(3<<UCSZ0);
                                   ^
-../RTO_prog.c: In function ‘RTO_u8CreatTask’:
-../RTO_prog.c:27:96: warning: comparison of distinct pointer types lacks a cast [enabled by default]
-  if (RTO_MAXIMUM_TASK_NUMBER>Copy_u8TaskPriority && RTO_TaskScheduler[Copy_u8TaskPriority]->ptr!=NULL)
-                                                                                                ^
-../RTO_prog.c: In function ‘RTO_u8DeleteTask’:
-../RTO_prog.c:41:96: warning: comparison of distinct pointer types lacks a cast [enabled by default]
-  if (RTO_MAXIMUM_TASK_NUMBER>Copy_u8TaskPriority && RTO_TaskScheduler[Copy_u8TaskPriority]->ptr!=NULL)
-                                                                                                ^
-../RTO_prog.c:43:40: warning: assignment from incompatible pointer type [enabled by default]
-  RTO_TaskScheduler[Copy_u8TaskPriority]=NULL;
-                                        ^
-../RTO_prog.c: In function ‘RTO_u8StartTask’:
-../RTO_prog.c:57:96: warning: comparison of distinct pointer types lacks a cast [enabled by default]
-  if (RTO_MAXIMUM_TASK_NUMBER>Copy_u8TaskPriority && RTO_TaskScheduler[Copy_u8TaskPriority]->ptr!=NULL)
-                                                                                                ^
-../RTO_prog.c: In function ‘RTO_u8StopTask’:
-../RTO_prog.c:73:96: warning: comparison of distinct pointer types lacks a cast [enabled by default]
-  if (RTO_MAXIMUM_TASK_NUMBER>Copy_u8TaskPriority && RTO_TaskScheduler[Copy_u8TaskPriority]->ptr!=NULL)
-                                                                                                ^
-../RTO_prog.c: In function ‘RTO_voidSchedular’:
-../RTO_prog.c:93:56: warning: comparison of distinct pointer types lacks a cast [enabled by default]
-    if( RTO_TaskScheduler[RTO__u8SchedularCounter]->ptr != NULL && RTO_TaskScheduler[RTO__u8SchedularCounter]->state !=Paused)
-                                                        ^
-In file included from ../RTO_prog.c:8:0:
-../RTO_prog.c: At top level:
-../RTO_interface.h:30:13: warning: ‘RTO_u8Schedular’ declared ‘static’ but never defined [-Wunused-function]
- static void RTO_u8Schedular(void);
-             ^
-In file included from ../RTO_prog.c:10:0:
-../RTO_private.h:11:11: warning: ‘Schedular’ declared ‘static’ but never defined [-Wunused-function]
- static u8 Schedular(void);
-           ^
-../RTO_prog.c:87:13: warning: ‘RTO_voidSchedular’ defined but not used [-Wunused-function]
- static void RTO_voidSchedular(void)
-             ^
-Finished building: ../RTO_prog.c
- 
-Building file: ../TIMER0_prog.c
-Invoking: AVR Compiler
-avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"TIMER0_prog.d" -MT"TIMER0_prog.o" -c -o "TIMER0_prog.o" "../TIMER0_prog.c"
-In file included from ../TIMER0_prog.c:13:0:
-../TIMER0_interface.h:13:1: warning: ‘__INTR_ATTRS’ attribute directive ignored [-Wattributes]
- void __vector_11(void) __attribute__((signal,__INTR_ATTRS));
- ^
-../TIMER0_prog.c:41:6: error: conflicting types for ‘TIMER0_voidSetTimerCallBack’
- void TIMER0_voidSetTimerCallBack(void (* Copy_voidCallBackFunction)(void))
+../main.c: At top level:
+../main.c:22:6: warning: return type of ‘main’ is not ‘int’ [-Wmain]
+ void main (void)
       ^
-In file included from ../TIMER0_prog.c:13:0:
-../TIMER0_interface.h:14:6: note: previous declaration of ‘TIMER0_voidSetTimerCallBack’ was here
- void TIMER0_voidSetTimerCallBack(void *(Copy_voidCallBackFunction)(void));
-      ^
-make: *** [TIMER0_prog.o] Error 1
-20:12:27 **** Incremental Build of configuration Debug for project RTO ****
+make: *** [main.o] Error 1
+00:27:09 **** Incremental Build of configuration Debug for project UART ****
 make all 
-Building file: ../TIMER0_prog.c
-Invoking: AVR Compiler
-avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"TIMER0_prog.d" -MT"TIMER0_prog.o" -c -o "TIMER0_prog.o" "../TIMER0_prog.c"
-In file included from ../TIMER0_prog.c:13:0:
-../TIMER0_interface.h:13:1: warning: ‘__INTR_ATTRS’ attribute directive ignored [-Wattributes]
-Finished building: ../TIMER0_prog.c
- void __vector_11(void) __attribute__((signal,__INTR_ATTRS));
- ^
- 
 Building file: ../main.c
 Invoking: AVR Compiler
 avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
-../main.c:8:6: warning: return type of ‘main’ is not ‘int’ [-Wmain]
- void main(void)
+../main.c:23:6: warning: return type of ‘main’ is not ‘int’ [-Wmain]
+ void main (void)
       ^
 Finished building: ../main.c
  
-Building target: RTO.elf
+Building target: UART.elf
 Invoking: AVR C Linker
-avr-gcc -Wl,-Map,RTO.map -mmcu=atmega16 -o "RTO.elf"  ./DIO_Prog.o ./RTO_prog.o ./TIMER0_prog.o ./main.o   
-Finished building target: RTO.elf
+avr-gcc -Wl,-Map,UART.map -mmcu=atmega16 -o "UART.elf"  ./DIO_Prog.o ./UART_Prog.o ./delay_ms.o ./main.o   
+Finished building target: UART.elf
  
 Invoking: AVR Create Extended Listing
-avr-objdump -h -S RTO.elf  >"RTO.lss"
-Finished building: RTO.lss
+avr-objdump -h -S UART.elf  >"UART.lss"
+Finished building: UART.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex UART.elf  "UART.hex"
+Finished building: UART.hex
  
 Invoking: Print Size
-avr-size --format=avr --mcu=atmega16 RTO.elf
+avr-size --format=avr --mcu=atmega16 UART.elf
 AVR Memory Usage
 ----------------
 Device: atmega16
 
-Program:    2960 bytes (18.1% Full)
+Program:    2308 bytes (14.1% Full)
 (.text + .data + .bootloader)
 
-Data:         14 bytes (1.4% Full)
+Data:          0 bytes (0.0% Full)
 (.data + .bss + .noinit)
 
 
 Finished building: sizedummy
  
-20:19:49 **** Incremental Build of configuration Debug for project RTO ****
+00:28:31 **** Incremental Build of configuration Debug for project UART ****
 make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+../main.c:33:6: warning: return type of ‘main’ is not ‘int’ [-Wmain]
+ void main (void)
+      ^
+Finished building: ../main.c
+ 
+Building target: UART.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,UART.map -mmcu=atmega16 -o "UART.elf"  ./DIO_Prog.o ./UART_Prog.o ./delay_ms.o ./main.o   
+Finished building target: UART.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S UART.elf  >"UART.lss"
+Finished building: UART.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex UART.elf  "UART.hex"
+Finished building: UART.hex
+ 
 Invoking: Print Size
-avr-size --format=avr --mcu=atmega16 RTO.elf
+avr-size --format=avr --mcu=atmega16 UART.elf
 AVR Memory Usage
 ----------------
 Device: atmega16
 
-Program:    2960 bytes (18.1% Full)
+Program:    2368 bytes (14.5% Full)
 (.text + .data + .bootloader)
 
-Data:         14 bytes (1.4% Full)
+Data:          0 bytes (0.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+00:28:32 **** Incremental Build of configuration Debug for project UART ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 UART.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:    2368 bytes (14.5% Full)
+(.text + .data + .bootloader)
+
+Data:          0 bytes (0.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+00:30:26 **** Incremental Build of configuration Debug for project UART ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+../main.c:33:6: warning: return type of ‘main’ is not ‘int’ [-Wmain]
+ void main (void)
+      ^
+Finished building: ../main.c
+ 
+Building target: UART.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,UART.map -mmcu=atmega16 -o "UART.elf"  ./DIO_Prog.o ./UART_Prog.o ./delay_ms.o ./main.o   
+Finished building target: UART.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S UART.elf  >"UART.lss"
+Finished building: UART.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex UART.elf  "UART.hex"
+Finished building: UART.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 UART.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:    2368 bytes (14.5% Full)
+(.text + .data + .bootloader)
+
+Data:          0 bytes (0.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+00:31:10 **** Incremental Build of configuration Debug for project UART ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+../main.c:33:6: warning: return type of ‘main’ is not ‘int’ [-Wmain]
+ void main (void)
+      ^
+Finished building: ../main.c
+ 
+Building target: UART.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,UART.map -mmcu=atmega16 -o "UART.elf"  ./DIO_Prog.o ./UART_Prog.o ./delay_ms.o ./main.o   
+Finished building target: UART.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S UART.elf  >"UART.lss"
+Finished building: UART.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex UART.elf  "UART.hex"
+Finished building: UART.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 UART.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:    2364 bytes (14.4% Full)
+(.text + .data + .bootloader)
+
+Data:          0 bytes (0.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+00:33:56 **** Incremental Build of configuration Debug for project UART ****
+make all 
+Building file: ../UART_Prog.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"UART_Prog.d" -MT"UART_Prog.o" -c -o "UART_Prog.o" "../UART_Prog.c"
+../UART_Prog.c: In function ‘UART_u8Init’:
+../UART_Prog.c:23:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+../UART_Prog.c: In function ‘UART_u8Transmit’:
+../UART_Prog.c:40:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+Finished building: ../UART_Prog.c
+ 
+Building target: UART.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,UART.map -mmcu=atmega16 -o "UART.elf"  ./DIO_Prog.o ./UART_Prog.o ./delay_ms.o ./main.o   
+Finished building target: UART.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S UART.elf  >"UART.lss"
+Finished building: UART.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex UART.elf  "UART.hex"
+Finished building: UART.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 UART.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:    2356 bytes (14.4% Full)
+(.text + .data + .bootloader)
+
+Data:          0 bytes (0.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+00:34:48 **** Incremental Build of configuration Debug for project UART ****
+make all 
+Building file: ../UART_Prog.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"UART_Prog.d" -MT"UART_Prog.o" -c -o "UART_Prog.o" "../UART_Prog.c"
+../UART_Prog.c: In function ‘UART_u8Init’:
+../UART_Prog.c:23:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+../UART_Prog.c: In function ‘UART_u8Transmit’:
+../UART_Prog.c:40:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+Finished building: ../UART_Prog.c
+ 
+Building target: UART.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,UART.map -mmcu=atmega16 -o "UART.elf"  ./DIO_Prog.o ./UART_Prog.o ./delay_ms.o ./main.o   
+Finished building target: UART.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S UART.elf  >"UART.lss"
+Finished building: UART.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex UART.elf  "UART.hex"
+Finished building: UART.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 UART.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:    2356 bytes (14.4% Full)
+(.text + .data + .bootloader)
+
+Data:          0 bytes (0.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+10:24:21 **** Incremental Build of configuration Debug for project UART ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+../main.c:15:6: warning: return type of ‘main’ is not ‘int’ [-Wmain]
+ void main (void)
+      ^
+Finished building: ../main.c
+ 
+Building target: UART.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,UART.map -mmcu=atmega16 -o "UART.elf"  ./DIO_Prog.o ./UART_Prog.o ./delay_ms.o ./main.o   
+Finished building target: UART.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S UART.elf  >"UART.lss"
+Finished building: UART.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex UART.elf  "UART.hex"
+Finished building: UART.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 UART.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:    2250 bytes (13.7% Full)
+(.text + .data + .bootloader)
+
+Data:          0 bytes (0.0% Full)
 (.data + .bss + .noinit)
 
 

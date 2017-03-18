@@ -1,0 +1,33 @@
+/*
+ * main.c
+ *
+ *  Created on: Mar 9, 2017
+ *      Author: Russel
+ */
+#include "std_types.h"
+#include "utils.h"
+#include "DIO_Interface.h"
+#include "ADC_interface.h"
+#include "delay_ms.h"
+#include "LCD_Interface.h"
+#define LED_ZERO 1
+#define LED_ONE 3
+
+void main (void)
+{
+	u8 MAIN_u8LocalADC_Analog_Value;
+DIO_voidInitialize();
+LCD_u8Init();
+ADC_u8Init();
+
+while (TRUE)
+{
+ADC_u8ReadADC_Value(ZERO,&MAIN_u8LocalADC_Analog_Value);
+
+
+
+}
+
+
+
+}

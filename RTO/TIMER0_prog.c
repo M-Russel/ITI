@@ -12,9 +12,15 @@
 #include "TIMER0_private.h"
 #include "TIMER0_interface.h"
 
+u16 TIMER0_u16OverFlowCounter=TIMER0_OVERFLOW_COUNTER_INITIAL;
 
 void (* TIMER0_voidCallBack) (void);
 
+
+void TIMER0_voidSetTimerCallBack(void (* Copy_voidCallBackFunction)(void))
+{
+	TIMER0_voidCallBack=Copy_voidCallBackFunction;
+}
 void TIMER0_init(void)
 {
 //	SREG=SREG_ENABLED; // global enable
@@ -36,9 +42,13 @@ void TIMER0_init(void)
 }
 void __vector_11(void)
 {
-TIMER0_voidCallBack();
+	TIMER0_u16OverFlowCounter++;
+	if (TIMER0_OVERFLOW_COUNTER_MAX==TIMER0_u16OverFlowCounter)
+	{
+		TIMER0_voidCallBack();
+		TIMER0_u16OverFlowCounter=TIMER0_OVERFLOW_COUNTER_INITIAL;
+		TCNT0=TCNT0_INITIAL_VALUE;
+	}
+	else {}
 }
-void TIMER0_voidSetTimerCallBack(void (* Copy_voidCallBackFunction)(void))
-{
-	TIMER0_voidCallBack=Copy_voidCallBackFunction;
-}
+

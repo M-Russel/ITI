@@ -1,0 +1,23 @@
+/*
+ * Test.c
+ *
+ *  Created on: Feb 27, 2017
+ *      Author: root
+ */
+
+#include <stdio.h>
+#include "std_types.h"
+void main (void)
+{
+
+	u8 x=10,y;
+	pu8 ptr1=&x;
+	pu16 ptr2=ptr1;
+	pu32 ptr3=ptr2;
+	*ptr3=0x32141234;
+	ptr1++;
+	y=*ptr1;
+printf("%d",y);
+
+return ;
+}
