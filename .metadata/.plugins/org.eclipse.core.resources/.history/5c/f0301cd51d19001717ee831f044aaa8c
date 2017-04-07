@@ -1,0 +1,52 @@
+/*
+ * std_types.h
+ *
+ *  Created on: Apr 4, 2017
+ *      Author: Russel
+ *      Version : 1
+ *
+ *
+ */
+
+
+#ifndef types
+#define types
+//getting a new type which name is u8 and it represents unsigned character (8 bit)
+typedef unsigned char u8;
+//getting a new type which name is pu8 and it represents pointer to unsigned character (8 bit)
+typedef unsigned char* pu8;
+
+#endif
+
+
+
+
+
+
+/*
+
+u32 Benefit ;
+
+u32 calculate(u32 sales)
+{
+
+
+
+}
+
+supermarket 
+50,000  10% profite 
+
+protect ur variables
+use as much as u want only 
+
+how much i have sold,benefit ?
+what is my capital now ?
+
+circular right 
+circular left
+difference between ternary and if 
+*/
+
+
+

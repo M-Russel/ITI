@@ -7,17 +7,85 @@
 
 #include <stdio.h>
 #include "std_types.h"
+#define N 10
+
+void ARRAY_voidInsertionSort(u8 Copy_u8ElementsNumber,pu8 Copy_pu8Array)
+{
+	u8 Copy_Counter=0;
+	u8 Copy_Counter2=0;
+//	u8 Copy_min=0;
+	u8 Copy_tmp=0;
+
+	for (Copy_Counter=1;Copy_Counter<N;Copy_Counter++)
+	{
+		Copy_tmp=Copy_pu8Array[Copy_Counter];
+		Copy_Counter2=Copy_Counter;
+
+		while (Copy_pu8Array[Copy_Counter2-1] <Copy_tmp)
+		{
+			Copy_pu8Array[Copy_Counter2]=Copy_pu8Array[Copy_Counter2-1];
+			Copy_Counter2--;
+		}
+		Copy_pu8Array[Copy_Counter2]=Copy_tmp;
+
+	}
+
+
+
+}
+
+
+void ARRAY_voidSelectionSort(u8 Copy_u8ElementsNumber,pu8 Copy_pu8Array)
+{
+u8 Copy_Counter=0;
+u8 Copy_Counter2=0;
+u8 Copy_min=0;
+u8 Copy_tmp=0;
+
+for (Copy_Counter=0;Copy_Counter<N;Copy_Counter++)
+{
+Copy_min=Copy_Counter;
+
+for (Copy_Counter2=Copy_Counter+1;Copy_Counter2<=N;Copy_Counter2++)
+{
+ if (Copy_pu8Array[Copy_Counter2] < Copy_pu8Array[Copy_min])
+ {
+	 Copy_min=Copy_Counter2;
+ }
+}
+
+Copy_tmp=Copy_pu8Array[Copy_min];
+Copy_pu8Array[Copy_min]=Copy_pu8Array[Copy_Counter];
+Copy_pu8Array[Copy_Counter]=Copy_tmp;
+
+}
+
+
+}
+
+typedef struct {
+	u8 x;
+	u16 y;
+	u32 z;
+
+}test;
 void main (void)
 {
 
-u8 x[10]={1};
-u8 y[10]={};
-u8 z[10]={};
-u8 h=0;
+u8 arr[N]={7,4,2,5,3,6,8,9,10,1};
+u8 Counter=0;
 
-h=*(u8 *)(0x7ffe9518b9a0);
+for (Counter =0 ; Counter<N;Counter++)
+{
+printf("%d \t",arr[Counter]);
+}
 
-printf("%d",h);
+printf("\n");
+ARRAY_voidInsertionSort(N,arr);
 
-return ;
+for (Counter =0 ; Counter<N;Counter++)
+{
+printf("%d \t",arr[Counter]);
+}
+
 }

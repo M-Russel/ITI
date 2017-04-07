@@ -1,0 +1,102 @@
+20:10:45 **** Incremental Build of configuration Debug for project Flex_Gloves ****
+make all 
+Building file: ../Main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=4000000UL -MMD -MP -MF"Main.d" -MT"Main.o" -c -o "Main.o" "../Main.c"
+In file included from ../Main.c:11:0:
+../TIMER0_interface.h:36:1: warning: ‘__INTR_ATTRS’ attribute directive ignored [-Wattributes]
+ void __vector_11(void) __attribute__((signal,__INTR_ATTRS));
+ ^
+In file included from ../Main.c:13:0:
+../LCD_Interface.h:17:0: warning: "ERROR" redefined [enabled by default]
+ #define ERROR 1
+ ^
+In file included from ../Main.c:10:0:
+../DIO_Interface.h:47:0: note: this is the location of the previous definition
+ #define ERROR 0
+ ^
+In file included from ../Main.c:13:0:
+../LCD_Interface.h:18:0: warning: "OK" redefined [enabled by default]
+ #define OK 0
+ ^
+In file included from ../Main.c:10:0:
+../DIO_Interface.h:46:0: note: this is the location of the previous definition
+ #define OK 1
+ ^
+../Main.c: In function ‘LCD_VoidDisableLCDEnable’:
+../Main.c:42:9: warning: type defaults to ‘int’ in declaration of ‘Counter2’ [enabled by default]
+  static Counter2=ZERO;
+         ^
+../Main.c: In function ‘LCD_VoidWriteDATA’:
+../Main.c:60:2: warning: pointer targets in passing argument 1 of ‘LCD_u8WriteString’ differ in signedness [-Wpointer-sign]
+  LCD_u8WriteString("HELLO",&String_Counter);
+  ^
+In file included from ../Main.c:13:0:
+../LCD_Interface.h:36:4: note: expected ‘u8 *’ but argument is of type ‘char *’
+ u8 LCD_u8WriteString(u8 Copy_u8String[],pu8 Copy_pu8StringCounter);
+    ^
+../Main.c:64:2: warning: pointer targets in passing argument 1 of ‘LCD_u8WriteString’ differ in signedness [-Wpointer-sign]
+  LCD_u8WriteString("How",&String_Counter);
+  ^
+In file included from ../Main.c:13:0:
+../LCD_Interface.h:36:4: note: expected ‘u8 *’ but argument is of type ‘char *’
+ u8 LCD_u8WriteString(u8 Copy_u8String[],pu8 Copy_pu8StringCounter);
+    ^
+../Main.c:68:2: warning: pointer targets in passing argument 1 of ‘LCD_u8WriteString’ differ in signedness [-Wpointer-sign]
+  LCD_u8WriteString("Are",&String_Counter);
+  ^
+In file included from ../Main.c:13:0:
+../LCD_Interface.h:36:4: note: expected ‘u8 *’ but argument is of type ‘char *’
+ u8 LCD_u8WriteString(u8 Copy_u8String[],pu8 Copy_pu8StringCounter);
+    ^
+../Main.c:72:2: warning: pointer targets in passing argument 1 of ‘LCD_u8WriteString’ differ in signedness [-Wpointer-sign]
+  LCD_u8WriteString("you",&String_Counter);
+  ^
+In file included from ../Main.c:13:0:
+../LCD_Interface.h:36:4: note: expected ‘u8 *’ but argument is of type ‘char *’
+ u8 LCD_u8WriteString(u8 Copy_u8String[],pu8 Copy_pu8StringCounter);
+    ^
+../Main.c:55:34: warning: unused variable ‘h’ [-Wunused-variable]
+  static u8 String_Counter=0,CO=0,h=0;
+                                  ^
+../Main.c: At top level:
+../Main.c:111:6: warning: return type of ‘main’ is not ‘int’ [-Wmain]
+ void main(void)
+      ^
+In file included from ../Main.c:12:0:
+../RTO_interface.h:30:13: warning: ‘RTO_voidSchedular’ declared ‘static’ but never defined [-Wunused-function]
+ static void RTO_voidSchedular(void);
+             ^
+Finished building: ../Main.c
+ 
+Building target: Flex_Gloves.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,Flex_Gloves.map -mmcu=atmega32 -o "Flex_Gloves.elf"  ./ADC_prog.o ./DIO_Prog.o ./LCD_Prog.o ./Main.o ./RTO_prog.o ./TIMER0_prog.o ./delay_ms.o   
+Finished building target: Flex_Gloves.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S Flex_Gloves.elf  >"Flex_Gloves.lss"
+Finished building: Flex_Gloves.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex Flex_Gloves.elf  "Flex_Gloves.hex"
+Finished building: Flex_Gloves.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 Flex_Gloves.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    4494 bytes (13.7% Full)
+(.text + .data + .bootloader)
+
+Data:         41 bytes (2.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+
+20:10:45 Build Finished (took 199ms)
+

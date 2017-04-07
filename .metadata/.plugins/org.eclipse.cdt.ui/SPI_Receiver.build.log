@@ -1,0 +1,48 @@
+18:33:22 **** Incremental Build of configuration Debug for project SPI_Receiver ****
+make all 
+Building file: ../SW_Component2.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"SW_Component2.d" -MT"SW_Component2.o" -c -o "SW_Component2.o" "../SW_Component2.c"
+../SW_Component2.c:13:6: warning: return type of ‘main’ is not ‘int’ [-Wmain]
+ void main(void)
+      ^
+../SW_Component2.c: In function ‘main’:
+../SW_Component2.c:17:1: warning: implicit declaration of function ‘LCD_u8Init’ [-Wimplicit-function-declaration]
+ LCD_u8Init();
+ ^
+../SW_Component2.c:19:1: warning: implicit declaration of function ‘LCD_u8WriteData’ [-Wimplicit-function-declaration]
+ LCD_u8WriteData('h');
+ ^
+Finished building: ../SW_Component2.c
+ 
+Building target: SPI_Receiver.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,SPI_Receiver.map -mmcu=atmega16 -o "SPI_Receiver.elf"  ./DIO_Prog.o ./LCD_Prog.o ./RTO_prog.o ./SPI_prog.o ./SW_Component2.o ./TIMER0_prog.o ./delay_ms.o   
+Finished building target: SPI_Receiver.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S SPI_Receiver.elf  >"SPI_Receiver.lss"
+Finished building: SPI_Receiver.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex SPI_Receiver.elf  "SPI_Receiver.hex"
+Finished building: SPI_Receiver.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 SPI_Receiver.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:    3914 bytes (23.9% Full)
+(.text + .data + .bootloader)
+
+Data:          8 bytes (0.8% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+
+18:33:23 Build Finished (took 1s.217ms)
+

@@ -1,0 +1,22 @@
+/*
+ * SW_Component2.c
+ *
+ *  Created on: Apr 7, 2017
+ *      Author: root
+ */
+
+#include "std_types.h"
+#include "utils.h"
+#include "DIO_Interface.h"
+#include "SPI_interface.h"
+
+void main(void)
+{
+
+
+while (TRUE)
+{}
+
+
+
+}

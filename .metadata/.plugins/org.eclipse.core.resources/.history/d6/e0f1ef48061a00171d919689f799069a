@@ -1,0 +1,52 @@
+/*
+ * SPI_private.h
+ *
+ *  Created on: Apr 5, 2017
+ *      Author: Russel
+ */
+
+#ifndef SPI_PRIVATE_H_
+#define SPI_PRIVATE_H_
+
+
+/*SPI Data Register :- */
+#define SPDR (*((volatile pu8)(0x2F)))
+/*SPI Status Register */
+#define SPSR (*((volatile pu8)(0x2E)))
+/*SPI Control Register */
+#define SPCR (*((volatile pu8)(0x2D)))
+
+/*SPI Interrupt Enable
+ * SPIE = 1 Interrupt enabled
+ * SPIE = 0 Interrupt disabled
+ * */
+#define SPIE     7
+/*SPI  Enable
+ * SPE = 1 SPI Enabled
+ * SPE = 0 SPI Disabled
+ * */
+#define SPE      6
+/*Data order
+ *DORD = 1 LSB first.
+ * DORD = 0 MSB Second.
+ *  */
+#define DORD  5
+/*Master Slave Select
+ * MSTR = 1 Master
+ * MSTR = 0 Slave
+ *  */
+#define MSTR   4
+/*Clock Polarity
+ * CPOL = 0  Leading Edge: Rising  Trailing Edge: Falling
+ * CPOL = 1  Leading Edge: Falling  Trailing Edge: Rising
+ * */
+#define CPOL   3
+/*Clock Phase
+ * CPHA
+ * CPHA =0  Leading Edge: Sample  Trailing Edge: Setup
+ * CPHA = 1 Leading Edge: Setup    Trailing Edge: Sample
+ * */
+#define CPHA   2
+#define SPR1    1
+#define SPR0    0
+#endif /* SPI_PRIVATE_H_ */

@@ -1,0 +1,35 @@
+/*
+ * main.c
+ *
+ *  Created on: Apr 4, 2017
+ *      Author: root
+ */
+#include "std_types.h"
+#include "utils.h"
+#include "DIO_Interface.h"
+
+void main (void)
+{
+	pu8 test=NULL;
+	u8 check = 0;
+DIO_u8Init();
+
+while (1)
+{
+
+	check = DIO_u8GetPinValue(0,test);
+
+	if (check == 1)
+	{
+		DIO_u8SetPortValue(DIO_PORT_HIGH,&PORTA);
+	}
+	else
+	{
+		DIO_u8SetPortValue(DIO_PORT_LOW,&PORTA);
+
+	}
+
+}
+
+
+}

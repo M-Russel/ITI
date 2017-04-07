@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">&#x0A;<refactoring comment="Rename resource &apos;LCD_Drivers/LCD_Interface.h&apos; to &apos;OLD_LCD_Interface.h&apos;" description="Rename resource &apos;LCD_Interface.h&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="LCD_Interface.h" name="OLD_LCD_Interface.h" stamp="1491580273139" updateReferences="true"/>&#x0A;<refactoring comment="Rename resource &apos;LCD_Drivers/LCD_Prog.c&apos; to &apos;OLD_LCD_Prog.c&apos;" description="Rename resource &apos;LCD_Prog.c&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="LCD_Prog.c" name="OLD_LCD_Prog.c" stamp="1491580281143" updateReferences="true"/>
+</session>

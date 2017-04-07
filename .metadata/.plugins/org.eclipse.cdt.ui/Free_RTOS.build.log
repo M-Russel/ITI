@@ -1,0 +1,30 @@
+19:09:44 **** Build of configuration Debug for project Free_RTOS ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -I/home/russel/eclipse/FreeRTOS_SourceFiles -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+../main.c:27:6: warning: return type of ‘main’ is not ‘int’ [-Wmain]
+ void main (void)
+      ^
+../main.c: In function ‘main’:
+../main.c:33:1: warning: pointer targets in passing argument 2 of ‘xTaskGenericCreate’ differ in signedness [-Wpointer-sign]
+ xTaskCreate(task1,"Hamada",80,NULL,1,NULL);
+ ^
+In file included from ../main.c:9:0:
+/home/russel/eclipse/FreeRTOS_SourceFiles/task.h:1302:22: note: expected ‘const signed char * const’ but argument is of type ‘char *’
+ signed portBASE_TYPE xTaskGenericCreate( pdTASK_CODE pxTaskCode, const signed char * const pcName, unsigned short usStackDepth, void *pvParameters, unsigned portBASE_TYPE uxPriority, xTaskHandle *pxCreatedTask, portSTACK_TYPE *puxStackBuffer, const xMemoryRegion * const xRegions ) PRIVILEGED_FUNCTION;
+                      ^
+Finished building: ../main.c
+ 
+Building target: Free_RTOS.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,Free_RTOS.map -mmcu=atmega16 -o "Free_RTOS.elf"  ./main.o   
+./main.o: In function `main':
+../main.c:34: undefined reference to `vTaskDelay'
+../main.c:36: undefined reference to `xTaskGenericCreate'
+../main.c:36: undefined reference to `vTaskStartScheduler'
+collect2: error: ld returned 1 exit status
+make: *** [Free_RTOS.elf] Error 1
+
+19:09:45 Build Finished (took 83ms)
+

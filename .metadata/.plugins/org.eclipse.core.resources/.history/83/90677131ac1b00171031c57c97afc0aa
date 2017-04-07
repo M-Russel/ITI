@@ -1,0 +1,34 @@
+/*
+ * SW_Component2.c
+ *
+ *  Created on: Apr 7, 2017
+ *      Author: root
+ */
+
+#include "std_types.h"
+#include "utils.h"
+#include "DIO_Interface.h"
+#include "SPI_interface.h"
+
+void main(void)
+{
+u8 Local_u8Received=0;
+DIO_voidInitialize();
+SPI_u8Init();
+while (TRUE)
+{
+SPI_u8ReceiveData(&Local_u8Received)	;
+if (4==Local_u8Received)
+{
+DIO_u8SetPinValue(PIN_0,DIO_HIGH);
+}
+else
+{
+	DIO_u8SetPinValue(PIN_0,DIO_LOW);
+
+}
+}
+
+
+
+}

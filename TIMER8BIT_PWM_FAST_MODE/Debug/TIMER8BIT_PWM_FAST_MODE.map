@@ -1,0 +1,460 @@
+Archive member included because of file (symbol)
+
+/usr/lib/gcc/avr/4.8.2/avr5/libgcc.a(_exit.o)
+                              /usr/lib/gcc/avr/4.8.2/../../../avr/lib/avr5/crtm32.o (exit)
+/usr/lib/gcc/avr/4.8.2/avr5/libgcc.a(_tablejump.o)
+                              ./DIO_Prog.o (__tablejump2__)
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+text             0x0000000000000000 0x0000000000020000 xr
+data             0x0000000000800060 0x000000000000ffa0 rw !x
+eeprom           0x0000000000810000 0x0000000000010000 rw !x
+fuse             0x0000000000820000 0x0000000000000400 rw !x
+lock             0x0000000000830000 0x0000000000000400 rw !x
+signature        0x0000000000840000 0x0000000000000400 rw !x
+user_signatures  0x0000000000850000 0x0000000000000400 rw !x
+*default*        0x0000000000000000 0xffffffffffffffff
+
+Linker script and memory map
+
+LOAD /usr/lib/gcc/avr/4.8.2/../../../avr/lib/avr5/crtm32.o
+LOAD ./DIO_Prog.o
+LOAD ./Fast_PWM.o
+LOAD ./TIMER0.o
+LOAD ./TIMER0_prog.o
+LOAD ./TIMER1.o
+LOAD ./TIMER2.o
+LOAD ./delay_ms.o
+START GROUP
+LOAD /usr/lib/gcc/avr/4.8.2/avr5/libgcc.a
+LOAD /usr/lib/gcc/avr/4.8.2/../../../avr/lib/avr5/libm.a
+LOAD /usr/lib/gcc/avr/4.8.2/../../../avr/lib/avr5/libc.a
+END GROUP
+
+.hash
+ *(.hash)
+
+.dynsym
+ *(.dynsym)
+
+.dynstr
+ *(.dynstr)
+
+.gnu.version
+ *(.gnu.version)
+
+.gnu.version_d
+ *(.gnu.version_d)
+
+.gnu.version_r
+ *(.gnu.version_r)
+
+.rel.init
+ *(.rel.init)
+
+.rela.init
+ *(.rela.init)
+
+.rel.text
+ *(.rel.text)
+ *(.rel.text.*)
+ *(.rel.gnu.linkonce.t*)
+
+.rela.text
+ *(.rela.text)
+ *(.rela.text.*)
+ *(.rela.gnu.linkonce.t*)
+
+.rel.fini
+ *(.rel.fini)
+
+.rela.fini
+ *(.rela.fini)
+
+.rel.rodata
+ *(.rel.rodata)
+ *(.rel.rodata.*)
+ *(.rel.gnu.linkonce.r*)
+
+.rela.rodata
+ *(.rela.rodata)
+ *(.rela.rodata.*)
+ *(.rela.gnu.linkonce.r*)
+
+.rel.data
+ *(.rel.data)
+ *(.rel.data.*)
+ *(.rel.gnu.linkonce.d*)
+
+.rela.data
+ *(.rela.data)
+ *(.rela.data.*)
+ *(.rela.gnu.linkonce.d*)
+
+.rel.ctors
+ *(.rel.ctors)
+
+.rela.ctors
+ *(.rela.ctors)
+
+.rel.dtors
+ *(.rel.dtors)
+
+.rela.dtors
+ *(.rela.dtors)
+
+.rel.got
+ *(.rel.got)
+
+.rela.got
+ *(.rela.got)
+
+.rel.bss
+ *(.rel.bss)
+
+.rela.bss
+ *(.rela.bss)
+
+.rel.plt
+ *(.rel.plt)
+
+.rela.plt
+ *(.rela.plt)
+
+.text           0x0000000000000000      0x87a
+ *(.vectors)
+ .vectors       0x0000000000000000       0x54 /usr/lib/gcc/avr/4.8.2/../../../avr/lib/avr5/crtm32.o
+                0x0000000000000000                __vectors
+                0x0000000000000000                __vector_default
+ *(.vectors)
+ *(.progmem.gcc*)
+ .progmem.gcc_sw_table.DIO_u8SetPinDirection
+                0x0000000000000054       0x40 ./DIO_Prog.o
+ .progmem.gcc_sw_table.DIO_u8SetPinValue
+                0x0000000000000094       0x40 ./DIO_Prog.o
+ .progmem.gcc_sw_table.DIO_u8GetPinValue
+                0x00000000000000d4       0x40 ./DIO_Prog.o
+ *(.progmem*)
+                0x0000000000000114                . = ALIGN (0x2)
+                0x0000000000000114                __trampolines_start = .
+ *(.trampolines)
+ .trampolines   0x0000000000000114        0x0 linker stubs
+ *(.trampolines*)
+                0x0000000000000114                __trampolines_end = .
+ *(.jumptables)
+ *(.jumptables*)
+ *(.lowtext)
+ *(.lowtext*)
+                0x0000000000000114                __ctors_start = .
+ *(.ctors)
+                0x0000000000000114                __ctors_end = .
+                0x0000000000000114                __dtors_start = .
+ *(.dtors)
+                0x0000000000000114                __dtors_end = .
+ SORT(*)(.ctors)
+ SORT(*)(.dtors)
+ *(.init0)
+ .init0         0x0000000000000114        0x0 /usr/lib/gcc/avr/4.8.2/../../../avr/lib/avr5/crtm32.o
+                0x0000000000000114                __init
+ *(.init0)
+ *(.init1)
+ *(.init1)
+ *(.init2)
+ .init2         0x0000000000000114        0xc /usr/lib/gcc/avr/4.8.2/../../../avr/lib/avr5/crtm32.o
+ *(.init2)
+ *(.init3)
+ *(.init3)
+ *(.init4)
+ *(.init4)
+ *(.init5)
+ *(.init5)
+ *(.init6)
+ *(.init6)
+ *(.init7)
+ *(.init7)
+ *(.init8)
+ *(.init8)
+ *(.init9)
+ .init9         0x0000000000000120        0x8 /usr/lib/gcc/avr/4.8.2/../../../avr/lib/avr5/crtm32.o
+ *(.init9)
+ *(.text)
+ .text          0x0000000000000128        0x4 /usr/lib/gcc/avr/4.8.2/../../../avr/lib/avr5/crtm32.o
+                0x0000000000000128                __vector_1
+                0x0000000000000128                __vector_12
+                0x0000000000000128                __bad_interrupt
+                0x0000000000000128                __vector_6
+                0x0000000000000128                __vector_3
+                0x0000000000000128                __vector_11
+                0x0000000000000128                __vector_13
+                0x0000000000000128                __vector_17
+                0x0000000000000128                __vector_19
+                0x0000000000000128                __vector_7
+                0x0000000000000128                __vector_5
+                0x0000000000000128                __vector_4
+                0x0000000000000128                __vector_9
+                0x0000000000000128                __vector_2
+                0x0000000000000128                __vector_15
+                0x0000000000000128                __vector_8
+                0x0000000000000128                __vector_14
+                0x0000000000000128                __vector_10
+                0x0000000000000128                __vector_16
+                0x0000000000000128                __vector_18
+                0x0000000000000128                __vector_20
+ .text          0x000000000000012c        0x0 ./DIO_Prog.o
+ .text          0x000000000000012c        0x0 ./Fast_PWM.o
+ .text          0x000000000000012c        0x0 ./TIMER0.o
+ .text          0x000000000000012c        0x0 ./TIMER0_prog.o
+ .text          0x000000000000012c        0x0 ./TIMER1.o
+ .text          0x000000000000012c        0x0 ./TIMER2.o
+ .text          0x000000000000012c        0x0 ./delay_ms.o
+ .text          0x000000000000012c        0x0 /usr/lib/gcc/avr/4.8.2/avr5/libgcc.a(_exit.o)
+ .text          0x000000000000012c        0x0 /usr/lib/gcc/avr/4.8.2/avr5/libgcc.a(_tablejump.o)
+                0x000000000000012c                . = ALIGN (0x2)
+ *(.text.*)
+ .text.DIO_voidInitialize
+                0x000000000000012c       0x56 ./DIO_Prog.o
+                0x000000000000012c                DIO_voidInitialize
+ .text.DIO_u8SetPortDirection
+                0x0000000000000182       0x50 ./DIO_Prog.o
+                0x0000000000000182                DIO_u8SetPortDirection
+ .text.DIO_u8SetPinDirection
+                0x00000000000001d2      0x22e ./DIO_Prog.o
+                0x00000000000001d2                DIO_u8SetPinDirection
+ .text.DIO_u8SetPortValue
+                0x0000000000000400       0x2a ./DIO_Prog.o
+                0x0000000000000400                DIO_u8SetPortValue
+ .text.DIO_u8SetPinValue
+                0x000000000000042a      0x22e ./DIO_Prog.o
+                0x000000000000042a                DIO_u8SetPinValue
+ .text.DIO_u8GetPortValue
+                0x0000000000000658       0x20 ./DIO_Prog.o
+                0x0000000000000658                DIO_u8GetPortValue
+ .text.DIO_u8GetPinValue
+                0x0000000000000678      0x108 ./DIO_Prog.o
+                0x0000000000000678                DIO_u8GetPinValue
+ .text.main     0x0000000000000780       0x12 ./Fast_PWM.o
+                0x0000000000000780                main
+ .text.TIMER0_init
+                0x0000000000000792       0x4e ./TIMER0_prog.o
+                0x0000000000000792                TIMER0_init
+ .text.delay_ms
+                0x00000000000007e0       0x8a ./delay_ms.o
+                0x00000000000007e0                delay_ms
+ .text.libgcc.mul
+                0x000000000000086a        0x0 /usr/lib/gcc/avr/4.8.2/avr5/libgcc.a(_exit.o)
+ .text.libgcc.div
+                0x000000000000086a        0x0 /usr/lib/gcc/avr/4.8.2/avr5/libgcc.a(_exit.o)
+ .text.libgcc   0x000000000000086a        0x0 /usr/lib/gcc/avr/4.8.2/avr5/libgcc.a(_exit.o)
+ .text.libgcc.prologue
+                0x000000000000086a        0x0 /usr/lib/gcc/avr/4.8.2/avr5/libgcc.a(_exit.o)
+ .text.libgcc.builtins
+                0x000000000000086a        0x0 /usr/lib/gcc/avr/4.8.2/avr5/libgcc.a(_exit.o)
+ .text.libgcc.fmul
+                0x000000000000086a        0x0 /usr/lib/gcc/avr/4.8.2/avr5/libgcc.a(_exit.o)
+ .text.libgcc.fixed
+                0x000000000000086a        0x0 /usr/lib/gcc/avr/4.8.2/avr5/libgcc.a(_exit.o)
+ .text.libgcc.mul
+                0x000000000000086a        0x0 /usr/lib/gcc/avr/4.8.2/avr5/libgcc.a(_tablejump.o)
+ .text.libgcc.div
+                0x000000000000086a        0x0 /usr/lib/gcc/avr/4.8.2/avr5/libgcc.a(_tablejump.o)
+ .text.libgcc   0x000000000000086a        0xc /usr/lib/gcc/avr/4.8.2/avr5/libgcc.a(_tablejump.o)
+                0x000000000000086a                __tablejump2__
+                0x000000000000086e                __tablejump__
+ .text.libgcc.prologue
+                0x0000000000000876        0x0 /usr/lib/gcc/avr/4.8.2/avr5/libgcc.a(_tablejump.o)
+ .text.libgcc.builtins
+                0x0000000000000876        0x0 /usr/lib/gcc/avr/4.8.2/avr5/libgcc.a(_tablejump.o)
+ .text.libgcc.fmul
+                0x0000000000000876        0x0 /usr/lib/gcc/avr/4.8.2/avr5/libgcc.a(_tablejump.o)
+ .text.libgcc.fixed
+                0x0000000000000876        0x0 /usr/lib/gcc/avr/4.8.2/avr5/libgcc.a(_tablejump.o)
+                0x0000000000000876                . = ALIGN (0x2)
+ *(.fini9)
+ .fini9         0x0000000000000876        0x0 /usr/lib/gcc/avr/4.8.2/avr5/libgcc.a(_exit.o)
+                0x0000000000000876                exit
+                0x0000000000000876                _exit
+ *(.fini9)
+ *(.fini8)
+ *(.fini8)
+ *(.fini7)
+ *(.fini7)
+ *(.fini6)
+ *(.fini6)
+ *(.fini5)
+ *(.fini5)
+ *(.fini4)
+ *(.fini4)
+ *(.fini3)
+ *(.fini3)
+ *(.fini2)
+ *(.fini2)
+ *(.fini1)
+ *(.fini1)
+ *(.fini0)
+ .fini0         0x0000000000000876        0x4 /usr/lib/gcc/avr/4.8.2/avr5/libgcc.a(_exit.o)
+ *(.fini0)
+                0x000000000000087a                _etext = .
+
+.data           0x0000000000800060        0x0 load address 0x000000000000087a
+                0x0000000000800060                PROVIDE (__data_start, .)
+ *(.data)
+ .data          0x0000000000800060        0x0 /usr/lib/gcc/avr/4.8.2/../../../avr/lib/avr5/crtm32.o
+ .data          0x0000000000800060        0x0 ./DIO_Prog.o
+ .data          0x0000000000800060        0x0 ./Fast_PWM.o
+ .data          0x0000000000800060        0x0 ./TIMER0.o
+ .data          0x0000000000800060        0x0 ./TIMER0_prog.o
+ .data          0x0000000000800060        0x0 ./TIMER1.o
+ .data          0x0000000000800060        0x0 ./TIMER2.o
+ .data          0x0000000000800060        0x0 ./delay_ms.o
+ .data          0x0000000000800060        0x0 /usr/lib/gcc/avr/4.8.2/avr5/libgcc.a(_exit.o)
+ .data          0x0000000000800060        0x0 /usr/lib/gcc/avr/4.8.2/avr5/libgcc.a(_tablejump.o)
+ *(.data*)
+ *(.rodata)
+ *(.rodata*)
+ *(.gnu.linkonce.d*)
+                0x0000000000800060                . = ALIGN (0x2)
+                0x0000000000800060                _edata = .
+                0x0000000000800060                PROVIDE (__data_end, .)
+
+.bss            0x0000000000800060        0x0
+                0x0000000000800060                PROVIDE (__bss_start, .)
+ *(.bss)
+ .bss           0x0000000000800060        0x0 /usr/lib/gcc/avr/4.8.2/../../../avr/lib/avr5/crtm32.o
+ .bss           0x0000000000800060        0x0 ./DIO_Prog.o
+ .bss           0x0000000000800060        0x0 ./Fast_PWM.o
+ .bss           0x0000000000800060        0x0 ./TIMER0.o
+ .bss           0x0000000000800060        0x0 ./TIMER0_prog.o
+ .bss           0x0000000000800060        0x0 ./TIMER1.o
+ .bss           0x0000000000800060        0x0 ./TIMER2.o
+ .bss           0x0000000000800060        0x0 ./delay_ms.o
+ .bss           0x0000000000800060        0x0 /usr/lib/gcc/avr/4.8.2/avr5/libgcc.a(_exit.o)
+ .bss           0x0000000000800060        0x0 /usr/lib/gcc/avr/4.8.2/avr5/libgcc.a(_tablejump.o)
+ *(.bss*)
+ *(COMMON)
+                0x0000000000800060                PROVIDE (__bss_end, .)
+                0x000000000000087a                __data_load_start = LOADADDR (.data)
+                0x000000000000087a                __data_load_end = (__data_load_start + SIZEOF (.data))
+
+.noinit         0x0000000000800060        0x0
+                0x0000000000800060                PROVIDE (__noinit_start, .)
+ *(.noinit*)
+                0x0000000000800060                PROVIDE (__noinit_end, .)
+                0x0000000000800060                _end = .
+                0x0000000000800060                PROVIDE (__heap_start, .)
+
+.eeprom         0x0000000000810000        0x0
+ *(.eeprom*)
+                0x0000000000810000                __eeprom_end = .
+
+.fuse
+ *(.fuse)
+ *(.lfuse)
+ *(.hfuse)
+ *(.efuse)
+
+.lock
+ *(.lock*)
+
+.signature
+ *(.signature*)
+
+.user_signatures
+ *(.user_signatures*)
+
+.stab           0x0000000000000000     0x1f38
+ *(.stab)
+ .stab          0x0000000000000000      0x6cc /usr/lib/gcc/avr/4.8.2/../../../avr/lib/avr5/crtm32.o
+ .stab          0x00000000000006cc      0x8e8 ./DIO_Prog.o
+                                        0x8f4 (size before relaxing)
+ .stab          0x0000000000000fb4      0x2a0 ./Fast_PWM.o
+                                        0x378 (size before relaxing)
+ .stab          0x0000000000001254      0x258 ./TIMER0.o
+                                        0x264 (size before relaxing)
+ .stab          0x00000000000014ac      0x2b8 ./TIMER0_prog.o
+                                        0x390 (size before relaxing)
+ .stab          0x0000000000001764      0x258 ./TIMER1.o
+                                        0x264 (size before relaxing)
+ .stab          0x00000000000019bc      0x258 ./TIMER2.o
+                                        0x264 (size before relaxing)
+ .stab          0x0000000000001c14      0x324 ./delay_ms.o
+                                        0x3fc (size before relaxing)
+
+.stabstr        0x0000000000000000      0xb0c
+ *(.stabstr)
+ .stabstr       0x0000000000000000      0xb0c /usr/lib/gcc/avr/4.8.2/../../../avr/lib/avr5/crtm32.o
+
+.stab.excl
+ *(.stab.excl)
+
+.stab.exclstr
+ *(.stab.exclstr)
+
+.stab.index
+ *(.stab.index)
+
+.stab.indexstr
+ *(.stab.indexstr)
+
+.comment        0x0000000000000000       0x11
+ *(.comment)
+ .comment       0x0000000000000000       0x11 ./DIO_Prog.o
+                                         0x12 (size before relaxing)
+ .comment       0x0000000000000000       0x12 ./Fast_PWM.o
+ .comment       0x0000000000000000       0x12 ./TIMER0.o
+ .comment       0x0000000000000000       0x12 ./TIMER0_prog.o
+ .comment       0x0000000000000000       0x12 ./TIMER1.o
+ .comment       0x0000000000000000       0x12 ./TIMER2.o
+ .comment       0x0000000000000000       0x12 ./delay_ms.o
+
+.debug
+ *(.debug)
+
+.line
+ *(.line)
+
+.debug_srcinfo
+ *(.debug_srcinfo)
+
+.debug_sfnames
+ *(.debug_sfnames)
+
+.debug_aranges
+ *(.debug_aranges)
+
+.debug_pubnames
+ *(.debug_pubnames)
+
+.debug_info
+ *(.debug_info)
+ *(.gnu.linkonce.wi.*)
+
+.debug_abbrev
+ *(.debug_abbrev)
+
+.debug_line
+ *(.debug_line)
+
+.debug_frame
+ *(.debug_frame)
+
+.debug_str
+ *(.debug_str)
+
+.debug_loc
+ *(.debug_loc)
+
+.debug_macinfo
+ *(.debug_macinfo)
+
+.debug_pubtypes
+ *(.debug_pubtypes)
+
+.debug_ranges
+ *(.debug_ranges)
+
+.debug_macro
+ *(.debug_macro)
+OUTPUT(TIMER8BIT_PWM_FAST_MODE.elf elf32-avr)
+LOAD linker stubs

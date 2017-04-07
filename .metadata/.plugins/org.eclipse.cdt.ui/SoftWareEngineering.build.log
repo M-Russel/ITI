@@ -1,0 +1,45 @@
+12:36:08 **** Incremental Build of configuration Debug for project SoftWareEngineering ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+../main.c:11:6: warning: return type of ‘main’ is not ‘int’ [-Wmain]
+ void main (void)
+      ^
+../main.c: In function ‘main’:
+../main.c:15:1: warning: passing argument 2 of ‘DIO_u8SetPortValue’ discards ‘volatile’ qualifier from pointer target type [enabled by default]
+ DIO_u8SetPortValue(DIO_PORT_HIGH,&PORTA);
+ ^
+In file included from ../main.c:9:0:
+../DIO_Interface.h:148:4: note: expected ‘pu8’ but argument is of type ‘volatile u8 *’
+ u8 DIO_u8SetPortValue(u8 Copy_u8PortValue,pu8 Copy_pu8PortName );
+    ^
+Finished building: ../main.c
+ 
+Building target: SoftWareEngineering.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,SoftWareEngineering.map -mmcu=atmega16 -o "SoftWareEngineering.elf"  ./DIO_Prog.o ./main.o   
+Finished building target: SoftWareEngineering.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S SoftWareEngineering.elf  >"SoftWareEngineering.lss"
+Finished building: SoftWareEngineering.lss
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 SoftWareEngineering.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:    1996 bytes (12.2% Full)
+(.text + .data + .bootloader)
+
+Data:          0 bytes (0.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+
+12:36:08 Build Finished (took 73ms)
+

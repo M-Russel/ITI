@@ -1,0 +1,192 @@
+18:28:11 **** Incremental Build of configuration Debug for project Nokia ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+In file included from ../main.c:15:0:
+../DIO_Interface.h:14:0: warning: "DDRA" redefined [enabled by default]
+ #define DDRA (*((u8 *)0x3A))    //Data Direction Register For Port A
+ ^
+In file included from /usr/lib/avr/include/avr/io.h:238:0,
+                 from /usr/lib/avr/include/avr/pgmspace.h:88,
+                 from ../main.c:7:
+/usr/lib/avr/include/avr/iom16.h:254:0: note: this is the location of the previous definition
+ #define DDRA    _SFR_IO8(0x1A)
+ ^
+In file included from ../main.c:15:0:
+../DIO_Interface.h:15:0: warning: "PORTA" redefined [enabled by default]
+ #define PORTA (*((u8 *)0x3B))  //Output for Port A
+ ^
+In file included from /usr/lib/avr/include/avr/io.h:238:0,
+                 from /usr/lib/avr/include/avr/pgmspace.h:88,
+                 from ../main.c:7:
+/usr/lib/avr/include/avr/iom16.h:264:0: note: this is the location of the previous definition
+ #define PORTA   _SFR_IO8(0x1B)
+ ^
+In file included from ../main.c:15:0:
+../DIO_Interface.h:16:0: warning: "PINA" redefined [enabled by default]
+ #define PINA (*((u8 *)0x39))  //Input for Port A
+ ^
+In file included from /usr/lib/avr/include/avr/io.h:238:0,
+                 from /usr/lib/avr/include/avr/pgmspace.h:88,
+                 from ../main.c:7:
+/usr/lib/avr/include/avr/iom16.h:244:0: note: this is the location of the previous definition
+ #define PINA    _SFR_IO8(0x19)
+ ^
+In file included from ../main.c:15:0:
+../DIO_Interface.h:17:0: warning: "DDRB" redefined [enabled by default]
+ #define DDRB (*((u8 *)0x37))   //Data Direction Register For Port B
+ ^
+In file included from /usr/lib/avr/include/avr/io.h:238:0,
+                 from /usr/lib/avr/include/avr/pgmspace.h:88,
+                 from ../main.c:7:
+/usr/lib/avr/include/avr/iom16.h:224:0: note: this is the location of the previous definition
+ #define DDRB    _SFR_IO8(0x17)
+ ^
+In file included from ../main.c:15:0:
+../DIO_Interface.h:18:0: warning: "PORTB" redefined [enabled by default]
+ #define PORTB (*((u8 *)0x38)) //Output Register for Port B
+ ^
+In file included from /usr/lib/avr/include/avr/io.h:238:0,
+                 from /usr/lib/avr/include/avr/pgmspace.h:88,
+                 from ../main.c:7:
+/usr/lib/avr/include/avr/iom16.h:234:0: note: this is the location of the previous definition
+ #define PORTB   _SFR_IO8(0x18)
+ ^
+In file included from ../main.c:15:0:
+../DIO_Interface.h:19:0: warning: "PINB" redefined [enabled by default]
+ #define PINB (*((u8 *)0x36)) //Input Register for Port B
+ ^
+In file included from /usr/lib/avr/include/avr/io.h:238:0,
+                 from /usr/lib/avr/include/avr/pgmspace.h:88,
+                 from ../main.c:7:
+/usr/lib/avr/include/avr/iom16.h:214:0: note: this is the location of the previous definition
+ #define PINB    _SFR_IO8(0x16)
+ ^
+In file included from ../main.c:15:0:
+../DIO_Interface.h:20:0: warning: "DDRC" redefined [enabled by default]
+ #define DDRC (*((u8 *)0x34))   //Data Direction Register For Port C
+ ^
+In file included from /usr/lib/avr/include/avr/io.h:238:0,
+                 from /usr/lib/avr/include/avr/pgmspace.h:88,
+                 from ../main.c:7:
+/usr/lib/avr/include/avr/iom16.h:194:0: note: this is the location of the previous definition
+ #define DDRC    _SFR_IO8(0x14)
+ ^
+In file included from ../main.c:15:0:
+../DIO_Interface.h:21:0: warning: "PORTC" redefined [enabled by default]
+ #define PORTC (*((u8 *)0x35)) //Output Register for Port C
+ ^
+In file included from /usr/lib/avr/include/avr/io.h:238:0,
+                 from /usr/lib/avr/include/avr/pgmspace.h:88,
+                 from ../main.c:7:
+/usr/lib/avr/include/avr/iom16.h:204:0: note: this is the location of the previous definition
+ #define PORTC   _SFR_IO8(0x15)
+ ^
+In file included from ../main.c:15:0:
+../DIO_Interface.h:22:0: warning: "PINC" redefined [enabled by default]
+ #define PINC (*((u8 *)0x33)) //Input Register for Port C
+ ^
+In file included from /usr/lib/avr/include/avr/io.h:238:0,
+                 from /usr/lib/avr/include/avr/pgmspace.h:88,
+                 from ../main.c:7:
+/usr/lib/avr/include/avr/iom16.h:184:0: note: this is the location of the previous definition
+ #define PINC    _SFR_IO8(0x13)
+ ^
+In file included from ../main.c:15:0:
+../DIO_Interface.h:23:0: warning: "DDRD" redefined [enabled by default]
+ #define DDRD (*((u8 *)0x31))   //Data Direction Register For Port D
+ ^
+In file included from /usr/lib/avr/include/avr/io.h:238:0,
+                 from /usr/lib/avr/include/avr/pgmspace.h:88,
+                 from ../main.c:7:
+/usr/lib/avr/include/avr/iom16.h:164:0: note: this is the location of the previous definition
+ #define DDRD    _SFR_IO8(0x11)
+ ^
+In file included from ../main.c:15:0:
+../DIO_Interface.h:24:0: warning: "PORTD" redefined [enabled by default]
+ #define PORTD (*((u8 *)0x32)) //Output Register for Port D
+ ^
+In file included from /usr/lib/avr/include/avr/io.h:238:0,
+                 from /usr/lib/avr/include/avr/pgmspace.h:88,
+                 from ../main.c:7:
+/usr/lib/avr/include/avr/iom16.h:174:0: note: this is the location of the previous definition
+ #define PORTD   _SFR_IO8(0x12)
+ ^
+In file included from ../main.c:15:0:
+../DIO_Interface.h:25:0: warning: "PIND" redefined [enabled by default]
+Finished building: ../main.c
+ #define PIND (*((u8 *)0x30)) //Input Register for Port D
+ ^
+In file included from /usr/lib/avr/include/avr/io.h:238:0,
+ 
+                 from /usr/lib/avr/include/avr/pgmspace.h:88,
+                 from ../main.c:7:
+/usr/lib/avr/include/avr/iom16.h:154:0: note: this is the location of the previous definition
+Building target: Nokia.elf
+ #define PIND    _SFR_IO8(0x10)
+ ^
+../main.c:20:0: warning: "SPCR" redefined [enabled by default]
+Invoking: AVR C Linker
+ #define SPCR (*((u8 *)(0x2d)))
+avr-gcc -Wl,-Map,Nokia.map -mmcu=atmega16 -o "Nokia.elf"  ./DIO_Prog.o ./delay_ms.o ./main.o   
+ ^
+In file included from /usr/lib/avr/include/avr/io.h:238:0,
+                 from /usr/lib/avr/include/avr/pgmspace.h:88,
+                 from ../main.c:7:
+/usr/lib/avr/include/avr/iom16.h:137:0: note: this is the location of the previous definition
+ #define SPCR    _SFR_IO8(0x0D)
+ ^
+../main.c:21:0: warning: "SPDR" redefined [enabled by default]
+ #define SPDR (*((u8 *)(0x2f)))
+ ^
+In file included from /usr/lib/avr/include/avr/io.h:238:0,
+                 from /usr/lib/avr/include/avr/pgmspace.h:88,
+                 from ../main.c:7:
+/usr/lib/avr/include/avr/iom16.h:152:0: note: this is the location of the previous definition
+ #define SPDR    _SFR_IO8(0x0F)
+ ^
+../main.c:22:0: warning: "SPSR" redefined [enabled by default]
+ #define SPSR (*((u8 *)(0x2e)))
+ ^
+In file included from /usr/lib/avr/include/avr/io.h:238:0,
+                 from /usr/lib/avr/include/avr/pgmspace.h:88,
+                 from ../main.c:7:
+/usr/lib/avr/include/avr/iom16.h:147:0: note: this is the location of the previous definition
+ #define SPSR    _SFR_IO8(0x0E)
+ ^
+../main.c:338:6: warning: return type of ‘main’ is not ‘int’ [-Wmain]
+ void main(void)
+      ^
+../main.c: In function ‘main’:
+../main.c:341:6: warning: unused variable ‘x’ [-Wunused-variable]
+  u16 x=0;
+      ^
+../main.c: In function ‘LCD_update’:
+../main.c:425:1: warning: implicit declaration of function ‘delay_ms’ [-Wimplicit-function-declaration]
+ delay_ms(200); }
+ ^
+Finished building target: Nokia.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S Nokia.elf  >"Nokia.lss"
+Finished building: Nokia.lss
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 Nokia.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:    6584 bytes (40.2% Full)
+(.text + .data + .bootloader)
+
+Data:          0 bytes (0.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+
+18:28:12 Build Finished (took 135ms)
+

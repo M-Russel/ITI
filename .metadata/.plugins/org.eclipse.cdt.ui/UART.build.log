@@ -1,4 +1,4 @@
-21:25:30 **** Build of configuration Debug for project UART ****
+21:49:26 **** Build of configuration Debug for project UART ****
 make all 
 Building file: ../DIO_Prog.c
 Invoking: AVR Compiler
@@ -10,17 +10,17 @@ Invoking: AVR Compiler
 avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"UART_Prog.d" -MT"UART_Prog.o" -c -o "UART_Prog.o" "../UART_Prog.c"
 ../UART_Prog.c: In function ‘UART_u8Init’:
 ../UART_Prog.c:23:1: warning: control reaches end of non-void function [-Wreturn-type]
-Finished building: ../UART_Prog.c
- 
-Building file: ../main.c
-Invoking: AVR Compiler
-avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
  }
  ^
 ../UART_Prog.c: In function ‘UART_u8Transmit’:
+Finished building: ../UART_Prog.c
 ../UART_Prog.c:40:1: warning: control reaches end of non-void function [-Wreturn-type]
+ 
  }
  ^
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
 ../main.c:16:6: warning: return type of ‘main’ is not ‘int’ [-Wmain]
  void main (void)
       ^
@@ -34,10 +34,6 @@ Finished building target: UART.elf
 Invoking: AVR Create Extended Listing
 avr-objdump -h -S UART.elf  >"UART.lss"
 Finished building: UART.lss
- 
-Create Flash image (ihex format)
-avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex UART.elf  "UART.hex"
-Finished building: UART.hex
  
 Invoking: Print Size
 avr-size --format=avr --mcu=atmega16 UART.elf
@@ -55,5 +51,5 @@ Data:          0 bytes (0.0% Full)
 Finished building: sizedummy
  
 
-21:25:31 Build Finished (took 1s.281ms)
+21:49:26 Build Finished (took 171ms)
 

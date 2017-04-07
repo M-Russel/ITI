@@ -1,0 +1,591 @@
+/*
+ * DIO_Prog.c
+ *
+  *  Created on: Apr 4, 2017
+ *      Author: Russel
+ *      Version : 1
+ */
+
+// Data types header file
+#include "std_types.h"
+// Bit calculation and manipulation header file
+#include "utils.h"
+//DIO_Private.h header file
+#include "DIO_Private.h"
+//DIO_Config.h header file
+#include "DIO_Config.h"
+//DIO_Interface.h header file
+#include "DIO_Interface.h"
+
+/* **************************************************************************************************************
+ *																																											*
+ * "DIO_u8Init"																																					    *
+ *   																																										*
+ * 		-FUNCTION RESPOSIBLE FOR Initializing the hardware and giving the initial values to the registers 	*
+ * 	TAKES:																																								*
+ * 		-No Input arguments
+ * 	RETURNS:																																						*
+ * 		-IT RETURNS AN INDICATION OF THE SUCCESS OF THE OPERATION 														*
+ * 			-IF THE OPERATION PERFORMED SUCCESSFULLY IT WILL RETURN VALUE OF '0'									*
+ * 			-IF THE OPERATION HAD ANY TROUBLE FOR ANY REASON IT WILL RETURN VALUE OF '1'					*
+ * 																																											*
+ * 	NOTE **:-																																							*
+ * 		IT IS PREFERED TO CHECK THE VALUE OF THE INDICATOR BEFORE PROCEEDING IN YOUR CODE			*
+ * 																																											*
+ * 																																											*
+ * **************************************************************************************************************/
+u8 DIO_u8Init(void)
+{
+	// Variable to store the return status of DIO_u8Init Function
+	u8 Local_u8InitStatus=ERROR;
+
+	//Assigning the initial directions to pins within PORT A which their values had been set into DIO_Config.h
+DDRA = REGISTER_VALUE( DIO_u8PIN_0_DIRECTION , DIO_u8PIN_1_DIRECTION , DIO_u8PIN_2_DIRECTION,
+		DIO_u8PIN_3_DIRECTION,DIO_u8PIN_4_DIRECTION,DIO_u8PIN_5_DIRECTION,DIO_u8PIN_6_DIRECTION,DIO_u8PIN_7_DIRECTION);
+
+
+	//Assigning the initial directions to pins within PORT B which their values had been set into DIO_Config.h
+DDRB = REGISTER_VALUE(DIO_u8PIN_8_DIRECTION,DIO_u8PIN_9_DIRECTION, DIO_u8PIN_10_DIRECTION,
+		DIO_u8PIN_11_DIRECTION , DIO_u8PIN_12_DIRECTION, DIO_u8PIN_13_DIRECTION,DIO_u8PIN_14_DIRECTION,DIO_u8PIN_15_DIRECTION);
+
+	//Assigning the initial directions to pins within PORT C which their values had been set into DIO_Config.h
+DDRC=REGISTER_VALUE(DIO_u8PIN_16_DIRECTION,DIO_u8PIN_17_DIRECTION,DIO_u8PIN_18_DIRECTION,
+		DIO_u8PIN_19_DIRECTION,DIO_u8PIN_20_DIRECTION,DIO_u8PIN_21_DIRECTION,DIO_u8PIN_22_DIRECTION,DIO_u8PIN_23_DIRECTION);
+
+//Assigning the initial directions to pins within PORT D which their values had been set into DIO_Config.h
+DDRD=REGISTER_VALUE(DIO_u8PIN_24_DIRECTION,DIO_u8PIN_25_DIRECTION,DIO_u8PIN_26_DIRECTION,
+		DIO_u8PIN_27_DIRECTION,DIO_u8PIN_28_DIRECTION,DIO_u8PIN_29_DIRECTION,DIO_u8PIN_30_DIRECTION,DIO_u8PIN_31_DIRECTION);
+
+
+//Assigning the initial Value to pins within PORT A  which their values had been set into DIO_Config.h
+PORTA=REGISTER_VALUE(DIO_u8PIN_0_INITIAL,DIO_u8PIN_1_INITIAL,DIO_u8PIN_2_INITIAL,DIO_u8PIN_3_INITIAL,DIO_u8PIN_4_INITIAL,
+		DIO_u8PIN_5_INITIAL,DIO_u8PIN_6_INITIAL,DIO_u8PIN_7_INITIAL);
+
+//Assigning the initial Value to pins within PORT B  which their values had been set into DIO_Config.h
+PORTB=REGISTER_VALUE(DIO_u8PIN_8_INITIAL,DIO_u8PIN_9_INITIAL,DIO_u8PIN_10_INITIAL,DIO_u8PIN_11_INITIAL,DIO_u8PIN_12_INITIAL,
+		DIO_u8PIN_13_INITIAL,DIO_u8PIN_14_INITIAL,DIO_u8PIN_15_INITIAL);
+
+//Assigning the initial Value to pins within PORT C  which their values had been set into DIO_Config.h
+PORTC=REGISTER_VALUE(DIO_u8PIN_16_INITIAL,DIO_u8PIN_17_INITIAL,DIO_u8PIN_18_INITIAL,DIO_u8PIN_19_INITIAL,DIO_u8PIN_20_INITIAL,
+		DIO_u8PIN_21_INITIAL,DIO_u8PIN_22_INITIAL,DIO_u8PIN_23_INITIAL);
+
+//Assigning the initial Value to pins within PORT D  which their values had been set into DIO_Config.h
+PORTD=REGISTER_VALUE(DIO_u8PIN_24_INITIAL,DIO_u8PIN_25_INITIAL,DIO_u8PIN_26_INITIAL,DIO_u8PIN_27_INITIAL,DIO_u8PIN_28_INITIAL,
+		DIO_u8PIN_29_INITIAL,DIO_u8PIN_30_INITIAL,DIO_u8PIN_31_INITIAL);
+
+Local_u8InitStatus=OK;
+
+return Local_u8InitStatus;
+}
+
+/* **************************************************************************************************************
+ *																												*
+ * "DIO_u8SetPinDirection"																					    *
+ *   																											*
+ * 		-FUNCTION RESPOSIBLE FOR SETTING THE DIRECTION OF A SPECIFIC PIN IN A  SPECIFIC DATA DIRECTION REGISTER *
+ * 	TAKES:																										*
+ * 		-IT TAKES THE ADDRESS OF THE REQUIRED DATA DIRECTION REGISTER											*
+ * 		-IT TAKES THE NUMBER OF THE PIN THAT WE WANT TO SET ITS DIRECTION										*
+ * 		-IT TAKES THE DIRECTION THAT WE WANT TO ASSIGN TO THE PREVIOUS PIN 										*
+ * 	RETURNS:																									*
+ * 		-IT RETURNS AN INDICATION OF THE SUCCESS OF THE OPERATION 												*
+ * 			-IF THE OPERATION PERFORMED SUCCESSFULLY IT WILL RETURN VALUE OF '0'								*
+ * 			-IF THE OPERATION HAD ANY TROUBLE FOR ANY REASON IT WILL RETURN VALUE OF '1'						*
+ * 																												*
+ * 	NOTE **:-																									*
+ * 		IT IS PREFERED TO CHECK THE VALUE OF THE INDICATOR BEFORE PROCEEDING IN YOUR CODE						*
+ * 																												*
+ * 																												*
+ * **************************************************************************************************************/
+u8 DIO_u8SetPinDirection(u8 Copy_u8PinNum , u8 Copy_u8Direction)
+{
+	// Variable to store the return status of DIO_u8SetPinDirection Function
+u8 Local_u8SetPinDirectionStatus=ERROR;
+	switch (Copy_u8PinNum)
+	{
+//Check if  THE REQUIRED PIN BELONGS TO DDRA
+	case PIN_0:
+	case PIN_1:
+	case PIN_2:
+	case PIN_3:
+	case PIN_4:
+	case PIN_5:
+	case PIN_6:
+	case PIN_7:
+		//CHECKING IF THE THE DIRECTION IS INPUT
+		if (DIO_INPUT == Copy_u8Direction )
+		{
+			/*
+			 Setting the Copy_u8PinNum (after getting its modulus by 8 because each port contains 8 pins
+			 so after this operation the result will be from 0:7 but for DDRA only ) with Zero which represents
+			Input
+			*/
+			clrBit(DDRA,(Copy_u8PinNum%8));
+			//Saving Return Status as OK
+			Local_u8SetPinDirectionStatus= OK;
+		}
+		//CHECKING IF THE THE DIRECTION IS OUTPUT
+		else if (Copy_u8Direction == DIO_OUTPUT)
+		{
+			 /*
+			   Setting the Copy_u8PinNum (after getting its modulus by 8 because each port contains 8 pins
+			  *so after this operation the result will be from 0:7 but for DDRA only ) with ONE which represents
+			 *OUTPUT
+			 */
+			setBit(DDRA,(Copy_u8PinNum%8));
+			 // Saving Return Status as OK
+
+			Local_u8SetPinDirectionStatus=OK;
+		}
+		//IF THE DIRECTIONE NEITHER INPUT NOR OUTPUT RETURNING  ERROR
+		else
+			Local_u8SetPinDirectionStatus=ERROR;
+		break;
+		//Check if  THE REQUIRED PIN BELONGS TO DDRB
+	case PIN_8:
+	case PIN_9:
+	case PIN_10:
+	case PIN_11:
+	case PIN_12:
+	case PIN_13:
+    case PIN_14:
+    case PIN_15:
+		//CHECKING IF THE THE DIRECTION IS INPUT
+		if (DIO_INPUT == Copy_u8Direction )
+    	{
+    		/*
+			 Setting the Copy_u8PinNum (after getting its modulus by 8 because each port contains 8 pins
+			 so after this operation the result will be from 0:7 but for DDRB only ) with Zero which represents
+			Input
+			*/
+    				clrBit(DDRB,(Copy_u8PinNum%8));
+    				//Saving Return Status as OK
+
+    				Local_u8SetPinDirectionStatus=OK;
+    			}
+		//CHECKING IF THE THE DIRECTION IS OUTPUT
+
+    			else if (Copy_u8Direction == DIO_OUTPUT)
+    			{
+    				 /*
+    				   Setting the Copy_u8PinNum (after getting its modulus by 8 because each port contains 8 pins
+    				  *so after this operation the result will be from 0:7 but for DDRB only ) with ONE which represents
+    				 *OUTPUT
+    				 */
+    				setBit(DDRB,(Copy_u8PinNum%8));
+    				//Saving Return Status as OK
+    				Local_u8SetPinDirectionStatus=OK;
+    			}
+		//IF THE DIRECTIONE NEITHER INPUT NOR OUTPUT RETURNING  ERROR
+    			else
+    				Local_u8SetPinDirectionStatus=ERROR;
+    		break;
+    		//Check if  THE REQUIRED PIN BELONGS TO DDRC
+    case PIN_16:
+    case PIN_17:
+    case PIN_18:
+    case PIN_19:
+   	case PIN_20 :
+   	case PIN_21:
+    case PIN_22:
+   	case PIN_23:
+
+   		//CHECKING IF THE THE DIRECTION IS INPUT
+		if (DIO_INPUT == Copy_u8Direction )
+      			{
+    		/*
+			 Setting the Copy_u8PinNum (after getting its modulus by 8 because each port contains 8 pins
+			 so after this operation the result will be from 0:7 but for DDRC only ) with Zero which represents
+			Input
+			*/
+       				clrBit(DDRC,(Copy_u8PinNum%8));
+    				//Saving Return Status as OK
+
+       				Local_u8SetPinDirectionStatus=OK;
+       			}
+		//CHECKING IF THE THE DIRECTION IS OUTPUT
+       			else if (Copy_u8Direction == DIO_OUTPUT)
+   	  			{
+   				 /*
+   				   Setting the Copy_u8PinNum (after getting its modulus by 8 because each port contains 8 pins
+   				  *so after this operation the result will be from 0:7 but for DDRC only ) with ONE which represents
+   				 *OUTPUT
+   				 */
+   	   				setBit(DDRC,(Copy_u8PinNum%8));
+    				//Saving Return Status as OK
+
+   	   			Local_u8SetPinDirectionStatus=OK;
+       			}
+   		//IF THE DIRECTIONE NEITHER INPUT NOR OUTPUT RETURNING AN ERROR
+   	   			else
+   	   			Local_u8SetPinDirectionStatus=ERROR;
+   		    break;
+
+   		    //Check if  THE REQUIRED PIN BELONGS TO DDRD
+   	case PIN_24:
+   	case PIN_25:
+   	case PIN_26:
+   	case PIN_27:
+   	case PIN_28:
+   	case PIN_29:
+   	case PIN_30:
+   	case PIN_31:
+		if (DIO_INPUT == Copy_u8Direction )
+   	  			{
+   		/*
+			 Setting the Copy_u8PinNum (after getting its modulus by 8 because each port contains 8 pins
+			 so after this operation the result will be from 0:7 but for DDRD only ) with Zero which represents
+			Input
+			*/
+       				clrBit(DDRD,(Copy_u8PinNum%8));
+    				//Saving Return Status as OK
+       				Local_u8SetPinDirectionStatus=OK;
+   	       			}
+		//CHECKING IF THE THE DIRECTION IS OUTPUT
+   	       			else if (Copy_u8Direction == DIO_OUTPUT)
+   	   	  			{
+   	   				 /*
+   	   				   Setting the Copy_u8PinNum (after getting its modulus by 8 because each port contains 8 pins
+   	   				  *so after this operation the result will be from 0:7 but for DDRD only ) with ONE which represents
+   	   				 *OUTPUT
+   	   				 */
+   	   	   			setBit(DDRD,(Copy_u8PinNum%8));
+    				//Saving Return Status as OK
+   	   	   			Local_u8SetPinDirectionStatus=OK;
+   	       			}
+   	//IF THE DIRECTIONE NEITHER INPUT NOR OUTPUT RETURNING AN ERROR
+   	   	   			else
+   	   	   		Local_u8SetPinDirectionStatus=ERROR;
+
+   		break;
+   		// IF THE PIN NUMBER WAS INVALID OR OUT OF RANGE
+   	default :Local_u8SetPinDirectionStatus= ERROR;
+	}
+	//returning the Function's status
+return Local_u8SetPinDirectionStatus;
+}
+
+
+
+
+
+
+/* **************************************************************************************************************
+ *																												*
+ * "DIO_u8SetPortValue"																						    *
+ *   																											*
+ * 		-FUNCTION RESPOSIBLE FOR SETTING THE VALUE OF A SPECIFIC PORT REGISTER									*
+ * 	TAKES:																										*
+ * 		-IT TAKES THE NAME OF THE REQUIRED PORT REGISTER														*
+ * 		-IT TAKES THE VALUE THAT WE WANT TO ASSIGN TO THE PREVIOUS PORT REGISTER  								*
+ * 	RETURNS:																									*
+ * 		-IT RETURNS AN INDICATION OF THE SUCCESS OF THE OPERATION 												*
+ * 			-IF THE OPERATION PERFORMED SUCCESSFULLY IT WILL RETURN VALUE OF '0'								*
+ * 			-IF THE OPERATION HAD ANY TROUBLE FOR ANY REASON IT WILL RETURN VALUE OF '1'						*
+ * 																												*
+ * 	NOTE **:-																									*
+ * 		IT IS PREFERED TO CHECK THE VALUE OF THE INDICATOR BEFORE PROCEEDING IN YOUR CODE						*
+ * 																												*
+ * 																												*
+ * **************************************************************************************************************/
+
+
+
+u8 DIO_u8SetPortValue(u8 Copy_u8PortValue,pu8 Copy_pu8PortName )
+{
+u8 Local_u8SetPortValueStatus;
+	// Checking if The PortName pointer is not Null and the PortValue is valid
+	if (Copy_u8PortValue <= DIO_PORT_MAX_VALUE && Copy_pu8PortName != NULL)
+	{
+		// ASSIGNING THE VALUE TO THE REQUIRED PORT
+		(*(Copy_pu8PortName))= Copy_u8PortValue;
+		Local_u8SetPortValueStatus=OK;
+	}
+	else
+	{
+		Local_u8SetPortValueStatus=ERROR;
+	}
+	// RETURNING THE ERROR INDICATOR INCASE OF ANY UNEXPECTED EVENT
+	return Local_u8SetPortValueStatus;
+}
+
+/* **************************************************************************************************************
+ *																												*
+ * "DIO_u8SetPinValue"																						    *
+ *   																											*
+ * 		-FUNCTION RESPOSIBLE FOR SETTING THE VALUE OF A SPECIFIC PIN IN A SPECIFIC PORT REGISTER				*
+ * 	TAKES:																										*
+ * 		-IT TAKES THE NAME OF THE REQUIRED PORT REGISTER														*
+ * 		-IT TAKES THE NUMBER OF THE REQUIRED PIN																*
+ * 		-IT TAKES THE VALUE THAT WE WANT TO ASSIGN TO THE PREVIOUS PIN 											*
+ * 	RETURNS:																									*
+ * 		-IT RETURNS AN INDICATION OF THE SUCCESS OF THE OPERATION 												*
+ * 			-IF THE OPERATION PERFORMED SUCCESSFULLY IT WILL RETURN VALUE OF '0'								*
+ * 			-IF THE OPERATION HAD ANY TROUBLE FOR ANY REASON IT WILL RETURN VALUE OF '1'						*
+ * 																												*
+ * 	NOTE **:-																									*
+ * 		IT IS PREFERED TO CHECK THE VALUE OF THE INDICATOR BEFORE PROCEEDING IN YOUR CODE						*
+ * 																												*
+ * 																												*
+ * **************************************************************************************************************/
+
+
+
+u8 DIO_u8SetPinValue(u8 Copy_u8PinNum,u8 Copy_u8Value)
+{
+	u8 Local_u8SetPinValueStatus=ERROR;
+
+	//checking if the comming value is valid
+if (DIO_LOW==Copy_u8Value || DIO_HIGH==Copy_u8Value)
+{
+	if (DIO_Max_Pin_Number > Copy_u8PinNum)
+	switch (Copy_u8PinNum)
+	{
+	//Check if  THE REQUIRED PIN BELONGS TO PORTA
+	case 0:
+	case 1:
+	case 2:
+	case 3:
+	case 4:
+	case 5:
+	case 6:
+	case 7:
+		//Check if the assigned value is LOW
+		if (Copy_u8Value == DIO_LOW)
+ 			{
+			/*
+						 Setting the Copy_u8PinNum (after getting its modulus by 8 because each port contains 8 pins
+						 so after this operation the result will be from 0:7 but for PORTA only ) with Zero which represents
+						LOW
+						*/
+			clrBit(PORTA,(Copy_u8PinNum%8));
+			//Saving Return Status as OK
+
+			Local_u8SetPinValueStatus= OK;
+		}
+		else if (Copy_u8Value == DIO_HIGH)
+		{
+			/*
+						 Setting the Copy_u8PinNum (after getting its modulus by 8 because each port contains 8 pins
+						 so after this operation the result will be from 0:7 but for PORTA only ) with One which represents
+						HIGH
+						*/
+			setBit(PORTA,(Copy_u8PinNum%8));
+			//Saving Return Status as OK
+
+			Local_u8SetPinValueStatus= OK;
+		}
+		//IF THE VALUE NEITHER HIGH NOR LOW  RETURNING AN ERROR SIGNAL
+		else
+			Local_u8SetPinValueStatus= ERROR;
+		break;
+		//Check if  THE REQUIRED PIN BELONGS TO PORTB
+
+	case 8:
+	case 9:
+	case 10:
+	case 11:
+	case 12:
+	case 13:
+    case 14:
+	case 15:
+			if (Copy_u8Value == DIO_LOW)
+			{
+				/*
+							 Setting the Copy_u8PinNum (after getting its modulus by 8 because each port contains 8 pins
+							 so after this operation the result will be from 0:7 but for PORTB only ) with Zero which represents
+							LOW
+							*/
+				clrBit(PORTB,(Copy_u8PinNum%8));
+				//Saving Return Status as OK
+
+				Local_u8SetPinValueStatus= OK;
+			}
+			else if (Copy_u8Value == DIO_HIGH)
+			{
+				/*
+							 Setting the Copy_u8PinNum (after getting its modulus by 8 because each port contains 8 pins
+							 so after this operation the result will be from 0:7 but for PORTB only ) with One which represents
+							HIGH
+							*/
+				setBit(PORTB,(Copy_u8PinNum%8));
+				//Saving Return Status as OK
+
+				Local_u8SetPinValueStatus= OK;
+			}
+			//IF THE VALUE NEITHER HIGH NOR LOW RETURNING AN ERROR SIGNAL
+			else
+				Local_u8SetPinValueStatus= ERROR;
+		break;
+
+		//Check if  THE REQUIRED PIN BELONGS TO PORTC
+    case 16:
+    case 17:
+    case 18:
+    case 19:
+   	case 20 :
+   	case 21:
+    case 22:
+   	case 23:
+		if (Copy_u8Value == DIO_LOW)
+		{
+			/*
+						 Setting the Copy_u8PinNum (after getting its modulus by 8 because each port contains 8 pins
+						 so after this operation the result will be from 0:7 but for PORTC only ) with Zero which represents
+						LOW
+						*/
+			clrBit(PORTC,(Copy_u8PinNum%8));
+			//Saving Return Status as OK
+
+			Local_u8SetPinValueStatus= OK;
+		}
+		else if (Copy_u8Value == DIO_HIGH)
+		{
+			/*
+						 Setting the Copy_u8PinNum (after getting its modulus by 8 because each port contains 8 pins
+						 so after this operation the result will be from 0:7 but for PORTC only ) with One which represents
+						HIGH
+						*/
+			setBit(PORTC,(Copy_u8PinNum%8));
+			//Saving Return Status as OK
+
+			Local_u8SetPinValueStatus= OK;
+		}
+		//IF THE VALUE NEITHER HIGH NOR LOW RETURNING AN ERROR SIGNAL
+		else
+			Local_u8SetPinValueStatus= ERROR;
+	break;
+
+	//Check if  THE REQUIRED PIN BELONGS TO PORTD
+   	case 24:
+   	case 25:
+   	case 26:
+   	case 27:
+   	case 28:
+   	case 29:
+   	case 30:
+   	case 31:
+		if (Copy_u8Value == DIO_LOW)
+		{
+			/*
+						 Setting the Copy_u8PinNum (after getting its modulus by 8 because each port contains 8 pins
+						 so after this operation the result will be from 0:7 but for PORTD only ) with Zero which represents
+						LOW
+						*/
+			clrBit(PORTD,(Copy_u8PinNum%8));
+			//Saving Return Status as OK
+
+			Local_u8SetPinValueStatus= OK;
+		}
+		else if (Copy_u8Value == DIO_HIGH)
+		{
+			/*
+						 Setting the Copy_u8PinNum (after getting its modulus by 8 because each port contains 8 pins
+						 so after this operation the result will be from 0:7 but for PORTD only ) with One which represents
+						HIGH
+						*/
+			setBit(PORTD,(Copy_u8PinNum%8));
+			//Saving Return Status as OK
+
+			Local_u8SetPinValueStatus= OK;
+		}
+		//IF THE VALUE NEITHER HIGH NOR LOW RETURNING AN ERROR SIGNAL
+		else
+			Local_u8SetPinValueStatus= ERROR;
+	break;
+//IF the Pin Number is out of the range or invalid
+   	default :
+   		Local_u8SetPinValueStatus=ERROR;
+	}
+}
+
+else
+{
+		Local_u8SetPinValueStatus=ERROR;
+}
+return Local_u8SetPinValueStatus;
+
+
+
+}
+
+
+
+/* **************************************************************************************************************
+ *																												*
+ * "DIO_u8GetPinValue"																						    *
+ *   																											*
+ * 		-FUNCTION RESPOSIBLE FOR GETTING THE VALUE OF A SPECIFIC PIN IN A SPECIFIC PINREGISTER					*
+ * 	TAKES:																										*
+ * 		-IT TAKES THE NUMBER OF THE REQUIRED PIN																*
+ * 		-IT TAKES POINTER TO RETURN THE VALUE OF THE REQUIRED PIN INTO IT 										*
+ * 	RETURNS:																									*
+ * 		-IT RETURNS THE CORRESPONDING VALUE OF THE REQUIRED PIN													*
+ * 		-IT RETURNS INDICATOR FOR THE STATUS OF THE OPERATION													*
+ * 			-IF THE OPERATION PERFORMED SUCCESSFULLY IT WILL RETURN  VALUE OF '0'								*
+ * 			-IF THE OPERATION HAD ANY TROUBLE FOR ANY REASON IT WILL RETURN VALUE OF '1'						*
+ * 																												*
+ * 	NOTE **:-																									*
+ * 		IT IS PREFERED TO CHECK THE VALUE OF THE VALUE BEFORE PROCEEDING IN YOUR CODE							*
+ * 																												*
+ * 																												*
+ * **************************************************************************************************************/
+
+
+u8 DIO_u8GetPinValue(u8 Copy_u8PinNumber,pu8 Copy_pu8ReturnedValue) // HEADER OF THE FUNCTION
+{
+	switch (Copy_u8PinNumber)
+	{
+	case 0:
+	case 1:
+	case 2:
+	case 3:
+	case 4:
+	case 5:
+	case 6:
+	case 7:
+         *(Copy_pu8ReturnedValue)=getBit(PINA,Copy_u8PinNumber);
+         return OK;
+         break;
+	case 8:
+	case 9:
+	case 10:
+	case 11:
+	case 12:
+	case 13:
+    case 14:
+	case 15:
+        *(Copy_pu8ReturnedValue)=getBit(PINB,Copy_u8PinNumber%8);
+        return OK;
+        break;
+    case 16:
+    case 17:
+    case 18:
+    case 19:
+   	case 20 :
+   	case 21:
+    case 22:
+   	case 23:
+        *(Copy_pu8ReturnedValue)=getBit(PINC,Copy_u8PinNumber%8);
+        return OK;
+        break;
+   	case 24:
+   	case 25:
+   	case 26:
+   	case 27:
+   	case 28:
+   	case 29:
+   	case 30:
+   	case 31:
+        *(Copy_pu8ReturnedValue)=getBit(PIND,Copy_u8PinNumber%8);
+        return OK;
+        break;
+   	default : return ERROR;
+	}
+return ERROR;
+
+
+
+}
+
+

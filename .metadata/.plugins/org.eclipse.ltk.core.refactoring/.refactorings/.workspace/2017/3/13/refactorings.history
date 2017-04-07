@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Delete 21 resources" deleteContents="false" description="Delete 21 resources" element1="/Free_RTOS/croutine.c" element10="/Free_RTOS/port.c" element11="/Free_RTOS/portable.h" element12="/Free_RTOS/portmacro.h" element13="/Free_RTOS/projdefs.h" element14="/Free_RTOS/queue.c" element15="/Free_RTOS/queue.h" element16="/Free_RTOS/semphr.h" element17="/Free_RTOS/StackMacros.h" element18="/Free_RTOS/task.h" element19="/Free_RTOS/tasks.c" element2="/Free_RTOS/croutine.h" element20="/Free_RTOS/timers.c" element21="/Free_RTOS/timers.h" element3="/Free_RTOS/FreeRTOS.h" element4="/Free_RTOS/FreeRTOSConfig.h" element5="/Free_RTOS/heap_1.c" element6="/Free_RTOS/list.c" element7="/Free_RTOS/list.h" element8="/Free_RTOS/macros.h" element9="/Free_RTOS/mpu_wrappers.h" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="21" stamp="1490720726794"/>
+</session>

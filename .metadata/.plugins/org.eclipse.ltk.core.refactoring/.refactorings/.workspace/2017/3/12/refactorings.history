@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Delete 4 resources" deleteContents="false" description="Delete 4 resources" element1="/Flex_Gloves/TIMER0_config.h" element2="/Flex_Gloves/TIMER0_interface.h" element3="/Flex_Gloves/TIMER0_private.h" element4="/Flex_Gloves/TIMER0_prog.c" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="4" stamp="1490438118456"/>
+</session>

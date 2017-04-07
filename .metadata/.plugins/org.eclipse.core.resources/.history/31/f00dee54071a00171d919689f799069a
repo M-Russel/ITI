@@ -1,0 +1,62 @@
+/*
+ * SPI_config.h
+ *
+ *  Created on: Apr 5, 2017
+ *      Author: Russel
+ */
+
+#ifndef SPI_CONFIG_H_
+#define SPI_CONFIG_H_
+
+#define ENABLED 1
+#define DISABLED 0
+
+/*SPI Interrupt Enable
+ * SPIE = 1 Interrupt enabled
+ * SPIE = 0 Interrupt disabled
+ * */
+#define SPIE_STATUS    7
+/*SPI  Enable
+ * SPE = 1 SPI Enabled
+ * SPE = 0 SPI Disabled
+ * */
+#define SPE_STATUS      6
+/*Data order
+ *DORD = 1 LSB first.
+ * DORD = 0 MSB Second.
+ *  */
+#define DORD_STATUS  5
+/*Master Slave Select
+ * MSTR = 1 Master
+ * MSTR = 0 Slave
+ *  */
+#define MSTR_STATUS   4
+/*Clock Polarity
+ * CPOL = 0  Leading Edge: Rising  Trailing Edge: Falling
+ * CPOL = 1  Leading Edge: Falling  Trailing Edge: Rising
+ * */
+#define CPOL_STATUS   3
+/*Clock Phase
+ * CPHA
+ * CPHA =0  Leading Edge: Sample  Trailing Edge: Setup
+ * CPHA = 1 Leading Edge: Setup    Trailing Edge: Sample
+ * */
+#define CPHA_STATUS   2
+
+/*SPI Clock Rate
+ * SPI2X SPR1 SPR0   SCK Frequency
+	0 	      0       0     f osc / 4
+	0        0       1     f osc / 16
+	0        1       0     f osc / 64
+	0        1       1     f osc / 128
+	1        0       0     f osc / 2
+	1        0       1     f osc / 8
+	1        1       0     f osc / 32
+	1        1       1     f osc / 64
+
+ * */
+#define SPR1_STATUS    1
+#define SPR0_STATUS    0
+
+
+#endif /* SPI_CONFIG_H_ */

@@ -34,7 +34,7 @@ flag=1;
 }
 
 
-void main(void)
+void main1(void)
 {
 	DIO_voidInitialize();
 	TIMER0_init();

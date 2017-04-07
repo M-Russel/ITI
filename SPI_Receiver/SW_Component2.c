@@ -1,0 +1,30 @@
+/*
+ * SW_Component2.c
+ *
+ *  Created on: Apr 7, 2017
+ *      Author: root
+ */
+
+#include "std_types.h"
+#include "utils.h"
+#include "DIO_Interface.h"
+#include "SPI_interface.h"
+#include "delay_ms.h"
+void main(void)
+{
+u8 Local_u8Received=0;
+DIO_voidInitialize();
+LCD_u8Init();
+SPI_u8Init();
+LCD_u8WriteData('h');
+
+while (TRUE)
+{
+SPI_u8ReceiveData(&Local_u8Received)	;
+LCD_u8WriteData(Local_u8Received);
+
+}
+
+
+
+}

@@ -1,6 +1,6 @@
 eclipse.preferences.version=1
 environment/buildEnvironmentInclude/cdt.managedbuild.config.gnu.mingw.exe.debug.1201114537/CPATH/delimiter=\:
-environment/buildEnvironmentInclude/cdt.managedbuild.config.gnu.mingw.exe.debug.1201114537/CPATH/operation=replace
+environment/buildEnvironmentInclude/cdt.managedbuild.config.gnu.mingw.exe.debug.1201114537/CPATH/operation=remove
 environment/buildEnvironmentInclude/cdt.managedbuild.config.gnu.mingw.exe.debug.1201114537/CPATH/value=/home/russel/catkin_ws/devel/include\:/opt/ros/indigo/include
 environment/buildEnvironmentInclude/cdt.managedbuild.config.gnu.mingw.exe.debug.1201114537/C_INCLUDE_PATH/delimiter=\:
 environment/buildEnvironmentInclude/cdt.managedbuild.config.gnu.mingw.exe.debug.1201114537/C_INCLUDE_PATH/operation=remove

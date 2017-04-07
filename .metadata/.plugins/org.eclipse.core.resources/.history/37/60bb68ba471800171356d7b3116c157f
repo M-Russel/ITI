@@ -1,0 +1,47 @@
+/*
+ * Test.c
+ *
+ *  Created on: Feb 27, 2017
+ *      Author: root
+ */
+
+#include <stdio.h>
+#include "std_types.h"
+#define N 10
+
+void ARRAY_voidSort(u8 Copy_u8ElementsNumber,pu8 Copy_pu8Array)
+{
+u8 Copy_Counter=0;
+u8 Copy_Counter2=0;
+
+Copy_pu8Array[0]=20;
+
+
+
+}
+
+typedef struct {
+	u8 x;
+	u16 y;
+	u32 z;
+
+}test;
+void main (void)
+{
+
+u8 arr[N]={1,2,3,4,5,6,7,8,9,10};
+u8 Counter=0;
+
+for (Counter =0 ; Counter<N;Counter++)
+{
+printf("%d \t",arr[Counter]);
+}
+
+ARRAY_voidSort(N,arr);
+
+for (Counter =0 ; Counter<N;Counter++)
+{
+printf("%d \t",arr[Counter]);
+}
+
+}

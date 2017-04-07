@@ -9,37 +9,37 @@
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="" key="selection"/>
+		<item value="SETBIT" key="selection"/>
 		<item value="true" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="true" key="wholeword"/>
 		<list key="findhistory">
+			<item value="setBit"/>
+			<item value="getBit"/>
+			<item value="clrBit"/>
+			<item value="SPCR"/>
+			<item value="__elpm"/>
+			<item value="if (Counter2==3)"/>
 			<item value="root"/>
 			<item value="LINE_END"/>
-			<item value="LINE_BASE"/>
-			<item value="SECOND_LINE"/>
-			<item value="FIRST_LINE"/>
-			<item value="SECONDLINE_DDRAM"/>
-			<item value="BASE_DDRAM"/>
-			<item value="BASE_CGR"/>
 		</list>
 		<list key="replacehistory">
+			<item value="SETBIT"/>
+			<item value="GETBIT"/>
+			<item value="CLRBIT"/>
 			<item value="Russel"/>
 			<item value="LCD_LINE_END"/>
 			<item value="LCD_LINE_BASE"/>
 			<item value="LCD_SECOND_LINE"/>
 			<item value="LCD_FIRST_LINE"/>
-			<item value="LCD_SECONDLINE_DDRAM"/>
-			<item value="LCD_BASE_DDRAM"/>
-			<item value="LCD_BASE_CGR"/>
 		</list>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
 		<item value="342" key="DIALOG_WIDTH"/>
 		<item value="1|Ubuntu|11.0|0|GTK|1|" key="DIALOG_FONT_NAME"/>
 		<item value="444" key="DIALOG_HEIGHT"/>
-		<item value="660" key="DIALOG_X_ORIGIN"/>
-		<item value="184" key="DIALOG_Y_ORIGIN"/>
+		<item value="595" key="DIALOG_X_ORIGIN"/>
+		<item value="303" key="DIALOG_Y_ORIGIN"/>
 	</section>
 </section>

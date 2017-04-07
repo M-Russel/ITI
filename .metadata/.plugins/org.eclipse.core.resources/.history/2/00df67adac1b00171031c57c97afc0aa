@@ -1,0 +1,30 @@
+/*
+ * Sw_Component1.c
+ *
+ *  Created on: Apr 7, 2017
+ *      Author: Russel
+ *
+ */
+
+#include "std_types.h"
+#include "utils.h"
+#include "DIO_Interface.h"
+#include "SPI_interface.h"
+
+
+
+void main (void)
+{
+	u8 Local_u8Data=4;
+	DIO_voidInitialize();
+	SPI_u8Init();
+
+	while (TRUE)
+	{
+SPI_u8TransmitData(Local_u8Data);
+
+	}
+
+
+
+}

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Delete 4 resources" deleteContents="false" description="Delete 4 resources" element1="/SPI_Receiver/LCD_config.h" element2="/SPI_Receiver/LCD_Interface.h" element3="/SPI_Receiver/LCD_Private.h" element4="/SPI_Receiver/LCD_Prog.c" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="4" stamp="1491580306938"/>
+</session>
