@@ -1,6 +1,12 @@
 #ifndef types
 #define types
 
+#define OK 1
+#define NOK 0
+
+#define TRUE 1
+#define FALSE 0
+
 typedef unsigned char u8;
 typedef unsigned short int u16;
 typedef unsigned long int u32;

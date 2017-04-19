@@ -1,0 +1,49 @@
+16:21:19 **** Incremental Build of configuration Debug for project I2C ****
+make all 
+Building file: ../SW_Component1.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=1000000UL -MMD -MP -MF"SW_Component1.d" -MT"SW_Component1.o" -c -o "SW_Component1.o" "../SW_Component1.c"
+In file included from ../SW_Component1.c:12:0:
+../LCD_Interface.h:21:0: warning: "OK" redefined [enabled by default]
+ #define OK 0
+ ^
+In file included from ../SW_Component1.c:8:0:
+../std_types.h:4:0: note: this is the location of the previous definition
+ #define OK 1
+ ^
+../SW_Component1.c:17:6: warning: return type of ‘main’ is not ‘int’ [-Wmain]
+ void main (void)
+      ^
+Finished building: ../SW_Component1.c
+ 
+Building target: I2C.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,I2C.map -mmcu=atmega32 -o "I2C.elf"  ./DIO_Prog.o ./I2C_prog.o ./LCD_Prog.o ./SW_Component1.o ./TIMER0_prog.o ./delay_ms.o   
+Finished building target: I2C.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S I2C.elf  >"I2C.lss"
+Finished building: I2C.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex I2C.elf  "I2C.hex"
+Finished building: I2C.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 I2C.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    3774 bytes (11.5% Full)
+(.text + .data + .bootloader)
+
+Data:          5 bytes (0.2% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+
+16:21:19 Build Finished (took 116ms)
+

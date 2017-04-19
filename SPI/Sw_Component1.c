@@ -10,27 +10,24 @@
 #include "utils.h"
 #include "DIO_Interface.h"
 #include "SPI_interface.h"
-
+#include "delay_ms.h"
 
 
 void main (void)
 {
-	u8 Local_u8Data[5]="Hell";
+	u8 Local_u8Data[]="Hello";
 	u8 counter=0;
 	DIO_voidInitialize();
 	SPI_u8Init();
 
 	while (TRUE)
 	{
-SPI_u8TransmitData();
-counter++;
-if (counter == 5)
+for (counter=0;counter <5;counter++)
 {
-counter=0;
-}
-else {
 
-		}
+	SPI_u8TransmitData(Local_u8Data[counter]);
+	delay_ms(1000);
+}
 	}
 
 

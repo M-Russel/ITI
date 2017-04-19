@@ -1,0 +1,15 @@
+/*
+ * I2C_interface.h
+ *
+ *  Created on: Apr 10, 2017
+ *      Author: Russel
+ */
+
+#ifndef I2C_INTERFACE_H_
+#define I2C_INTERFACE_H_
+
+u8 I2C_u8Start(void);
+u8 I2C_u8Stop(void);
+
+
+#endif /* I2C_INTERFACE_H_ */

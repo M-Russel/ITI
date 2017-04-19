@@ -1,0 +1,32 @@
+/*
+ * main.c
+ *
+ *  Created on: Mar 13, 2017
+ *      Author: Russel
+ *      Version:1.0
+ */
+#include "std_types.h"
+#include "utils.h"
+#include "DIO_Interface.h"
+#include "UART_Private.h"
+#include "UART_Interface.h"
+
+
+
+void main (void)
+{
+DIO_voidInitialize();
+UART_u8Init();
+
+while(TRUE)
+{
+
+UART_u8Transmit('a');
+
+//	USART_Transmit('5');
+}
+
+}
+
+
+

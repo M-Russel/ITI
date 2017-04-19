@@ -1,0 +1,14 @@
+/*
+ * I2C_prog.c
+ *
+ *  Created on: Apr 10, 2017
+ *      Author: Russel
+ */
+
+
+u8 I2C_u8Start(void){}
+u8 I2C_u8Stop(void){}
+u8 I2C_u8WriteByte(u8 Copy_u8SlaveAddress,u8 Copy_u8DataByte){}
+u8 I2C_u8ContinueWrite(u8 Copy_u8DataByte){}
+u8 I2C_u8ReadByte(u8 Copy_u8SlaveAddress){}
+u8 I2C_u8ContinueRead(u8 Copy_u8SlaveAddress){}

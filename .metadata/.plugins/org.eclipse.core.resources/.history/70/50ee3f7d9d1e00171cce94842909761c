@@ -1,0 +1,30 @@
+/*
+ * SW_Component1.c
+ *
+ *  Created on: Apr 11, 2017
+ *      Author: root
+ */
+
+#include "std_types.h"
+#include "utils.h"
+#include "DIO_Interface.h"
+#include "I2C_interface.h"
+#include "LCD_Interface.h"
+
+
+
+
+void main (void)
+{
+	DIO_voidInitialize();
+	LCD_u8Init();
+	I2C_u8Init();
+
+
+
+while (TRUE){
+I2C_u8ReadByte(0b1010101);
+
+};
+
+}

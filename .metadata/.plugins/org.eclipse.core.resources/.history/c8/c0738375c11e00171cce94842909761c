@@ -1,0 +1,33 @@
+/*
+ * SW_Component1.c
+ *
+ *  Created on: Apr 11, 2017
+ *      Author: root
+ */
+
+#include "std_types.h"
+#include "utils.h"
+#include "DIO_Interface.h"
+#include "I2C_interface.h"
+#include "LCD_Interface.h"
+#include "I2C_private.h"
+
+
+
+void main (void)
+{
+	u8 local_u8Temp='c';
+	DIO_voidInitialize();
+	//LCD_u8Init();
+	I2C_u8Init();
+
+
+while (TRUE){
+	while (FALSE == getBit(TWCR,TWCR_TWINT));
+	TWDR=local_u8Temp;
+	setBit(TWCR,TWCR_TWINT);
+	setBit(TWCR,TWCR_TWEN);
+	while (FALSE == getBit(TWCR,TWCR_TWINT));
+};
+
+}

@@ -1,0 +1,46 @@
+/*
+ * I2C_private.h
+ *
+ *  Created on: Apr 10, 2017
+ *      Author: Russel
+ */
+
+#ifndef I2C_PRIVATE_H_
+#define I2C_PRIVATE_H_
+
+
+#define TWDR (*((volatile u8 *)(0x23)))
+
+#define TWCR (*((volatile u8 *)(0x56)))
+
+
+#define TWCR_TWINT 7
+#define TWCR_TWEA 6
+#define TWCR_TWSRA 5
+#define TWCR_TWSTO 4
+#define TWCR_TWWC 3
+#define TWCR_TWEN 2
+#define TWCR_RESERVED 1
+#define TWCR_TWIE 0
+
+
+
+#define TWAR (*((volatile u8 *)(0x22)))
+
+#define TWSR (*((volatile u8 *)(0x21)))
+
+
+
+#define TWBR (*((volatile u8 *)(0x20)))
+
+#define TWBR_TWBR7 7
+#define TWBR_TWBR6 6
+#define TWBR_TWBR5 5
+#define TWBR_TWBR4 4
+#define TWBR_TWBR3 3
+#define TWBR_TWBR2 2
+#define TWBR_TWBR1 1
+#define TWBR_TWBR0 0
+
+
+#endif /* I2C_PRIVATE_H_ */

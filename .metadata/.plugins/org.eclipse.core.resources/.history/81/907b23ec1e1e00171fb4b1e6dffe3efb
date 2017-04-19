@@ -1,0 +1,35 @@
+/*
+ * I2C_prog.c
+ *
+ *  Created on: Apr 10, 2017
+ *      Author: Russel
+ */
+#include "std_types.h"
+#include "utils.h"
+#include "I2C_interface.h"
+#include "I2C_config.h"
+#include "I2C_private.h"
+
+
+
+u8 I2C_u8Init(void)
+{
+	//TWINT TWEA TWSTA TWSTO TWWC TWEN – TWIE
+TWCR=I2C_REGISTER_VALUE(TWCR_TWIE_STATUS,TWCR_RESERVED_STATUS,TWCR_TWEN_STATUS,TWCR_TWWC_STATUS,
+		TWCR_TWSTO_STATUS,TWCR_TWSTA_STATUS,TWCR_TWEA_STATUS,TWCR_TWINT_STATUS);
+TWBR=I2C_REGISTER_VALUE(TWBR_TWBR0_STATUS,TWBR_TWBR1_STATUS,TWBR_TWBR2_STATUS,TWBR_TWBR3_STATUS,
+		TWBR_TWBR4_STATUS,TWBR_TWBR5_STATUS,TWBR_TWBR6_STATUS,TWBR_TWBR7_STATUS);
+
+
+}
+u8 I2C_u8Start(void){
+setBit(TWCR,TWCR_TWSTA);
+
+return OK;
+
+}
+u8 I2C_u8Stop(void){}
+u8 I2C_u8WriteByte(u8 Copy_u8SlaveAddress,u8 Copy_u8DataByte){}
+u8 I2C_u8ContinueWrite(u8 Copy_u8DataByte){}
+u8 I2C_u8ReadByte(u8 Copy_u8SlaveAddress){}
+u8 I2C_u8ContinueRead(u8 Copy_u8SlaveAddress){}

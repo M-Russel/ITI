@@ -1,0 +1,56 @@
+/*
+ * I2C_config.h
+ *
+ *  Created on: Apr 10, 2017
+ *      Author: Russel
+ */
+
+#ifndef I2C_CONFIG_H_
+#define I2C_CONFIG_H_
+
+
+#define TWCR_TWINT_STATUS 7
+#define TWCR_TWEA_STATUS 6
+#define TWCR_TWSTA_STATUS 5
+#define TWCR_TWSTO_STATUS 4
+#define TWCR_TWWC_STATUS 3
+#define TWCR_TWEN_STATUS 2
+#define TWCR_RESERVED_STATUS 1
+#define TWCR_TWIE_STATUS 0
+
+
+
+
+
+#define TWAR_TWA6_STATUS 7
+#define TWAR_TWA5_STATUS 6
+#define TWAR_TWA4_STATUS 5
+#define TWAR_TWA3_STATUS 4
+#define TWAR_TWA2_STATUS 3
+#define TWAR_TWA1_STATUS 2
+#define TWAR_TWA0_STATUS 1
+#define TWAR_TWGCE_STATUS 0
+
+
+#define TWSR_TWS7_STATUS 7
+#define TWSR_TWS6_STATUS 6
+#define TWSR_TWS5_STATUS 5
+#define TWSR_TWS4_STATUS 4
+#define TWSR_TWS3_STATUS 3
+#define TWSR_TWS2_STATUS 2
+#define TWSR_TWS1_STATUS 1
+#define TWSR_TWS0_STATUS 0
+
+
+
+#define TWBR_TWBR7_STATUS 7
+#define TWBR_TWBR6_STATUS 6
+#define TWBR_TWBR5_STATUS 5
+#define TWBR_TWBR4_STATUS 4
+#define TWBR_TWBR3_STATUS 3
+#define TWBR_TWBR2_STATUS 2
+#define TWBR_TWBR1_STATUS 1
+#define TWBR_TWBR0_STATUS 0
+
+
+#endif /* I2C_CONFIG_H_ */

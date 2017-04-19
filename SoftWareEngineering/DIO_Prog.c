@@ -7,16 +7,14 @@
  */
 
 // Data types header file
+#include "DIO_config.h"
+#include "DIO_interface.h"
+#include "DIO_private.h"
 #include "std_types.h"
 // Bit calculation and manipulation header file
 #include "utils.h"
 
 //DIO_Config.h header file
-#include "DIO_Config.h"
-//DIO_Interface.h header file
-#include "DIO_Interface.h"
-//DIO_Private.h header file
-#include "DIO_Private.h"
 
 /* **************************************************************************************************************
  *																																											*

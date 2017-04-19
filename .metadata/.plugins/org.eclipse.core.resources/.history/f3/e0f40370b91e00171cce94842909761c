@@ -1,0 +1,35 @@
+/*
+ * SW_Component1.c
+ *
+ *  Created on: Apr 11, 2017
+ *      Author: root
+ */
+
+#include "std_types.h"
+#include "utils.h"
+#include "DIO_Interface.h"
+#include "I2C_interface.h"
+#include "LCD_Interface.h"
+
+
+
+
+void main (void)
+{
+	u8 local_u8Temp='c';
+	DIO_voidInitialize();
+	LCD_u8Init();
+	I2C_u8Init();
+	I2C_u8Start();
+	local_u8Temp=I2C_u8ReadByte(0b1010101);
+	I2C_u8Stop();
+
+	LCD_u8ClearScreen();
+
+//LCD_u8WriteData('a');
+while (TRUE){
+	LCD_u8WriteData(local_u8Temp);
+
+};
+
+}

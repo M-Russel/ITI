@@ -19,8 +19,8 @@
 		<item value="62" key="DIALOG_Y_ORIGIN"/>
 	</section>
 	<section name="org.eclipse.cdt.ui.text.hover.CMacroExpansionExploration.internal">
-		<item value="342" key="size.height"/>
-		<item value="903" key="size.width"/>
+		<item value="330" key="size.height"/>
+		<item value="891" key="size.width"/>
 	</section>
 	<section name="org.eclipse.cdt.ui.text.hover.CMacroExpansionExploration">
 	</section>
